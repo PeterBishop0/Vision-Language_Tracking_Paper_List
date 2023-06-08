@@ -4,7 +4,7 @@ Paper list for vision-language tracking (continue to Update this list)
 ## Datasets:
 * **Towards More Flexible and Accurate Object Tracking with Natural Language: Algorithms and Benchmark**, Xiao Wang, Xiujun Shu, Zhipeng Zhang, Bo Jiang, Yaowei Wang, Yonghong Tian, Feng Wu (CVPR21)
 [[Paper](https://arxiv.org/pdf/2103.16746.pdf)]
-[[Github](https://github.com/wangxiao5791509/TNL2K_evaluation_toolkit)] 
+[[Evaluation Toolkit & Github](https://github.com/wangxiao5791509/TNL2K_evaluation_toolkit)]
 [[Project](https://sites.google.com/view/langtrackbenchmark/)] 
 
 
@@ -50,7 +50,7 @@ Paper list for vision-language tracking (continue to Update this list)
 
 * **Towards More Flexible and Accurate Object Tracking with Natural Language: Algorithms and Benchmark**, Xiao Wang, Xiujun Shu, Zhipeng Zhang, Bo Jiang, Yaowei Wang, Yonghong Tian, Feng Wu (CVPR21)
 [[Paper](https://arxiv.org/pdf/2103.16746.pdf)]
-[[Github](https://github.com/wangxiao5791509/TNL2K_evaluation_toolkit)] 
+[[Evaluation Toolkit & Github](https://github.com/wangxiao5791509/TNL2K_evaluation_toolkit)]
 [[Project](https://sites.google.com/view/langtrackbenchmark/)] 
 
 
