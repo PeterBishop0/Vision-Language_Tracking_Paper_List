@@ -66,7 +66,7 @@ Paper list for vision-language tracking (continue to Update this list)
 
 * **Beyond Visual Cues: Synchronously Exploring Target-Centric Semantics for Vision-Language Tracking**, Jiawei Ge, Xiangmei Chen, Jiuxin Cao, Xuelin Zhu, and Bo Liu (Arxiv23)  
 [[Paper](https://arxiv.org/abs/2311.17085)]
-[[Github]([Coming Soon (Private now)]([https://github.com/PeterBishop0/SATracker](https://github.com/PeterBishop0/SATracker)https://github.com/PeterBishop0/SATracker))] 
+[[Github Coming Soon (Private now)](https://github.com/PeterBishop0/SATracker)]
 
 
 
