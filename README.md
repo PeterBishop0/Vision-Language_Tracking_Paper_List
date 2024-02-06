@@ -29,6 +29,17 @@ Paper list for vision-language tracking (continue to Update this list)
 [[Paper](https://arxiv.org/abs/2207.01076)] 
 [[Code](https://github.com/JudasDie/SOTS)]
 
+* **All in One: Exploring Unified Vision-Language Tracking with Multi-Modal Alignment**, Chunhui Zhang, Xin Sun, Yiqian Yang, Li Liu, Qiong Liu, Xi Zhou, Yanfeng Wang (MM23)  
+[[Paper](https://dl.acm.org/doi/10.1145/3581783.3611803)] 
+
+* **CiteTracker: Correlating Image and Text for Visual Tracking**, Xin Li, Yuqing Huang, Zhenyu He, Yaowei Wang, Huchuan Lu, and Ming-Hsuan Yang (ICCV23)  
+[[Paper](https://openaccess.thecvf.com/content/ICCV2023/papers/Li_CiteTracker_Correlating_Image_and_Text_for_Visual_Tracking_ICCV_2023_paper.pdf)] 
+
+* **One-Stream Vision-Language Memory Network for Object Tracking**, Huanlong Zhang, Jingchao Wang, Jianwei Zhang, Tianzhu Zhang, and Bineng Zhong (TMM23)  
+[[Paper](https://ieeexplore.ieee.org/document/10149530)] 
+
+* **Towards Unified Token Learning for Vision-Language Tracking**, Yaozong Zheng, Bineng Zhong, Qihua Liang, Guorong Li, Rongrong Ji, Xianxian Li (TCSVT23)  
+[[Paper](https://ieeexplore.ieee.org/document/10208210)] 
 
 
 ### NL & NL+BBox:
@@ -68,7 +79,8 @@ Paper list for vision-language tracking (continue to Update this list)
 [[Paper](https://arxiv.org/abs/2311.17085)]
 [[Github Coming Soon (Private now)](https://github.com/PeterBishop0/SATracker)]
 
-
+* **Tracking by Natural Language Specification with Long Short-term Context Decoupling**, Ding Ma, Xiangqian Wu (ICCV23)  
+[[Paper](https://openaccess.thecvf.com/content/ICCV2023/papers/Ma_Tracking_by_Natural_Language_Specification_with_Long_Short-term_Context_Decoupling_ICCV_2023_paper.pdf)]
 
 
 
