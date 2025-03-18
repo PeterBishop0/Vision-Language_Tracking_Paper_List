@@ -54,7 +54,8 @@ Paper list for vision-language tracking (continue to Update this list)
 [[Github Coming Soon (Private now)](https://github.com/PeterBishop0/SATracker)]
 
 * **Towards Unified Token Learning for Vision-Language Tracking**, Yaozong Zheng, Bineng Zhong, Qihua Liang, Guorong Li, Rongrong Ji, Xianxian Li (TCSVT23)  
-[[Paper](https://ieeexplore.ieee.org/document/10208210)] 
+[[Paper](https://ieeexplore.ieee.org/abstract/document/10208210)]
+[[Code](https://github.com/Azong-HQU/MMTrack)]
 
 * **All in One: Exploring Unified Vision-Language Tracking with Multi-Modal Alignment**, Chunhui Zhang, Xin Sun, Yiqian Yang, Li Liu, Qiong Liu, Xi Zhou, Yanfeng Wang (MM23)  
 [[Paper](https://dl.acm.org/doi/10.1145/3581783.3611803)] 
@@ -71,9 +72,6 @@ Paper list for vision-language tracking (continue to Update this list)
 * **One-Stream Stepwise Decreasing for Vision-Language Tracking**, Guangtong Zhang, Bineng Zhong, Qihua Liang, Zhiyi Mo, Ning Li, Shuxiang Song (TCSVT24)  
 [[Paper](https://ieeexplore.ieee.org/abstract/document/10510485)]
 
-* **Toward Unified Token Learning for Vision-Language Tracking**, Zheng, Yaozong and Zhong, Bineng and Liang, Qihua and Li, Guorong and Ji, Rongrong and Li, Xianxian (TCSVT24)  
-[[Paper](https://ieeexplore.ieee.org/abstract/document/10208210)]
-[[Code](https://github.com/Azong-HQU/MMTrack)]
 
 * **Consistencies are All You Need for Semi-supervised Vision-Language Tracking**, Jiawei Ge, Jiuxin Cao, Xuelin Zhu, Xinyu Zhang, Chang Liu, Kun Wang, Bo Liu (MM24)  
 [[Paper](https://dl.acm.org/doi/10.1145/3664647.3680657)]
