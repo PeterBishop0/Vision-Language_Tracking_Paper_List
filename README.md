@@ -95,6 +95,10 @@ Paper list for vision-language tracking (continue to Update this list)
 [[Paper](https://ieeexplore.ieee.org/abstract/document/10547435)]
 
 
+* **Memvlt: Vision-language tracking with adaptive memory-based prompts**, Xiaokun Feng, Xuchen Li, Shiyu Hu, Dailing Zhang, Meiqi Wu, Jing Zhang, Xiaotang Chen, Kaiqi Huang (NeurIPS25)
+[[Paper](https://proceedings.neurips.cc/paper_files/paper/2024/hash/1af3e0bf5905e33789979f666c31192d-Abstract-Conference.html)]
+
+
 ### NL & NL+BBox:
 * **Tracking by Natural Language Specification**, Zhenyang Li, Ran Tao, Efstratios Gavves, Cees G. M. Snoek, Arnold W.M. Smeulders (CVPR17)  
 [[Paper](http://openaccess.thecvf.com/content_cvpr_2017/papers/Li_Tracking_by_Natural_CVPR_2017_paper.pdf)]
