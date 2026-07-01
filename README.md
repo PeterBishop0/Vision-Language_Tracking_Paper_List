@@ -106,6 +106,7 @@ Paper list for vision-language tracking (continue to Update this list)
 
 * **Gen4Track: A Tuning-free Data Augmentation Framework via Self-correcting Diffusion Model for Vision-Language Tracking**, Jiawei Ge, Xinyu Zhang, Jiuxin Cao, Xuelin Zhu, Weijia Liu, Qingqing Gao, Biwei Cao, Kun Wang, Chang Liu, Bo Liu, Chen Feng, Ioannis Patras (MM25)  
 [[Paper](https://ieeexplore.ieee.org/abstract/document/10807368?casa_token=wbq7Fbo1OmoAAAAA:XYr2x9WMXPdPad3hA64Og9nuNgxWw0OD6DucA4Vsm6Tc14-GH0QSJo6LGz_sOzZ2RmT8W8T3)]
+[[Code](https://github.com/PeterBishop0/Gen4Track)]
 
 
 
