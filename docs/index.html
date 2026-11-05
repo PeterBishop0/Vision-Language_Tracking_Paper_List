@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Vision-Language Tracking Researcher Graph: an interactive coauthorship map based on a curated paper list.">
+  <title>VLT Researcher Graph · Vision-Language Tracking</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="logo">VLT<span class="dot">●</span></span><div><strong>Researcher Graph</strong><small>Vision-Language Tracking · CCF A/B</small></div></div>
+    <a class="repo-link" href="https://github.com/PeterBishop0/Vision-Language_Tracking_Paper_List" target="_blank" rel="noopener noreferrer">查看论文仓库 ↗</a>
+  </header>
+  <main>
+    <div class="intro">
+      <div><div class="eyebrow">EXPLORING THE RESEARCH COMMUNITY</div><h1>谁在推动视觉语言跟踪研究？</h1><p>基于维护中的论文清单生成研究人员合著网络。点击节点，探索作者的论文、合作关系与研究方向。</p></div>
+      <div class="stats"><div><strong id="statPapers">—</strong><small>篇独立论文</small></div><div><strong id="statAuthors">—</strong><small>位署名作者</small></div><div><strong id="statEdges">—</strong><small>组合作者关系</small></div></div>
+    </div>
+    <div class="note" role="status">⚠ 本图谱是基于 README 署名的研究性演示：同名作者尚未经过 OpenAlex / ORCID 消歧；连线表示“共同署名”，不代表师生、机构或合作深度。</div>
+    <div class="workspace">
+      <aside class="sidebar filters">
+        <div class="panel-title">筛选 / FILTERS</div>
+        <label for="search">研究人员姓名</label>
+        <input id="search" type="search" placeholder="例如 Bineng Zhong" autocomplete="off">
+        <label for="category">论文类别</label>
+        <select id="category"><option value="">全部类别</option><option>NL+BBox</option><option>NL & NL+BBox</option><option>NL Only</option><option>Datasets</option></select>
+        <label for="ccf">CCF 等级</label>
+        <select id="ccf"><option value="">A + B</option><option value="A">CCF A</option><option value="B">CCF B</option></select>
+        <label for="fromYear">起始年份</label>
+        <select id="fromYear"></select>
+        <label for="toYear">截止年份</label>
+        <select id="toYear"></select>
+        <label for="maxNodes">图谱显示人数</label>
+        <select id="maxNodes"><option value="30">30 人</option><option value="50" selected>50 人</option><option value="80">80 人</option><option value="120">120 人</option></select>
+        <button id="reset" type="button">重置筛选</button>
+        <div class="divider"></div>
+        <div class="panel-title">阅读说明</div>
+        <p class="hint">节点越大，筛选范围内的论文越多；线条越粗，两位作者在清单内共同署名的论文越多。</p>
+        <p class="hint">为避免过密，默认只展示论文较多的 50 位作者。输入姓名可定位不在默认视图中的作者。</p>
+      </aside>
+      <section class="graph-area" aria-label="研究人员合作图谱">
+        <div class="graph-toolbar"><span id="graphStatus">正在加载数据…</span><button type="button" id="fit">适应画布</button></div>
+        <div id="cy" role="img" aria-label="基于论文署名关系的研究人员网络图"></div>
+        <div class="graph-foot"><span class="legend-dot"></span> 研究人员 <span class="legend-line"></span> 共同署名关系</div>
+      </section>
+      <aside class="sidebar detail" id="details" aria-live="polite"><div class="panel-title">研究人员 / RESEARCHER</div><div class="empty">点击网络中的作者，或在左侧搜索姓名，查看详细信息。</div></aside>
+    </div>
+    <footer><span id="lastBuilt">数据来源：本仓库 README.md</span><span>Made for the VLT community · Graph data is reproducible</span></footer>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/cytoscape@3.34.3/dist/cytoscape.min.js"></script>
+  <script src="app.js" defer></script>
+</body>
+</html>
