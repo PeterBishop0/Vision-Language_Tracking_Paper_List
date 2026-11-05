@@ -1,0 +1,12 @@
+﻿paper_title,year,venue,first_author,issue,status
+BSTrack: Bridging Cross-Modal Spatio-Temporal Differences in Vision-Language Tracking,2026,TCSVT,Yihao Zhen,HKU repository lists authors but not the first author’s publication affiliation.,Reviewed / institution unverified
+Cross-Modality Fourier Prompt Tuning for Generalizable Visual-Language Tracking,2026,TMM,Zhibin Zhang,Index lists coauthors’ current institutions but not first-author affiliation for the article.,Reviewed / institution unverified
+DTP-Track: Diversity-Guided Token Pruning and Purification for Vision-Language Tracking,2026,TCSVT,Geng Xiong,IEEE article metadata does not establish Geng Xiong’s institution.,Reviewed / institution unverified
+RWKV-Inspired Multi-Modal Relation Modeling for Vision-Language Tracking,2026,TMM,Guangtong Zhang,Guangtong Zhang appears with different institutions across publications; this article’s affiliation unconfirmed.,Reviewed / institution unverified
+Self-Chained Dynamic Context Perception to Tracking by Natural Language Specification,2026,TIP,Ding Ma,Author-wide academic profile suggests HIT; no verified affiliation on this article’s first page.,Reviewed / institution unverified
+Temporally Evolving Visual Memory and Adaptive Language Refinement for Object Tracking,2026,TCSVT,Zequan Cui,Coauthor institution not attributed to Zequan Cui.,Reviewed / institution unverified
+Updatable One-Stream Vision-Language Tracking via Multilayer Perceptual Memory Network,2026,Pattern Recognition,Hao Dong,Publisher lists affiliation superscript a but source snippet omits its institution name.,Reviewed / institution unverified
+Gen4Track: A Tuning-free Data Augmentation Framework via Self-correcting Diffusion Model for Vision-Language Tracking,2025,ACM MM,Jiawei Ge,The author has Southeast University and QMUL connections; publication-specific affiliation was not established.,Reviewed / institution unverified
+Multi-Modal Understanding and Generation for Object Tracking,2025,TCSVT,Hong Zhu,Hong Zhu article affiliation not established by accessible paper-level evidence.,Reviewed / institution unverified
+Semantic-Aware Network for Natural Language Tracking,2025,TCSVT,Yuyang Tang,Author’s later USTC affiliation does not prove this article’s affiliation.,Reviewed / institution unverified
+Unified Transformer With Isomorphic Branches for Natural Language Tracking,2023,TCSVT,Rong Wang,Rong Wang is a common name and paper first-author affiliation remains unknown.,Reviewed / institution unverified

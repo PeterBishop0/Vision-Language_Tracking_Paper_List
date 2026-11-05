@@ -1,14 +1,16 @@
 {
   "meta": {
     "source": "README.md",
-    "generated_utc": "2026-11-05T07:25:43+00:00",
+    "generated_utc": "2026-11-05T09:30:37+00:00",
     "raw_entries": 67,
     "unique_papers": 65,
     "researchers": 273,
     "coauthorship_edges": 937,
+    "verified_institutions": 42,
+    "verified_papers": 54,
     "warnings": [],
-    "identity_note": "Author identities are provisional and merged by normalized name; homonyms may be conflated.",
-    "ccf_note": "CCF A/B labels are mapped from venue abbreviations in the curated README; verify against official CCF directory when updating."
+    "identity_note": "Same-normalized-name author IDs are provisional; ORCID/OpenAlex disambiguation pending.",
+    "affiliation_note": "Only source-backed first/co-first/corresponding roles establish institution membership; coauthors are not assumed to share affiliation."
   },
   "authors": [
     {
@@ -1701,18 +1703,6 @@
       ]
     },
     {
-      "id": "a_4b602ce309f3",
-      "name": "Feng Qi",
-      "paper_ids": [
-        "p_21b83b144dd7"
-      ],
-      "collaborator_ids": [
-        "a_75929e4f04f1",
-        "a_9d898c3b014e",
-        "a_c3894f1764f9"
-      ]
-    },
-    {
       "id": "a_75ca36e4f518",
       "name": "Gangshan Wu",
       "paper_ids": [
@@ -2276,10 +2266,10 @@
         "a_2168e0cac40b",
         "a_2b6fc2f8bf94",
         "a_ae4c667611ac",
-        "a_bedb27a10b06",
         "a_c2a22428f981",
         "a_c5e7e6e63d70",
         "a_df8bc7f4432f",
+        "a_ff086adff974",
         "a_ffcbdd59dbef"
       ]
     },
@@ -2388,10 +2378,10 @@
         "a_2168e0cac40b",
         "a_42c677c6c4e4",
         "a_ae4c667611ac",
-        "a_bedb27a10b06",
         "a_c2a22428f981",
         "a_c5e7e6e63d70",
         "a_df8bc7f4432f",
+        "a_ff086adff974",
         "a_ffcbdd59dbef"
       ]
     },
@@ -2609,10 +2599,10 @@
         "a_2b6fc2f8bf94",
         "a_42c677c6c4e4",
         "a_ae4c667611ac",
-        "a_bedb27a10b06",
         "a_c2a22428f981",
         "a_c5e7e6e63d70",
-        "a_df8bc7f4432f"
+        "a_df8bc7f4432f",
+        "a_ff086adff974"
       ]
     },
     {
@@ -2824,10 +2814,10 @@
         "a_2b6fc2f8bf94",
         "a_42c677c6c4e4",
         "a_ae4c667611ac",
-        "a_bedb27a10b06",
         "a_c2a22428f981",
         "a_c5e7e6e63d70",
         "a_df8bc7f4432f",
+        "a_ff086adff974",
         "a_ffcbdd59dbef"
       ]
     },
@@ -2846,6 +2836,18 @@
         "a_a62e4c384f31",
         "a_ca86460fe7d9",
         "a_f9231f77b3bf"
+      ]
+    },
+    {
+      "id": "a_0508acaf13fb",
+      "name": "Qi Feng",
+      "paper_ids": [
+        "p_21b83b144dd7"
+      ],
+      "collaborator_ids": [
+        "a_75929e4f04f1",
+        "a_9d898c3b014e",
+        "a_c3894f1764f9"
       ]
     },
     {
@@ -2956,7 +2958,7 @@
         "p_21b83b144dd7"
       ],
       "collaborator_ids": [
-        "a_4b602ce309f3",
+        "a_0508acaf13fb",
         "a_75929e4f04f1",
         "a_c3894f1764f9"
       ]
@@ -3016,10 +3018,10 @@
         "a_2168e0cac40b",
         "a_2b6fc2f8bf94",
         "a_42c677c6c4e4",
-        "a_bedb27a10b06",
         "a_c2a22428f981",
         "a_c5e7e6e63d70",
         "a_df8bc7f4432f",
+        "a_ff086adff974",
         "a_ffcbdd59dbef"
       ]
     },
@@ -3139,9 +3141,9 @@
         "a_2b6fc2f8bf94",
         "a_42c677c6c4e4",
         "a_ae4c667611ac",
-        "a_bedb27a10b06",
         "a_c2a22428f981",
         "a_df8bc7f4432f",
+        "a_ff086adff974",
         "a_ffcbdd59dbef"
       ]
     },
@@ -3301,7 +3303,7 @@
         "p_21b83b144dd7"
       ],
       "collaborator_ids": [
-        "a_4b602ce309f3",
+        "a_0508acaf13fb",
         "a_75929e4f04f1",
         "a_9d898c3b014e"
       ]
@@ -3402,7 +3404,7 @@
         "p_21b83b144dd7"
       ],
       "collaborator_ids": [
-        "a_4b602ce309f3",
+        "a_0508acaf13fb",
         "a_9d898c3b014e",
         "a_c3894f1764f9"
       ]
@@ -3460,9 +3462,9 @@
         "a_2b6fc2f8bf94",
         "a_42c677c6c4e4",
         "a_ae4c667611ac",
-        "a_bedb27a10b06",
         "a_c5e7e6e63d70",
         "a_df8bc7f4432f",
+        "a_ff086adff974",
         "a_ffcbdd59dbef"
       ]
     },
@@ -3529,10 +3531,10 @@
         "a_2b6fc2f8bf94",
         "a_42c677c6c4e4",
         "a_ae4c667611ac",
-        "a_bedb27a10b06",
         "a_c2a22428f981",
         "a_c5e7e6e63d70",
         "a_df8bc7f4432f",
+        "a_ff086adff974",
         "a_ffcbdd59dbef"
       ]
     },
@@ -3864,9 +3866,9 @@
         "a_2b6fc2f8bf94",
         "a_42c677c6c4e4",
         "a_ae4c667611ac",
-        "a_bedb27a10b06",
         "a_c2a22428f981",
         "a_c5e7e6e63d70",
+        "a_ff086adff974",
         "a_ffcbdd59dbef"
       ]
     },
@@ -4112,8 +4114,8 @@
       ]
     },
     {
-      "id": "a_bedb27a10b06",
-      "name": "Yiting Cheng",
+      "id": "a_ff086adff974",
+      "name": "Yiting Chen",
       "paper_ids": [
         "p_e0e34a54a11e"
       ],
@@ -4335,10 +4337,10 @@
         "a_2b6fc2f8bf94",
         "a_42c677c6c4e4",
         "a_ae4c667611ac",
-        "a_bedb27a10b06",
         "a_c2a22428f981",
         "a_c5e7e6e63d70",
         "a_df8bc7f4432f",
+        "a_ff086adff974",
         "a_ffcbdd59dbef"
       ]
     },
@@ -4488,7 +4490,38 @@
         "a_c21298f82188",
         "a_2515068044a9",
         "a_ef210ddb2eb1"
-      ]
+      ],
+      "first_author_id": "a_6d068485604f",
+      "verified_roles": [
+        {
+          "paper_id": "p_107ad7a2c3c7",
+          "author_id": "a_6d068485604f",
+          "name": "Guangtong Zhang",
+          "institution": "Jilin Engineering Normal University",
+          "role": "first",
+          "evidence_url": "https://ojs.aaai.org/index.php/AAAI/article/download/38237/42199"
+        },
+        {
+          "paper_id": "p_107ad7a2c3c7",
+          "author_id": "a_6d068485604f",
+          "name": "Guangtong Zhang",
+          "institution": "Jilin University",
+          "role": "first",
+          "evidence_url": "https://ojs.aaai.org/index.php/AAAI/article/download/38237/42199"
+        },
+        {
+          "paper_id": "p_107ad7a2c3c7",
+          "author_id": "a_ef210ddb2eb1",
+          "name": "Tian Bai",
+          "institution": "Jilin University",
+          "role": "corresponding",
+          "evidence_url": "https://ojs.aaai.org/index.php/AAAI/article/download/38237/42199"
+        }
+      ],
+      "corresponding_author_ids": [
+        "a_ef210ddb2eb1"
+      ],
+      "institution_status": "verified"
     },
     {
       "title": "BSTrack: Bridging Cross-Modal Spatio-Temporal Differences in Vision-Language Tracking",
@@ -4515,7 +4548,11 @@
         "a_be8104487d38",
         "a_a876d34c4929",
         "a_05da26d62e20"
-      ]
+      ],
+      "first_author_id": "a_f48de91eef28",
+      "verified_roles": [],
+      "corresponding_author_ids": [],
+      "institution_status": "pending"
     },
     {
       "title": "ChatTracker: Enhancing Visual Tracking via LLM-Driven Iterative Description Refinement",
@@ -4552,7 +4589,40 @@
         "a_bf680ee966a7",
         "a_7241f2a31be5",
         "a_04ac2ac0d3ab"
-      ]
+      ],
+      "first_author_id": "a_7b9b03d8db20",
+      "verified_roles": [
+        {
+          "paper_id": "p_5902d9de6023",
+          "author_id": "a_f9e535116823",
+          "name": "Mi Zhang",
+          "institution": "Fudan University",
+          "role": "corresponding",
+          "evidence_url": "https://mi-zhang-fdu.github.io/"
+        },
+        {
+          "paper_id": "p_5902d9de6023",
+          "author_id": "a_7acbc6524523",
+          "name": "Yang Li",
+          "institution": "East China Normal University",
+          "role": "corresponding",
+          "evidence_url": "https://sii.ecnu.edu.cn/53647/list.htm"
+        },
+        {
+          "paper_id": "p_5902d9de6023",
+          "author_id": "a_bf680ee966a7",
+          "name": "Changbo Wang",
+          "institution": "East China Normal University",
+          "role": "corresponding",
+          "evidence_url": "https://sii.ecnu.edu.cn/53647/list.htm"
+        }
+      ],
+      "corresponding_author_ids": [
+        "a_7acbc6524523",
+        "a_bf680ee966a7",
+        "a_f9e535116823"
+      ],
+      "institution_status": "verified"
     },
     {
       "title": "Cross-Modality Fourier Prompt Tuning for Generalizable Visual-Language Tracking",
@@ -4581,7 +4651,11 @@
         "a_8aec3d9ee7d8",
         "a_c4508dee27ee",
         "a_3ab3a6e785c5"
-      ]
+      ],
+      "first_author_id": "a_e5a82aad4592",
+      "verified_roles": [],
+      "corresponding_author_ids": [],
+      "institution_status": "pending"
     },
     {
       "title": "DIFTrack: Vision-Language Tracking with Deep Interaction Fusion",
@@ -4610,7 +4684,20 @@
         "a_fdf5676aac82",
         "a_7854d9082f1d",
         "a_5e3b7a49d512"
-      ]
+      ],
+      "first_author_id": "a_9ab9a8b38330",
+      "verified_roles": [
+        {
+          "paper_id": "p_b18baeb5e798",
+          "author_id": "a_9ab9a8b38330",
+          "name": "Ze Zhou",
+          "institution": "Anhui Normal University",
+          "role": "first",
+          "evidence_url": "https://www.cmsworkshops.com/ICASSP2026/view_paper.php?PaperNum=5363&bare=1"
+        }
+      ],
+      "corresponding_author_ids": [],
+      "institution_status": "verified"
     },
     {
       "title": "DTP-Track: Diversity-Guided Token Pruning and Purification for Vision-Language Tracking",
@@ -4641,7 +4728,11 @@
         "a_c02a1f1e8f12",
         "a_96c30bb6511c",
         "a_5e0ffd233366"
-      ]
+      ],
+      "first_author_id": "a_2d76af62906e",
+      "verified_roles": [],
+      "corresponding_author_ids": [],
+      "institution_status": "pending"
     },
     {
       "title": "Dynamic Language Adaptation and Collaborative Memory Modeling for Vision-Language Tracking",
@@ -4674,7 +4765,20 @@
         "a_c6d6fa70e966",
         "a_15ea35b05572",
         "a_a4211851be53"
-      ]
+      ],
+      "first_author_id": "a_bfd15530afe7",
+      "verified_roles": [
+        {
+          "paper_id": "p_f8aab28656f4",
+          "author_id": "a_bfd15530afe7",
+          "name": "Guomao Guo",
+          "institution": "Xidian University",
+          "role": "first",
+          "evidence_url": "https://www.cmsworkshops.com/ICASSP2026/view_paper.php?PaperNum=6510"
+        }
+      ],
+      "corresponding_author_ids": [],
+      "institution_status": "verified"
     },
     {
       "title": "GLAD: Generative Language-Assisted Visual Tracking for Low-Semantic Templates",
@@ -4705,7 +4809,38 @@
         "a_57c0431f646d",
         "a_75ca36e4f518",
         "a_b080c0ee5b28"
-      ]
+      ],
+      "first_author_id": "a_7f10b5470607",
+      "verified_roles": [
+        {
+          "paper_id": "p_9d98b6914c26",
+          "author_id": "a_7f10b5470607",
+          "name": "Xingyu Luo",
+          "institution": "Nanjing University",
+          "role": "first",
+          "evidence_url": "https://www.researchgate.net/publication/400803462_GLAD_Generative_Language-Assisted_Visual_Tracking_for_Low-Semantic_Templates_GLAD_Generative_Language-Assisted_Visual_Tracking_for_Low-SemanticX_Luo_et_al"
+        },
+        {
+          "paper_id": "p_9d98b6914c26",
+          "author_id": "a_7bdac1a0fe94",
+          "name": "Yidong Cai",
+          "institution": "Nanjing University",
+          "role": "cofirst",
+          "evidence_url": "https://www.researchgate.net/publication/400803462_GLAD_Generative_Language-Assisted_Visual_Tracking_for_Low-Semantic_Templates_GLAD_Generative_Language-Assisted_Visual_Tracking_for_Low-SemanticX_Luo_et_al"
+        },
+        {
+          "paper_id": "p_9d98b6914c26",
+          "author_id": "a_79bd720270ef",
+          "name": "Jie Liu",
+          "institution": "Nanjing University",
+          "role": "corresponding",
+          "evidence_url": "https://njulj.github.io/publications/"
+        }
+      ],
+      "corresponding_author_ids": [
+        "a_79bd720270ef"
+      ],
+      "institution_status": "verified"
     },
     {
       "title": "GVLTrack: Global Vision-Language Tracking with Multi-Stage Modal Fusion",
@@ -4732,7 +4867,20 @@
         "a_161d893f68f9",
         "a_1cb177815723",
         "a_23ed77d94ad1"
-      ]
+      ],
+      "first_author_id": "a_94bb799060d6",
+      "verified_roles": [
+        {
+          "paper_id": "p_be679a5faaa7",
+          "author_id": "a_94bb799060d6",
+          "name": "Jian Tao",
+          "institution": "Zhejiang University of Technology",
+          "role": "first",
+          "evidence_url": "https://jglobal.jst.go.jp/en/detail?JGLOBAL_ID=202602263960371654"
+        }
+      ],
+      "corresponding_author_ids": [],
+      "institution_status": "verified"
     },
     {
       "title": "Learning to Track Instance from Single Nature Language Description",
@@ -4763,7 +4911,39 @@
         "a_c2c2f9f75ede",
         "a_b2dd086d35da",
         "a_5e0ffd233366"
-      ]
+      ],
+      "first_author_id": "a_e7fd78235577",
+      "verified_roles": [
+        {
+          "paper_id": "p_56ea47011ad7",
+          "author_id": "a_e7fd78235577",
+          "name": "Yaozong Zheng",
+          "institution": "Guangxi Normal University",
+          "role": "first",
+          "evidence_url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Zheng_Learning_to_Track_Instance_from_Single_Nature_Language_Description_CVPR_2026_paper.pdf"
+        },
+        {
+          "paper_id": "p_56ea47011ad7",
+          "author_id": "a_b5aebfe71d8d",
+          "name": "Bineng Zhong",
+          "institution": "Guangxi Normal University",
+          "role": "corresponding",
+          "evidence_url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Zheng_Learning_to_Track_Instance_from_Single_Nature_Language_Description_CVPR_2026_paper.pdf"
+        },
+        {
+          "paper_id": "p_56ea47011ad7",
+          "author_id": "a_a31f208fdd7a",
+          "name": "Qihua Liang",
+          "institution": "Guangxi Normal University",
+          "role": "corresponding",
+          "evidence_url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Zheng_Learning_to_Track_Instance_from_Single_Nature_Language_Description_CVPR_2026_paper.pdf"
+        }
+      ],
+      "corresponding_author_ids": [
+        "a_a31f208fdd7a",
+        "a_b5aebfe71d8d"
+      ],
+      "institution_status": "verified"
     },
     {
       "title": "LiteTrack: Towards Efficient Vision-Language Tracking with Parameter Freezing and Feature Selection",
@@ -4798,7 +4978,20 @@
         "a_7b54637135f0",
         "a_ec307e2dd2f7",
         "a_fc698f9215b7"
-      ]
+      ],
+      "first_author_id": "a_958e20799d20",
+      "verified_roles": [
+        {
+          "paper_id": "p_d9b42b6c098d",
+          "author_id": "a_958e20799d20",
+          "name": "Liqiang Liu",
+          "institution": "Xi’an Technological University",
+          "role": "first",
+          "evidence_url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5929541"
+        }
+      ],
+      "corresponding_author_ids": [],
+      "institution_status": "verified"
     },
     {
       "title": "MVLM: Template-Free Tracking via Vision-Language Margin Confidence and Memory-Gated Tracking",
@@ -4831,7 +5024,30 @@
         "a_fdee1c71009f",
         "a_c846aa3d6f48",
         "a_e80d75131a49"
-      ]
+      ],
+      "first_author_id": "a_a8d69e274c79",
+      "verified_roles": [
+        {
+          "paper_id": "p_c5e5fe0d94b4",
+          "author_id": "a_a8d69e274c79",
+          "name": "Dae-Hyeon Park",
+          "institution": "Inha University",
+          "role": "first",
+          "evidence_url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Park_MVLM_Template-Free_Tracking_via_Vision-Language_Margin_Confidence_and_Memory-Gated_Tracking_CVPR_2026_paper.pdf"
+        },
+        {
+          "paper_id": "p_c5e5fe0d94b4",
+          "author_id": "a_e80d75131a49",
+          "name": "Seung-Hwan Bae",
+          "institution": "Inha University",
+          "role": "corresponding",
+          "evidence_url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Park_MVLM_Template-Free_Tracking_via_Vision-Language_Margin_Confidence_and_Memory-Gated_Tracking_CVPR_2026_paper.pdf"
+        }
+      ],
+      "corresponding_author_ids": [
+        "a_e80d75131a49"
+      ],
+      "institution_status": "verified"
     },
     {
       "title": "RWKV-Inspired Multi-Modal Relation Modeling for Vision-Language Tracking",
@@ -4860,7 +5076,11 @@
         "a_b5aebfe71d8d",
         "a_d003ea243696",
         "a_ef210ddb2eb1"
-      ]
+      ],
+      "first_author_id": "a_6d068485604f",
+      "verified_roles": [],
+      "corresponding_author_ids": [],
+      "institution_status": "pending"
     },
     {
       "title": "Self-Chained Dynamic Context Perception to Tracking by Natural Language Specification",
@@ -4885,7 +5105,11 @@
         "a_6774db8d5663",
         "a_6620cc317be8",
         "a_a8b0cc42b8a8"
-      ]
+      ],
+      "first_author_id": "a_6774db8d5663",
+      "verified_roles": [],
+      "corresponding_author_ids": [],
+      "institution_status": "pending"
     },
     {
       "title": "Temporally Evolving Visual Memory and Adaptive Language Refinement for Object Tracking",
@@ -4916,7 +5140,11 @@
         "a_a31f208fdd7a",
         "a_5e0ffd233366",
         "a_b5aebfe71d8d"
-      ]
+      ],
+      "first_author_id": "a_f4601f866131",
+      "verified_roles": [],
+      "corresponding_author_ids": [],
+      "institution_status": "pending"
     },
     {
       "title": "TFBTrack: Target-Aware Foreground–Background Modeling for Vision-Language Tracking",
@@ -4953,7 +5181,22 @@
         "a_3063d0cbbc78",
         "a_ca86460fe7d9",
         "a_7b9c142577c7"
-      ]
+      ],
+      "first_author_id": "a_0ce4e330b7d8",
+      "verified_roles": [
+        {
+          "paper_id": "p_6f8128a454d7",
+          "author_id": "a_a62e4c384f31",
+          "name": "Fang Liu",
+          "institution": "Xidian University",
+          "role": "corresponding",
+          "evidence_url": "https://faculty.xidian.edu.cn/lishuo/zh_CN/index/452425/list/index.htm"
+        }
+      ],
+      "corresponding_author_ids": [
+        "a_a62e4c384f31"
+      ],
+      "institution_status": "verified"
     },
     {
       "title": "Updatable One-Stream Vision-Language Tracking via Multilayer Perceptual Memory Network",
@@ -4984,7 +5227,11 @@
         "a_34df026637bc",
         "a_842012a4234c",
         "a_b5aebfe71d8d"
-      ]
+      ],
+      "first_author_id": "a_69a4945f2c60",
+      "verified_roles": [],
+      "corresponding_author_ids": [],
+      "institution_status": "pending"
     },
     {
       "title": "A Swiss Army Knife for Tracking by Natural Language Specification",
@@ -5011,7 +5258,20 @@
         "a_677c10cb39fb",
         "a_7d1b9e390ea6",
         "a_d774874a080b"
-      ]
+      ],
+      "first_author_id": "a_1f0ad77ca1b1",
+      "verified_roles": [
+        {
+          "paper_id": "p_0bb036a0fbde",
+          "author_id": "a_1f0ad77ca1b1",
+          "name": "Kaige Mao",
+          "institution": "Harbin Institute of Technology",
+          "role": "first",
+          "evidence_url": "https://openalex.org/W4409076641"
+        }
+      ],
+      "corresponding_author_ids": [],
+      "institution_status": "verified"
     },
     {
       "title": "ATCTrack: Aligning Target-Context Cues with Dynamic Target States for Robust Vision-Language Tracking",
@@ -5046,7 +5306,38 @@
         "a_c2d911f6ee6b",
         "a_a6e8b8389c67",
         "a_21057ce5bc0a"
-      ]
+      ],
+      "first_author_id": "a_a66cb411355c",
+      "verified_roles": [
+        {
+          "paper_id": "p_02aa55658899",
+          "author_id": "a_a66cb411355c",
+          "name": "Xiaokun Feng",
+          "institution": "Institute of Automation, Chinese Academy of Sciences",
+          "role": "first",
+          "evidence_url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Feng_ATCTrack_Aligning_Target-Context_Cues_with_Dynamic_Target_States_for_Robust_ICCV_2025_paper.pdf"
+        },
+        {
+          "paper_id": "p_02aa55658899",
+          "author_id": "a_fbe41c24171e",
+          "name": "Shiyu Hu",
+          "institution": "Nanyang Technological University",
+          "role": "cofirst",
+          "evidence_url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Feng_ATCTrack_Aligning_Target-Context_Cues_with_Dynamic_Target_States_for_Robust_ICCV_2025_paper.pdf"
+        },
+        {
+          "paper_id": "p_02aa55658899",
+          "author_id": "a_21057ce5bc0a",
+          "name": "Kaiqi Huang",
+          "institution": "Institute of Automation, Chinese Academy of Sciences",
+          "role": "corresponding",
+          "evidence_url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Feng_ATCTrack_Aligning_Target-Context_Cues_with_Dynamic_Target_States_for_Robust_ICCV_2025_paper.pdf"
+        }
+      ],
+      "corresponding_author_ids": [
+        "a_21057ce5bc0a"
+      ],
+      "institution_status": "verified"
     },
     {
       "title": "AVLTrack: Dynamic Sparse Learning for Aerial Vision-Language Tracking",
@@ -5079,7 +5370,20 @@
         "a_40c3af5aa818",
         "a_96c30bb6511c",
         "a_e7fd78235577"
-      ]
+      ],
+      "first_author_id": "a_b59fd28cd8c8",
+      "verified_roles": [
+        {
+          "paper_id": "p_620e3eabdf36",
+          "author_id": "a_b59fd28cd8c8",
+          "name": "Yuanliang Xue",
+          "institution": "Xi’an Research Institute of High-tech",
+          "role": "first",
+          "evidence_url": "https://www.minicod.com/papers/avltrack-dynamic-sparse-learning-for-aerial-vision-language-tracking-8e8f75f7"
+        }
+      ],
+      "corresponding_author_ids": [],
+      "institution_status": "verified"
     },
     {
       "title": "Beyond Visual Cues: Synchronously Exploring Target-Centric Semantics for Vision-Language Tracking",
@@ -5114,7 +5418,20 @@
         "a_e43cb1e6d0f8",
         "a_7de706aec264",
         "a_d21cffe3e968"
-      ]
+      ],
+      "first_author_id": "a_a030458644f5",
+      "verified_roles": [
+        {
+          "paper_id": "p_fc09fcfe6ac2",
+          "author_id": "a_a030458644f5",
+          "name": "Jiawei Ge",
+          "institution": "Southeast University",
+          "role": "first",
+          "evidence_url": "https://jglobal.jst.go.jp/en/detail?JGLOBAL_ID=202502211163758802"
+        }
+      ],
+      "corresponding_author_ids": [],
+      "institution_status": "verified"
     },
     {
       "title": "Boost Tracking by Natural Language With Prompt-Guided Grounding",
@@ -5145,7 +5462,22 @@
         "a_1361848fc0ea",
         "a_a83ad2efa07b",
         "a_63e30f61f169"
-      ]
+      ],
+      "first_author_id": "a_322f89298f1a",
+      "verified_roles": [
+        {
+          "paper_id": "p_b4e0a3b3cd7a",
+          "author_id": "a_045a1e2041bd",
+          "name": "Guorong Li",
+          "institution": "University of Chinese Academy of Sciences",
+          "role": "corresponding",
+          "evidence_url": "https://people.ucas.ac.cn/~GuorongLi?language=en"
+        }
+      ],
+      "corresponding_author_ids": [
+        "a_045a1e2041bd"
+      ],
+      "institution_status": "verified"
     },
     {
       "title": "Dynamic Updates for Language Adaptation in Visual-Language Tracking",
@@ -5176,7 +5508,39 @@
         "a_f8446b485591",
         "a_8bf41d2a71ef",
         "a_5e0ffd233366"
-      ]
+      ],
+      "first_author_id": "a_c02a1f1e8f12",
+      "verified_roles": [
+        {
+          "paper_id": "p_8c3ac9c02758",
+          "author_id": "a_c02a1f1e8f12",
+          "name": "Xiaohai Li",
+          "institution": "Guangxi Normal University",
+          "role": "first",
+          "evidence_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Li_Dynamic_Updates_for_Language_Adaptation_in_Visual-Language_Tracking_CVPR_2025_paper.pdf"
+        },
+        {
+          "paper_id": "p_8c3ac9c02758",
+          "author_id": "a_b5aebfe71d8d",
+          "name": "Bineng Zhong",
+          "institution": "Guangxi Normal University",
+          "role": "corresponding",
+          "evidence_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Li_Dynamic_Updates_for_Language_Adaptation_in_Visual-Language_Tracking_CVPR_2025_paper.pdf"
+        },
+        {
+          "paper_id": "p_8c3ac9c02758",
+          "author_id": "a_a31f208fdd7a",
+          "name": "Qihua Liang",
+          "institution": "Guangxi Normal University",
+          "role": "corresponding",
+          "evidence_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Li_Dynamic_Updates_for_Language_Adaptation_in_Visual-Language_Tracking_CVPR_2025_paper.pdf"
+        }
+      ],
+      "corresponding_author_ids": [
+        "a_a31f208fdd7a",
+        "a_b5aebfe71d8d"
+      ],
+      "institution_status": "verified"
     },
     {
       "title": "Gen4Track: A Tuning-free Data Augmentation Framework via Self-correcting Diffusion Model for Vision-Language Tracking",
@@ -5219,7 +5583,11 @@
         "a_d21cffe3e968",
         "a_dcf0c475d36a",
         "a_3fda4f83dd0c"
-      ]
+      ],
+      "first_author_id": "a_a030458644f5",
+      "verified_roles": [],
+      "corresponding_author_ids": [],
+      "institution_status": "pending"
     },
     {
       "title": "Language-guided Visual Tracking: Comprehensive and Effective Multimodal Information Fusion",
@@ -5248,7 +5616,20 @@
         "a_c99c38230c19",
         "a_3877e487ff8a",
         "a_732104f3d3fd"
-      ]
+      ],
+      "first_author_id": "a_dd7e6ae43608",
+      "verified_roles": [
+        {
+          "paper_id": "p_9f5442669ba5",
+          "author_id": "a_dd7e6ae43608",
+          "name": "Jianbo Song",
+          "institution": "Beihang University",
+          "role": "first",
+          "evidence_url": "https://jglobal.jst.go.jp/en/detail?JGLOBAL_ID=202502250777216783"
+        }
+      ],
+      "corresponding_author_ids": [],
+      "institution_status": "verified"
     },
     {
       "title": "Learning Language Prompt for Vision-Language Tracking",
@@ -5277,7 +5658,20 @@
         "a_e6008d2b3b9f",
         "a_2df8bdd03d03",
         "a_18ffeb7f52b5"
-      ]
+      ],
+      "first_author_id": "a_a9f54406ff60",
+      "verified_roles": [
+        {
+          "paper_id": "p_2d4c379e8c90",
+          "author_id": "a_a9f54406ff60",
+          "name": "Chengao Zong",
+          "institution": "Dalian University of Technology",
+          "role": "first",
+          "evidence_url": "https://jglobal.jst.go.jp/en/detail?JGLOBAL_ID=202502261684993965"
+        }
+      ],
+      "corresponding_author_ids": [],
+      "institution_status": "verified"
     },
     {
       "title": "Mamba Adapter: Efficient Multi-Modal Fusion for Vision-Language Tracking",
@@ -5308,7 +5702,20 @@
         "a_f7a0207ae7b1",
         "a_f8446b485591",
         "a_5e0ffd233366"
-      ]
+      ],
+      "first_author_id": "a_30dafad0fad8",
+      "verified_roles": [
+        {
+          "paper_id": "p_22e862d21c6a",
+          "author_id": "a_30dafad0fad8",
+          "name": "Liangtao Shi",
+          "institution": "Guangxi Normal University",
+          "role": "first",
+          "evidence_url": "https://doi.org/10.1109/TCSVT.2025.3557570"
+        }
+      ],
+      "corresponding_author_ids": [],
+      "institution_status": "verified"
     },
     {
       "title": "MambaVLT: Time-Evolving Multimodal State Space Model for Vision-Language Tracking",
@@ -5337,7 +5744,47 @@
         "a_88f12f7acf9b",
         "a_b8296983eeaf",
         "a_9708fba01c0e"
-      ]
+      ],
+      "first_author_id": "a_3ac4e681c1c0",
+      "verified_roles": [
+        {
+          "paper_id": "p_a3b09c515a1c",
+          "author_id": "a_3ac4e681c1c0",
+          "name": "Xinqi Liu",
+          "institution": "Harbin Institute of Technology, Shenzhen",
+          "role": "first",
+          "evidence_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Liu_MambaVLT_Time-Evolving_Multimodal_State_Space_Model_for_Vision-Language_Tracking_CVPR_2025_paper.pdf"
+        },
+        {
+          "paper_id": "p_a3b09c515a1c",
+          "author_id": "a_193015e08d0d",
+          "name": "Li Zhou",
+          "institution": "Harbin Institute of Technology, Shenzhen",
+          "role": "cofirst",
+          "evidence_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Liu_MambaVLT_Time-Evolving_Multimodal_State_Space_Model_for_Vision-Language_Tracking_CVPR_2025_paper.pdf"
+        },
+        {
+          "paper_id": "p_a3b09c515a1c",
+          "author_id": "a_9708fba01c0e",
+          "name": "Zhenyu He",
+          "institution": "Harbin Institute of Technology, Shenzhen",
+          "role": "corresponding",
+          "evidence_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Liu_MambaVLT_Time-Evolving_Multimodal_State_Space_Model_for_Vision-Language_Tracking_CVPR_2025_paper.pdf"
+        },
+        {
+          "paper_id": "p_a3b09c515a1c",
+          "author_id": "a_88f12f7acf9b",
+          "name": "Zikun Zhou",
+          "institution": "Pengcheng Laboratory",
+          "role": "corresponding",
+          "evidence_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Liu_MambaVLT_Time-Evolving_Multimodal_State_Space_Model_for_Vision-Language_Tracking_CVPR_2025_paper.pdf"
+        }
+      ],
+      "corresponding_author_ids": [
+        "a_88f12f7acf9b",
+        "a_9708fba01c0e"
+      ],
+      "institution_status": "verified"
     },
     {
       "title": "Multi-Modal Hybrid Interaction Vision-Language Tracking",
@@ -5360,7 +5807,20 @@
       "author_ids": [
         "a_59dcb1607f31",
         "a_d7d4e41b2eaa"
-      ]
+      ],
+      "first_author_id": "a_59dcb1607f31",
+      "verified_roles": [
+        {
+          "paper_id": "p_af375b145325",
+          "author_id": "a_59dcb1607f31",
+          "name": "Lei Lei",
+          "institution": "Guangxi Normal University",
+          "role": "first",
+          "evidence_url": "https://hongsong-wang.github.io/TMM2025/"
+        }
+      ],
+      "corresponding_author_ids": [],
+      "institution_status": "verified"
     },
     {
       "title": "Multi-Modal Understanding and Generation for Object Tracking",
@@ -5387,7 +5847,11 @@
         "a_f249ebcde77c",
         "a_b5b6a1f21796",
         "a_8209a9e75755"
-      ]
+      ],
+      "first_author_id": "a_2d19450e7a8a",
+      "verified_roles": [],
+      "corresponding_author_ids": [],
+      "institution_status": "pending"
     },
     {
       "title": "Progressive Semantic-Visual Alignment and Refinement for Vision-Language Tracking",
@@ -5416,7 +5880,30 @@
         "a_6a898b7b3836",
         "a_f388bf15d4dc",
         "a_ff8bac71b192"
-      ]
+      ],
+      "first_author_id": "a_417116563fb9",
+      "verified_roles": [
+        {
+          "paper_id": "p_2ca4fb20eaf0",
+          "author_id": "a_417116563fb9",
+          "name": "Yanjie Liang",
+          "institution": "Pengcheng Laboratory",
+          "role": "first",
+          "evidence_url": "https://cvteam.buaa.edu.cn/papers/2025-TCSVT-Yanjie.pdf"
+        },
+        {
+          "paper_id": "p_2ca4fb20eaf0",
+          "author_id": "a_ff8bac71b192",
+          "name": "Jia Li",
+          "institution": "Beihang University",
+          "role": "corresponding",
+          "evidence_url": "https://cvteam.buaa.edu.cn/papers/2025-TCSVT-Yanjie.pdf"
+        }
+      ],
+      "corresponding_author_ids": [
+        "a_ff8bac71b192"
+      ],
+      "institution_status": "verified"
     },
     {
       "title": "Semantic-Aware Network for Natural Language Tracking",
@@ -5441,7 +5928,11 @@
         "a_0c9a71ecc563",
         "a_76023372736e",
         "a_60b9443352b7"
-      ]
+      ],
+      "first_author_id": "a_0c9a71ecc563",
+      "verified_roles": [],
+      "corresponding_author_ids": [],
+      "institution_status": "pending"
     },
     {
       "title": "State Space Models for Natural Language Tracking: Exploring Context-adaptive Language Cues",
@@ -5470,7 +5961,20 @@
         "a_3aa79083f0f8",
         "a_f429d65eb8c9",
         "a_60b9443352b7"
-      ]
+      ],
+      "first_author_id": "a_0c9a71ecc563",
+      "verified_roles": [
+        {
+          "paper_id": "p_4ebb4f4a5d29",
+          "author_id": "a_0c9a71ecc563",
+          "name": "Yuyang Tang",
+          "institution": "University of Science and Technology of China",
+          "role": "first",
+          "evidence_url": "https://hongsong-wang.github.io/TCSVT2026/"
+        }
+      ],
+      "corresponding_author_ids": [],
+      "institution_status": "verified"
     },
     {
       "title": "SUTrack: Towards Simple and Unified Single Object Tracking",
@@ -5503,7 +6007,30 @@
         "a_7c2bf506622b",
         "a_18ffeb7f52b5",
         "a_2df8bdd03d03"
-      ]
+      ],
+      "first_author_id": "a_e6008d2b3b9f",
+      "verified_roles": [
+        {
+          "paper_id": "p_0aa9ec99c31c",
+          "author_id": "a_e6008d2b3b9f",
+          "name": "Xin Chen",
+          "institution": "Dalian University of Technology",
+          "role": "first",
+          "evidence_url": "https://ojs.aaai.org/index.php/AAAI/article/download/32223/34378"
+        },
+        {
+          "paper_id": "p_0aa9ec99c31c",
+          "author_id": "a_18ffeb7f52b5",
+          "name": "Dong Wang",
+          "institution": "Dalian University of Technology",
+          "role": "corresponding",
+          "evidence_url": "https://ojs.aaai.org/index.php/AAAI/article/download/32223/34378"
+        }
+      ],
+      "corresponding_author_ids": [
+        "a_18ffeb7f52b5"
+      ],
+      "institution_status": "verified"
     },
     {
       "title": "UniSOT: A Unified Framework for Multi-Modality Single Object Tracking",
@@ -5534,7 +6061,30 @@
         "a_60b9443352b7",
         "a_303897a87f95",
         "a_e6c7972b70b7"
-      ]
+      ],
+      "first_author_id": "a_76023372736e",
+      "verified_roles": [
+        {
+          "paper_id": "p_9841564bd906",
+          "author_id": "a_76023372736e",
+          "name": "Yinchao Ma",
+          "institution": "University of Science and Technology of China",
+          "role": "first",
+          "evidence_url": "https://arxiv.org/pdf/2511.01427"
+        },
+        {
+          "paper_id": "p_9841564bd906",
+          "author_id": "a_60b9443352b7",
+          "name": "Tianzhu Zhang",
+          "institution": "University of Science and Technology of China",
+          "role": "corresponding",
+          "evidence_url": "https://arxiv.org/pdf/2511.01427"
+        }
+      ],
+      "corresponding_author_ids": [
+        "a_60b9443352b7"
+      ],
+      "institution_status": "verified"
     },
     {
       "title": "Vision-Language Tracking With CLIP and Interactive Prompt Learning",
@@ -5563,7 +6113,20 @@
         "a_b5b6a1f21796",
         "a_f249ebcde77c",
         "a_8209a9e75755"
-      ]
+      ],
+      "first_author_id": "a_2d19450e7a8a",
+      "verified_roles": [
+        {
+          "paper_id": "p_1eba5dabb7b0",
+          "author_id": "a_2d19450e7a8a",
+          "name": "Hong Zhu",
+          "institution": "National University of Defense Technology",
+          "role": "first",
+          "evidence_url": "https://bishtref.com/articles/10.1109/tits.2024.3520103"
+        }
+      ],
+      "corresponding_author_ids": [],
+      "institution_status": "verified"
     },
     {
       "title": "ChatTracker: Enhancing Visual Tracking Performance via Chatting with Multimodal Large Language Model",
@@ -5598,7 +6161,46 @@
         "a_7acbc6524523",
         "a_6571ddfc7454",
         "a_bf680ee966a7"
-      ]
+      ],
+      "first_author_id": "a_48ac295324ab",
+      "verified_roles": [
+        {
+          "paper_id": "p_e04ed85d658b",
+          "author_id": "a_48ac295324ab",
+          "name": "Yiming Sun",
+          "institution": "East China Normal University",
+          "role": "first",
+          "evidence_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/458567910b6d21f438f22aa20c036723-Paper-Conference.pdf"
+        },
+        {
+          "paper_id": "p_e04ed85d658b",
+          "author_id": "a_48ac295324ab",
+          "name": "Yiming Sun",
+          "institution": "Fudan University",
+          "role": "first",
+          "evidence_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/458567910b6d21f438f22aa20c036723-Paper-Conference.pdf"
+        },
+        {
+          "paper_id": "p_e04ed85d658b",
+          "author_id": "a_6a1f81db6f9e",
+          "name": "Fan Yu",
+          "institution": "East China Normal University",
+          "role": "cofirst",
+          "evidence_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/458567910b6d21f438f22aa20c036723-Paper-Conference.pdf"
+        },
+        {
+          "paper_id": "p_e04ed85d658b",
+          "author_id": "a_7acbc6524523",
+          "name": "Yang Li",
+          "institution": "East China Normal University",
+          "role": "corresponding",
+          "evidence_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/458567910b6d21f438f22aa20c036723-Paper-Conference.pdf"
+        }
+      ],
+      "corresponding_author_ids": [
+        "a_7acbc6524523"
+      ],
+      "institution_status": "verified"
     },
     {
       "title": "Consistencies are All You Need for Semi-supervised Vision-Language Tracking",
@@ -5631,7 +6233,20 @@
         "a_e43cb1e6d0f8",
         "a_7de706aec264",
         "a_d21cffe3e968"
-      ]
+      ],
+      "first_author_id": "a_a030458644f5",
+      "verified_roles": [
+        {
+          "paper_id": "p_c5794a63cc11",
+          "author_id": "a_a030458644f5",
+          "name": "Jiawei Ge",
+          "institution": "Southeast University",
+          "role": "first",
+          "evidence_url": "https://jglobal.jst.go.jp/en/detail?JGLOBAL_ID=202402243868147445"
+        }
+      ],
+      "corresponding_author_ids": [],
+      "institution_status": "verified"
     },
     {
       "title": "Context-Aware Integration of Language and Visual References for Natural Language Tracking",
@@ -5662,7 +6277,30 @@
         "a_859042e61843",
         "a_746cc9a368b0",
         "a_741c2019495f"
-      ]
+      ],
+      "first_author_id": "a_13401defcde8",
+      "verified_roles": [
+        {
+          "paper_id": "p_79fadeebd56a",
+          "author_id": "a_13401defcde8",
+          "name": "Yanyan Shao",
+          "institution": "Zhejiang University of Technology",
+          "role": "first",
+          "evidence_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Shao_Context-Aware_Integration_of_Language_and_Visual_References_for_Natural_Language_CVPR_2024_paper.pdf"
+        },
+        {
+          "paper_id": "p_79fadeebd56a",
+          "author_id": "a_ba760ab2fa77",
+          "name": "Qi Ye",
+          "institution": "Zhejiang University",
+          "role": "corresponding",
+          "evidence_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Shao_Context-Aware_Integration_of_Language_and_Visual_References_for_Natural_Language_CVPR_2024_paper.pdf"
+        }
+      ],
+      "corresponding_author_ids": [
+        "a_ba760ab2fa77"
+      ],
+      "institution_status": "verified"
     },
     {
       "title": "Diffusion Mask-Driven Visual-language Tracking",
@@ -5691,7 +6329,30 @@
         "a_a31f208fdd7a",
         "a_f8446b485591",
         "a_5e0ffd233366"
-      ]
+      ],
+      "first_author_id": "a_6d068485604f",
+      "verified_roles": [
+        {
+          "paper_id": "p_8f6c85f0d7a9",
+          "author_id": "a_6d068485604f",
+          "name": "Guangtong Zhang",
+          "institution": "Guangxi Normal University",
+          "role": "first",
+          "evidence_url": "https://www.ijcai.org/proceedings/2024/0183.pdf"
+        },
+        {
+          "paper_id": "p_8f6c85f0d7a9",
+          "author_id": "a_b5aebfe71d8d",
+          "name": "Bineng Zhong",
+          "institution": "Guangxi Normal University",
+          "role": "corresponding",
+          "evidence_url": "https://www.ijcai.org/proceedings/2024/0183.pdf"
+        }
+      ],
+      "corresponding_author_ids": [
+        "a_b5aebfe71d8d"
+      ],
+      "institution_status": "verified"
     },
     {
       "title": "Divert More Attention to Vision-Language Object Tracking",
@@ -5720,15 +6381,28 @@
         "a_cbdd84a2ddea",
         "a_68eddca9abd0",
         "a_af6ccc1e3fcc"
-      ]
+      ],
+      "first_author_id": "a_7c19874aa3ad",
+      "verified_roles": [
+        {
+          "paper_id": "p_7d88c786d302",
+          "author_id": "a_7c19874aa3ad",
+          "name": "Mingzhe Guo",
+          "institution": "Beijing Jiaotong University",
+          "role": "first",
+          "evidence_url": "https://jglobal.jst.go.jp/en/detail?JGLOBAL_ID=202502214997251911"
+        }
+      ],
+      "corresponding_author_ids": [],
+      "institution_status": "verified"
     },
     {
       "title": "Elysium: Exploring Object-level Perception in Videos via MLLM",
       "short_name": "",
       "authors": [
         "Han Wang",
-        "Yanjie Wang",
         "Yongjie Ye",
+        "Yanjie Wang",
         "Yuxiang Nie",
         "Can Huang"
       ],
@@ -5747,11 +6421,24 @@
       "id": "p_f37de3d80133",
       "author_ids": [
         "a_276a86b8796d",
-        "a_1577d8d42f4e",
         "a_e42841a17268",
+        "a_1577d8d42f4e",
         "a_b6a3e4b19f45",
         "a_48819f2b01b6"
-      ]
+      ],
+      "first_author_id": "a_276a86b8796d",
+      "verified_roles": [
+        {
+          "paper_id": "p_f37de3d80133",
+          "author_id": "a_276a86b8796d",
+          "name": "Han Wang",
+          "institution": "ByteDance Inc.",
+          "role": "first",
+          "evidence_url": "https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/03256.pdf"
+        }
+      ],
+      "corresponding_author_ids": [],
+      "institution_status": "verified"
     },
     {
       "title": "MemVLT: Vision-Language Tracking with Adaptive Memory-based Prompts",
@@ -5786,7 +6473,20 @@
         "a_c2d911f6ee6b",
         "a_a6e8b8389c67",
         "a_21057ce5bc0a"
-      ]
+      ],
+      "first_author_id": "a_a66cb411355c",
+      "verified_roles": [
+        {
+          "paper_id": "p_b7718dff44d2",
+          "author_id": "a_a66cb411355c",
+          "name": "Xiaokun Feng",
+          "institution": "Institute of Automation, Chinese Academy of Sciences",
+          "role": "first",
+          "evidence_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/1af3e0bf5905e33789979f666c31192d-Paper-Conference.pdf"
+        }
+      ],
+      "corresponding_author_ids": [],
+      "institution_status": "verified"
     },
     {
       "title": "One-Stream Stepwise Decreasing for Vision-Language Tracking",
@@ -5817,7 +6517,20 @@
         "a_f8446b485591",
         "a_96c30bb6511c",
         "a_5e0ffd233366"
-      ]
+      ],
+      "first_author_id": "a_6d068485604f",
+      "verified_roles": [
+        {
+          "paper_id": "p_2d2d8ac68b00",
+          "author_id": "a_6d068485604f",
+          "name": "Guangtong Zhang",
+          "institution": "Guangxi Normal University",
+          "role": "first",
+          "evidence_url": "https://doi.org/10.1109/TCSVT.2024.3395352"
+        }
+      ],
+      "corresponding_author_ids": [],
+      "institution_status": "verified"
     },
     {
       "title": "One-Stream Vision-Language Memory Network for Object Tracking",
@@ -5846,7 +6559,20 @@
         "a_70cfdae08001",
         "a_60b9443352b7",
         "a_b5aebfe71d8d"
-      ]
+      ],
+      "first_author_id": "a_34df026637bc",
+      "verified_roles": [
+        {
+          "paper_id": "p_2923e355a258",
+          "author_id": "a_34df026637bc",
+          "name": "Huanlong Zhang",
+          "institution": "Zhengzhou University of Light Industry",
+          "role": "first",
+          "evidence_url": "https://bishtref.com/articles/10.1109/tmm.2023.3285441"
+        }
+      ],
+      "corresponding_author_ids": [],
+      "institution_status": "verified"
     },
     {
       "title": "OneTracker: Unifying Visual Object Tracking with Foundation Models and Efficient Tuning",
@@ -5859,7 +6585,7 @@
         "Xinyu Zhou",
         "Pinxue Guo",
         "Kaixun Jiang",
-        "Yiting Cheng",
+        "Yiting Chen",
         "Jinglun Li",
         "Zhaoyu Chen",
         "Wenqiang Zhang"
@@ -5883,11 +6609,42 @@
         "a_df8bc7f4432f",
         "a_2168e0cac40b",
         "a_2b6fc2f8bf94",
-        "a_bedb27a10b06",
+        "a_ff086adff974",
         "a_42c677c6c4e4",
         "a_1a8598d088ff",
         "a_1876cd730d8b"
-      ]
+      ],
+      "first_author_id": "a_ffcbdd59dbef",
+      "verified_roles": [
+        {
+          "paper_id": "p_e0e34a54a11e",
+          "author_id": "a_ffcbdd59dbef",
+          "name": "Lingyi Hong",
+          "institution": "Fudan University",
+          "role": "first",
+          "evidence_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Hong_OneTracker_Unifying_Visual_Object_Tracking_with_Foundation_Models_and_Efficient_CVPR_2024_paper.pdf"
+        },
+        {
+          "paper_id": "p_e0e34a54a11e",
+          "author_id": "a_c5e7e6e63d70",
+          "name": "Shilin Yan",
+          "institution": "Fudan University",
+          "role": "cofirst",
+          "evidence_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Hong_OneTracker_Unifying_Visual_Object_Tracking_with_Foundation_Models_and_Efficient_CVPR_2024_paper.pdf"
+        },
+        {
+          "paper_id": "p_e0e34a54a11e",
+          "author_id": "a_1876cd730d8b",
+          "name": "Wenqiang Zhang",
+          "institution": "Fudan University",
+          "role": "corresponding",
+          "evidence_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Hong_OneTracker_Unifying_Visual_Object_Tracking_with_Foundation_Models_and_Efficient_CVPR_2024_paper.pdf"
+        }
+      ],
+      "corresponding_author_ids": [
+        "a_1876cd730d8b"
+      ],
+      "institution_status": "verified"
     },
     {
       "title": "SemTrack: A Large-scale Dataset for Semantic Tracking in the Wild",
@@ -5932,7 +6689,78 @@
         "a_59f67132362b",
         "a_5bb5f70fc099",
         "a_a612ea04cc8d"
-      ]
+      ],
+      "first_author_id": "a_0497ffe5e107",
+      "verified_roles": [
+        {
+          "paper_id": "p_4670b7e08846",
+          "author_id": "a_0497ffe5e107",
+          "name": "Pengfei Wang",
+          "institution": "Singapore University of Technology and Design",
+          "role": "first",
+          "evidence_url": "https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/03555.pdf"
+        },
+        {
+          "paper_id": "p_4670b7e08846",
+          "author_id": "a_bd157ba1bc81",
+          "name": "Jing Wu",
+          "institution": "Singapore University of Technology and Design",
+          "role": "cofirst",
+          "evidence_url": "https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/03555.pdf"
+        },
+        {
+          "paper_id": "p_4670b7e08846",
+          "author_id": "a_e5bb013a317e",
+          "name": "Kian Eng Ong",
+          "institution": "Singapore University of Technology and Design",
+          "role": "cofirst",
+          "evidence_url": "https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/03555.pdf"
+        },
+        {
+          "paper_id": "p_4670b7e08846",
+          "author_id": "a_2b90c294c310",
+          "name": "Xiaofei Hui",
+          "institution": "Lancaster University",
+          "role": "cofirst",
+          "evidence_url": "https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/03555.pdf"
+        },
+        {
+          "paper_id": "p_4670b7e08846",
+          "author_id": "a_2b90c294c310",
+          "name": "Xiaofei Hui",
+          "institution": "Singapore University of Technology and Design",
+          "role": "cofirst",
+          "evidence_url": "https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/03555.pdf"
+        },
+        {
+          "paper_id": "p_4670b7e08846",
+          "author_id": "a_239e48aa0dd9",
+          "name": "Zile Yang",
+          "institution": "Singapore University of Technology and Design",
+          "role": "cofirst",
+          "evidence_url": "https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/03555.pdf"
+        },
+        {
+          "paper_id": "p_4670b7e08846",
+          "author_id": "a_a612ea04cc8d",
+          "name": "Jun Liu",
+          "institution": "Lancaster University",
+          "role": "corresponding",
+          "evidence_url": "https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/03555.pdf"
+        },
+        {
+          "paper_id": "p_4670b7e08846",
+          "author_id": "a_a612ea04cc8d",
+          "name": "Jun Liu",
+          "institution": "Singapore University of Technology and Design",
+          "role": "corresponding",
+          "evidence_url": "https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/03555.pdf"
+        }
+      ],
+      "corresponding_author_ids": [
+        "a_a612ea04cc8d"
+      ],
+      "institution_status": "verified"
     },
     {
       "title": "Textual Tokens Classification for Multi-Modal Alignment in Vision-Language Tracking",
@@ -5959,7 +6787,20 @@
         "a_b0c90acc3fd5",
         "a_a6d3c464b86a",
         "a_7fa4bb8c6bce"
-      ]
+      ],
+      "first_author_id": "a_f15fb0b4dc9a",
+      "verified_roles": [
+        {
+          "paper_id": "p_f80f559dbe2f",
+          "author_id": "a_f15fb0b4dc9a",
+          "name": "Zhongjie Mao",
+          "institution": "Wuhan University",
+          "role": "first",
+          "evidence_url": "https://cmsworkshops.com/ICASSP2024/view_paper.php?PaperNum=4034"
+        }
+      ],
+      "corresponding_author_ids": [],
+      "institution_status": "verified"
     },
     {
       "title": "Toward Unified Token Learning for Vision-Language Tracking",
@@ -5990,7 +6831,20 @@
         "a_045a1e2041bd",
         "a_9237f05a2e90",
         "a_d7d4e41b2eaa"
-      ]
+      ],
+      "first_author_id": "a_e7fd78235577",
+      "verified_roles": [
+        {
+          "paper_id": "p_13dfcb58f9e9",
+          "author_id": "a_e7fd78235577",
+          "name": "Yaozong Zheng",
+          "institution": "Guangxi Normal University",
+          "role": "first",
+          "evidence_url": "https://bishtref.com/articles/10.1109/tcsvt.2023.3301933"
+        }
+      ],
+      "corresponding_author_ids": [],
+      "institution_status": "verified"
     },
     {
       "title": "Unifying Visual and Vision-Language Tracking via Contrastive Learning",
@@ -6021,7 +6875,30 @@
         "a_60b9443352b7",
         "a_17b1fa45e7fc",
         "a_e9e0662759de"
-      ]
+      ],
+      "first_author_id": "a_76023372736e",
+      "verified_roles": [
+        {
+          "paper_id": "p_3cfd17fed640",
+          "author_id": "a_76023372736e",
+          "name": "Yinchao Ma",
+          "institution": "University of Science and Technology of China",
+          "role": "first",
+          "evidence_url": "https://ojs.aaai.org/index.php/AAAI/article/download/28205/28406"
+        },
+        {
+          "paper_id": "p_3cfd17fed640",
+          "author_id": "a_60b9443352b7",
+          "name": "Tianzhu Zhang",
+          "institution": "University of Science and Technology of China",
+          "role": "corresponding",
+          "evidence_url": "https://ojs.aaai.org/index.php/AAAI/article/download/28205/28406"
+        }
+      ],
+      "corresponding_author_ids": [
+        "a_60b9443352b7"
+      ],
+      "institution_status": "verified"
     },
     {
       "title": "VastTrack: Vast Category Visual Object Tracking",
@@ -6056,7 +6933,102 @@
         "a_062fb946304d",
         "a_af6ccc1e3fcc",
         "a_435f9a739b1c"
-      ]
+      ],
+      "first_author_id": "a_5d365e9c4683",
+      "verified_roles": [
+        {
+          "paper_id": "p_f3a634ff25cb",
+          "author_id": "a_5d365e9c4683",
+          "name": "Liang Peng",
+          "institution": "Institute of Software, Chinese Academy of Sciences",
+          "role": "first",
+          "evidence_url": "https://www.proceedings.com/content/079/079017-4157open.pdf"
+        },
+        {
+          "paper_id": "p_f3a634ff25cb",
+          "author_id": "a_e801efaafb33",
+          "name": "Junyuan Gao",
+          "institution": "Institute of Software, Chinese Academy of Sciences",
+          "role": "cofirst",
+          "evidence_url": "https://www.proceedings.com/content/079/079017-4157open.pdf"
+        },
+        {
+          "paper_id": "p_f3a634ff25cb",
+          "author_id": "a_7f187fb0315e",
+          "name": "Shaohua Dong",
+          "institution": "University of North Texas",
+          "role": "cofirst",
+          "evidence_url": "https://www.proceedings.com/content/079/079017-4157open.pdf"
+        },
+        {
+          "paper_id": "p_f3a634ff25cb",
+          "author_id": "a_56c1ac33628f",
+          "name": "Weihong Li",
+          "institution": "Hangzhou Institute for Advanced Study",
+          "role": "cofirst",
+          "evidence_url": "https://www.proceedings.com/content/079/079017-4157open.pdf"
+        },
+        {
+          "paper_id": "p_f3a634ff25cb",
+          "author_id": "a_56c1ac33628f",
+          "name": "Weihong Li",
+          "institution": "Institute of Software, Chinese Academy of Sciences",
+          "role": "cofirst",
+          "evidence_url": "https://www.proceedings.com/content/079/079017-4157open.pdf"
+        },
+        {
+          "paper_id": "p_f3a634ff25cb",
+          "author_id": "a_56c1ac33628f",
+          "name": "Weihong Li",
+          "institution": "University of Chinese Academy of Sciences",
+          "role": "cofirst",
+          "evidence_url": "https://www.proceedings.com/content/079/079017-4157open.pdf"
+        },
+        {
+          "paper_id": "p_f3a634ff25cb",
+          "author_id": "a_8245c56ce9ae",
+          "name": "Xinran Liu",
+          "institution": "Institute of Software, Chinese Academy of Sciences",
+          "role": "cofirst",
+          "evidence_url": "https://www.proceedings.com/content/079/079017-4157open.pdf"
+        },
+        {
+          "paper_id": "p_f3a634ff25cb",
+          "author_id": "a_8245c56ce9ae",
+          "name": "Xinran Liu",
+          "institution": "University of Chinese Academy of Sciences",
+          "role": "cofirst",
+          "evidence_url": "https://www.proceedings.com/content/079/079017-4157open.pdf"
+        },
+        {
+          "paper_id": "p_f3a634ff25cb",
+          "author_id": "a_435f9a739b1c",
+          "name": "Libo Zhang",
+          "institution": "Hangzhou Institute for Advanced Study",
+          "role": "corresponding",
+          "evidence_url": "https://www.proceedings.com/content/079/079017-4157open.pdf"
+        },
+        {
+          "paper_id": "p_f3a634ff25cb",
+          "author_id": "a_435f9a739b1c",
+          "name": "Libo Zhang",
+          "institution": "Institute of Software, Chinese Academy of Sciences",
+          "role": "corresponding",
+          "evidence_url": "https://www.proceedings.com/content/079/079017-4157open.pdf"
+        },
+        {
+          "paper_id": "p_f3a634ff25cb",
+          "author_id": "a_435f9a739b1c",
+          "name": "Libo Zhang",
+          "institution": "University of Chinese Academy of Sciences",
+          "role": "corresponding",
+          "evidence_url": "https://www.proceedings.com/content/079/079017-4157open.pdf"
+        }
+      ],
+      "corresponding_author_ids": [
+        "a_435f9a739b1c"
+      ],
+      "institution_status": "verified"
     },
     {
       "title": "A Multi-modal Global Instance Tracking Benchmark (MGIT): Better Locating Target in Complex Spatio-temporal and Causal Relationship",
@@ -6089,7 +7061,20 @@
         "a_66b94471226c",
         "a_d11930dd3d36",
         "a_21057ce5bc0a"
-      ]
+      ],
+      "first_author_id": "a_fbe41c24171e",
+      "verified_roles": [
+        {
+          "paper_id": "p_6b9e94ba1303",
+          "author_id": "a_fbe41c24171e",
+          "name": "Shiyu Hu",
+          "institution": "Institute of Automation, Chinese Academy of Sciences",
+          "role": "first",
+          "evidence_url": "https://xuchen-li.github.io/files/MGIT-poster.pdf"
+        }
+      ],
+      "corresponding_author_ids": [],
+      "institution_status": "verified"
     },
     {
       "title": "All in One: Exploring Unified Vision-Language Tracking with Multi-Modal Alignment",
@@ -6122,7 +7107,30 @@
         "a_eb5c0eeea517",
         "a_9305e8243e4e",
         "a_0761607c83e6"
-      ]
+      ],
+      "first_author_id": "a_0754ec66131e",
+      "verified_roles": [
+        {
+          "paper_id": "p_dd52359014bb",
+          "author_id": "a_0754ec66131e",
+          "name": "Chunhui Zhang",
+          "institution": "Shanghai Jiao Tong University",
+          "role": "first",
+          "evidence_url": "https://doi.org/10.1145/3581783.3611803"
+        },
+        {
+          "paper_id": "p_dd52359014bb",
+          "author_id": "a_5b8e3c093cce",
+          "name": "Li Liu",
+          "institution": "Hong Kong University of Science and Technology (Guangzhou)",
+          "role": "corresponding",
+          "evidence_url": "https://researchportal.hkust.edu.hk/en/publications/all-in-one-exploring-unified-vision-language-tracking-with-multi--2/"
+        }
+      ],
+      "corresponding_author_ids": [
+        "a_5b8e3c093cce"
+      ],
+      "institution_status": "verified"
     },
     {
       "title": "CiteTracker: Correlating Image and Text for Visual Tracking",
@@ -6153,7 +7161,20 @@
         "a_9c01d1ff14b4",
         "a_2df8bdd03d03",
         "a_a4c098a9f970"
-      ]
+      ],
+      "first_author_id": "a_0f9797f1971f",
+      "verified_roles": [
+        {
+          "paper_id": "p_ed784c5718e4",
+          "author_id": "a_0f9797f1971f",
+          "name": "Xin Li",
+          "institution": "Pengcheng Laboratory",
+          "role": "first",
+          "evidence_url": "https://openaccess.thecvf.com/content/ICCV2023/papers/Li_CiteTracker_Correlating_Image_and_Text_for_Visual_Tracking_ICCV_2023_paper.pdf"
+        }
+      ],
+      "corresponding_author_ids": [],
+      "institution_status": "verified"
     },
     {
       "title": "Joint Visual Grounding and Tracking with Natural Language Specification",
@@ -6180,7 +7201,39 @@
         "a_88f12f7acf9b",
         "a_1f0ad77ca1b1",
         "a_9708fba01c0e"
-      ]
+      ],
+      "first_author_id": "a_193015e08d0d",
+      "verified_roles": [
+        {
+          "paper_id": "p_3103fa6aaa44",
+          "author_id": "a_193015e08d0d",
+          "name": "Li Zhou",
+          "institution": "Harbin Institute of Technology, Shenzhen",
+          "role": "first",
+          "evidence_url": "https://openaccess.thecvf.com/content/CVPR2023/papers/Zhou_Joint_Visual_Grounding_and_Tracking_With_Natural_Language_Specification_CVPR_2023_paper.pdf"
+        },
+        {
+          "paper_id": "p_3103fa6aaa44",
+          "author_id": "a_9708fba01c0e",
+          "name": "Zhenyu He",
+          "institution": "Harbin Institute of Technology, Shenzhen",
+          "role": "corresponding",
+          "evidence_url": "https://openaccess.thecvf.com/content/CVPR2023/papers/Zhou_Joint_Visual_Grounding_and_Tracking_With_Natural_Language_Specification_CVPR_2023_paper.pdf"
+        },
+        {
+          "paper_id": "p_3103fa6aaa44",
+          "author_id": "a_88f12f7acf9b",
+          "name": "Zikun Zhou",
+          "institution": "Pengcheng Laboratory",
+          "role": "corresponding",
+          "evidence_url": "https://openaccess.thecvf.com/content/CVPR2023/papers/Zhou_Joint_Visual_Grounding_and_Tracking_With_Natural_Language_Specification_CVPR_2023_paper.pdf"
+        }
+      ],
+      "corresponding_author_ids": [
+        "a_88f12f7acf9b",
+        "a_9708fba01c0e"
+      ],
+      "institution_status": "verified"
     },
     {
       "title": "Tracking by Natural Language Specification with Long Short-term Context Decoupling",
@@ -6203,7 +7256,20 @@
       "author_ids": [
         "a_6774db8d5663",
         "a_a8b0cc42b8a8"
-      ]
+      ],
+      "first_author_id": "a_6774db8d5663",
+      "verified_roles": [
+        {
+          "paper_id": "p_e20033f06b65",
+          "author_id": "a_6774db8d5663",
+          "name": "Ding Ma",
+          "institution": "Harbin Institute of Technology",
+          "role": "first",
+          "evidence_url": "https://openaccess.thecvf.com/content/ICCV2023/papers/Ma_Tracking_by_Natural_Language_Specification_with_Long_Short-term_Context_Decoupling_ICCV_2023_paper.pdf"
+        }
+      ],
+      "corresponding_author_ids": [],
+      "institution_status": "verified"
     },
     {
       "title": "Unified Transformer With Isomorphic Branches for Natural Language Tracking",
@@ -6236,7 +7302,11 @@
         "a_5c450e48eb62",
         "a_56473161cc17",
         "a_6af90ce3c91f"
-      ]
+      ],
+      "first_author_id": "a_11393c1b7e38",
+      "verified_roles": [],
+      "corresponding_author_ids": [],
+      "institution_status": "pending"
     },
     {
       "title": "WebUAV-3M: A Benchmark for Unveiling the Power of Million-Scale Deep UAV Tracking",
@@ -6271,7 +7341,20 @@
         "a_2c25975f763c",
         "a_44f92691cd1e",
         "a_f2821745ecaa"
-      ]
+      ],
+      "first_author_id": "a_0754ec66131e",
+      "verified_roles": [
+        {
+          "paper_id": "p_9cbbdbf8bdf3",
+          "author_id": "a_0754ec66131e",
+          "name": "Chunhui Zhang",
+          "institution": "Shanghai Jiao Tong University",
+          "role": "first",
+          "evidence_url": "https://ieeexplore.ieee.org/document/10004511"
+        }
+      ],
+      "corresponding_author_ids": [],
+      "institution_status": "verified"
     },
     {
       "title": "Divert More Attention to Vision-Language Tracking",
@@ -6298,7 +7381,38 @@
         "a_062fb946304d",
         "a_af6ccc1e3fcc",
         "a_cbdd84a2ddea"
-      ]
+      ],
+      "first_author_id": "a_7c19874aa3ad",
+      "verified_roles": [
+        {
+          "paper_id": "p_07c03c463953",
+          "author_id": "a_7c19874aa3ad",
+          "name": "Mingzhe Guo",
+          "institution": "Beijing Jiaotong University",
+          "role": "first",
+          "evidence_url": "https://papers.nips.cc/paper_files/paper/2022/file/1c8c87c36dc1e49e63555f95fa56b153-Paper-Conference.pdf"
+        },
+        {
+          "paper_id": "p_07c03c463953",
+          "author_id": "a_062fb946304d",
+          "name": "Zhipeng Zhang",
+          "institution": "DiDi Chuxing",
+          "role": "cofirst",
+          "evidence_url": "https://papers.nips.cc/paper_files/paper/2022/file/1c8c87c36dc1e49e63555f95fa56b153-Paper-Conference.pdf"
+        },
+        {
+          "paper_id": "p_07c03c463953",
+          "author_id": "a_cbdd84a2ddea",
+          "name": "Liping Jing",
+          "institution": "Beijing Jiaotong University",
+          "role": "corresponding",
+          "evidence_url": "https://papers.nips.cc/paper_files/paper/2022/file/1c8c87c36dc1e49e63555f95fa56b153-Paper-Conference.pdf"
+        }
+      ],
+      "corresponding_author_ids": [
+        "a_cbdd84a2ddea"
+      ],
+      "institution_status": "verified"
     },
     {
       "title": "Capsule-based Object Tracking with Natural Language Specification",
@@ -6321,13 +7435,26 @@
       "author_ids": [
         "a_6774db8d5663",
         "a_a8b0cc42b8a8"
-      ]
+      ],
+      "first_author_id": "a_6774db8d5663",
+      "verified_roles": [
+        {
+          "paper_id": "p_10bef15dee78",
+          "author_id": "a_6774db8d5663",
+          "name": "Ding Ma",
+          "institution": "Harbin Institute of Technology",
+          "role": "first",
+          "evidence_url": "https://2021.acmmm.org/documents/ACMMM21_Full_Technical_Program_15_2.pdf"
+        }
+      ],
+      "corresponding_author_ids": [],
+      "institution_status": "verified"
     },
     {
       "title": "Siamese Natural Language Tracker: Tracking by Natural Language Descriptions with Siamese Trackers",
       "short_name": "SNLT",
       "authors": [
-        "Feng Qi",
+        "Qi Feng",
         "Vitaly Ablavsky",
         "Qinxun Bai",
         "Stan Sclaroff"
@@ -6344,11 +7471,24 @@
       "other_urls": [],
       "id": "p_21b83b144dd7",
       "author_ids": [
-        "a_4b602ce309f3",
+        "a_0508acaf13fb",
         "a_75929e4f04f1",
         "a_9d898c3b014e",
         "a_c3894f1764f9"
-      ]
+      ],
+      "first_author_id": "a_0508acaf13fb",
+      "verified_roles": [
+        {
+          "paper_id": "p_21b83b144dd7",
+          "author_id": "a_0508acaf13fb",
+          "name": "Qi Feng",
+          "institution": "Boston University",
+          "role": "first",
+          "evidence_url": "https://openaccess.thecvf.com/content/CVPR2021/papers/Feng_Siamese_Natural_Language_Tracker_Tracking_by_Natural_Language_Descriptions_With_CVPR_2021_paper.pdf"
+        }
+      ],
+      "corresponding_author_ids": [],
+      "institution_status": "verified"
     },
     {
       "title": "Towards More Flexible and Accurate Object Tracking with Natural Language: Algorithms and Benchmark",
@@ -6384,7 +7524,38 @@
         "a_9c01d1ff14b4",
         "a_0d004b30cf8f",
         "a_e6c7972b70b7"
-      ]
+      ],
+      "first_author_id": "a_9dc59cdfaa63",
+      "verified_roles": [
+        {
+          "paper_id": "p_567265bfb2e5",
+          "author_id": "a_9dc59cdfaa63",
+          "name": "Xiao Wang",
+          "institution": "Pengcheng Laboratory",
+          "role": "first",
+          "evidence_url": "https://openaccess.thecvf.com/content/CVPR2021/papers/Wang_Towards_More_Flexible_and_Accurate_Object_Tracking_With_Natural_Language_CVPR_2021_paper.pdf"
+        },
+        {
+          "paper_id": "p_567265bfb2e5",
+          "author_id": "a_8cfa56955df5",
+          "name": "Xiujun Shu",
+          "institution": "Peking University",
+          "role": "cofirst",
+          "evidence_url": "https://openaccess.thecvf.com/content/CVPR2021/papers/Wang_Towards_More_Flexible_and_Accurate_Object_Tracking_With_Natural_Language_CVPR_2021_paper.pdf"
+        },
+        {
+          "paper_id": "p_567265bfb2e5",
+          "author_id": "a_9c01d1ff14b4",
+          "name": "Yaowei Wang",
+          "institution": "Pengcheng Laboratory",
+          "role": "corresponding",
+          "evidence_url": "https://openaccess.thecvf.com/content/CVPR2021/papers/Wang_Towards_More_Flexible_and_Accurate_Object_Tracking_With_Natural_Language_CVPR_2021_paper.pdf"
+        }
+      ],
+      "corresponding_author_ids": [
+        "a_9c01d1ff14b4"
+      ],
+      "institution_status": "verified"
     },
     {
       "title": "Grounding-Tracking-Integration",
@@ -6413,7 +7584,30 @@
         "a_4a3813caa865",
         "a_b29be8d9426a",
         "a_7f71b2e594ed"
-      ]
+      ],
+      "first_author_id": "a_fe3d551657cc",
+      "verified_roles": [
+        {
+          "paper_id": "p_750ccf837015",
+          "author_id": "a_fe3d551657cc",
+          "name": "Zhengyuan Yang",
+          "institution": "University of Rochester",
+          "role": "first",
+          "evidence_url": "https://arxiv.org/pdf/1912.06316"
+        },
+        {
+          "paper_id": "p_750ccf837015",
+          "author_id": "a_7f71b2e594ed",
+          "name": "Jiebo Luo",
+          "institution": "University of Rochester",
+          "role": "corresponding",
+          "evidence_url": "https://arxiv.org/pdf/1912.06316"
+        }
+      ],
+      "corresponding_author_ids": [
+        "a_7f71b2e594ed"
+      ],
+      "institution_status": "verified"
     },
     {
       "title": "LaSOT: A High-quality Benchmark for Large-scale Single Object Tracking",
@@ -6454,7 +7648,38 @@
         "a_9292db94ddf7",
         "a_b8406dc0662c",
         "a_68eddca9abd0"
-      ]
+      ],
+      "first_author_id": "a_af6ccc1e3fcc",
+      "verified_roles": [
+        {
+          "paper_id": "p_d05ebd6c913f",
+          "author_id": "a_af6ccc1e3fcc",
+          "name": "Heng Fan",
+          "institution": "Temple University",
+          "role": "first",
+          "evidence_url": "https://openaccess.thecvf.com/content_CVPR_2019/papers/Fan_LaSOT_A_High-Quality_Benchmark_for_Large-Scale_Single_Object_Tracking_CVPR_2019_paper.pdf"
+        },
+        {
+          "paper_id": "p_d05ebd6c913f",
+          "author_id": "a_3eb7be975fa2",
+          "name": "Liting Lin",
+          "institution": "South China University of Technology",
+          "role": "cofirst",
+          "evidence_url": "https://openaccess.thecvf.com/content_CVPR_2019/papers/Fan_LaSOT_A_High-Quality_Benchmark_for_Large-Scale_Single_Object_Tracking_CVPR_2019_paper.pdf"
+        },
+        {
+          "paper_id": "p_d05ebd6c913f",
+          "author_id": "a_68eddca9abd0",
+          "name": "Haibin Ling",
+          "institution": "Temple University",
+          "role": "corresponding",
+          "evidence_url": "https://openaccess.thecvf.com/content_CVPR_2019/papers/Fan_LaSOT_A_High-Quality_Benchmark_for_Large-Scale_Single_Object_Tracking_CVPR_2019_paper.pdf"
+        }
+      ],
+      "corresponding_author_ids": [
+        "a_68eddca9abd0"
+      ],
+      "institution_status": "verified"
     },
     {
       "title": "Tracking by Natural Language Specification",
@@ -6484,7 +7709,20 @@
         "a_5018c9c53dc9",
         "a_b096ddb58730",
         "a_374c0deeffa2"
-      ]
+      ],
+      "first_author_id": "a_44fe21bf1094",
+      "verified_roles": [
+        {
+          "paper_id": "p_fd82347cdf30",
+          "author_id": "a_44fe21bf1094",
+          "name": "Zhenyang Li",
+          "institution": "University of Amsterdam",
+          "role": "first",
+          "evidence_url": "https://pure.uva.nl/ws/files/19631019/Tracking_by_Natural_Language_Specification.pdf"
+        }
+      ],
+      "corresponding_author_ids": [],
+      "institution_status": "verified"
     }
   ],
   "edges": [
@@ -7874,6 +9112,30 @@
       "weight": 1
     },
     {
+      "source": "a_0508acaf13fb",
+      "target": "a_75929e4f04f1",
+      "paper_ids": [
+        "p_21b83b144dd7"
+      ],
+      "weight": 1
+    },
+    {
+      "source": "a_0508acaf13fb",
+      "target": "a_9d898c3b014e",
+      "paper_ids": [
+        "p_21b83b144dd7"
+      ],
+      "weight": 1
+    },
+    {
+      "source": "a_0508acaf13fb",
+      "target": "a_c3894f1764f9",
+      "paper_ids": [
+        "p_21b83b144dd7"
+      ],
+      "weight": 1
+    },
+    {
       "source": "a_05da26d62e20",
       "target": "a_a876d34c4929",
       "paper_ids": [
@@ -8659,14 +9921,6 @@
     },
     {
       "source": "a_1876cd730d8b",
-      "target": "a_bedb27a10b06",
-      "paper_ids": [
-        "p_e0e34a54a11e"
-      ],
-      "weight": 1
-    },
-    {
-      "source": "a_1876cd730d8b",
       "target": "a_c2a22428f981",
       "paper_ids": [
         "p_e0e34a54a11e"
@@ -8684,6 +9938,14 @@
     {
       "source": "a_1876cd730d8b",
       "target": "a_df8bc7f4432f",
+      "paper_ids": [
+        "p_e0e34a54a11e"
+      ],
+      "weight": 1
+    },
+    {
+      "source": "a_1876cd730d8b",
+      "target": "a_ff086adff974",
       "paper_ids": [
         "p_e0e34a54a11e"
       ],
@@ -8803,14 +10065,6 @@
     },
     {
       "source": "a_1a8598d088ff",
-      "target": "a_bedb27a10b06",
-      "paper_ids": [
-        "p_e0e34a54a11e"
-      ],
-      "weight": 1
-    },
-    {
-      "source": "a_1a8598d088ff",
       "target": "a_c2a22428f981",
       "paper_ids": [
         "p_e0e34a54a11e"
@@ -8828,6 +10082,14 @@
     {
       "source": "a_1a8598d088ff",
       "target": "a_df8bc7f4432f",
+      "paper_ids": [
+        "p_e0e34a54a11e"
+      ],
+      "weight": 1
+    },
+    {
+      "source": "a_1a8598d088ff",
+      "target": "a_ff086adff974",
       "paper_ids": [
         "p_e0e34a54a11e"
       ],
@@ -9027,14 +10289,6 @@
     },
     {
       "source": "a_2168e0cac40b",
-      "target": "a_bedb27a10b06",
-      "paper_ids": [
-        "p_e0e34a54a11e"
-      ],
-      "weight": 1
-    },
-    {
-      "source": "a_2168e0cac40b",
       "target": "a_c2a22428f981",
       "paper_ids": [
         "p_e0e34a54a11e"
@@ -9052,6 +10306,14 @@
     {
       "source": "a_2168e0cac40b",
       "target": "a_df8bc7f4432f",
+      "paper_ids": [
+        "p_e0e34a54a11e"
+      ],
+      "weight": 1
+    },
+    {
+      "source": "a_2168e0cac40b",
+      "target": "a_ff086adff974",
       "paper_ids": [
         "p_e0e34a54a11e"
       ],
@@ -9443,14 +10705,6 @@
     },
     {
       "source": "a_2b6fc2f8bf94",
-      "target": "a_bedb27a10b06",
-      "paper_ids": [
-        "p_e0e34a54a11e"
-      ],
-      "weight": 1
-    },
-    {
-      "source": "a_2b6fc2f8bf94",
       "target": "a_c2a22428f981",
       "paper_ids": [
         "p_e0e34a54a11e"
@@ -9468,6 +10722,14 @@
     {
       "source": "a_2b6fc2f8bf94",
       "target": "a_df8bc7f4432f",
+      "paper_ids": [
+        "p_e0e34a54a11e"
+      ],
+      "weight": 1
+    },
+    {
+      "source": "a_2b6fc2f8bf94",
+      "target": "a_ff086adff974",
       "paper_ids": [
         "p_e0e34a54a11e"
       ],
@@ -10587,14 +11849,6 @@
     },
     {
       "source": "a_42c677c6c4e4",
-      "target": "a_bedb27a10b06",
-      "paper_ids": [
-        "p_e0e34a54a11e"
-      ],
-      "weight": 1
-    },
-    {
-      "source": "a_42c677c6c4e4",
       "target": "a_c2a22428f981",
       "paper_ids": [
         "p_e0e34a54a11e"
@@ -10612,6 +11866,14 @@
     {
       "source": "a_42c677c6c4e4",
       "target": "a_df8bc7f4432f",
+      "paper_ids": [
+        "p_e0e34a54a11e"
+      ],
+      "weight": 1
+    },
+    {
+      "source": "a_42c677c6c4e4",
+      "target": "a_ff086adff974",
       "paper_ids": [
         "p_e0e34a54a11e"
       ],
@@ -10942,30 +12204,6 @@
       "target": "a_c6d6fa70e966",
       "paper_ids": [
         "p_f8aab28656f4"
-      ],
-      "weight": 1
-    },
-    {
-      "source": "a_4b602ce309f3",
-      "target": "a_75929e4f04f1",
-      "paper_ids": [
-        "p_21b83b144dd7"
-      ],
-      "weight": 1
-    },
-    {
-      "source": "a_4b602ce309f3",
-      "target": "a_9d898c3b014e",
-      "paper_ids": [
-        "p_21b83b144dd7"
-      ],
-      "weight": 1
-    },
-    {
-      "source": "a_4b602ce309f3",
-      "target": "a_c3894f1764f9",
-      "paper_ids": [
-        "p_21b83b144dd7"
       ],
       "weight": 1
     },
@@ -13427,14 +14665,6 @@
     },
     {
       "source": "a_ae4c667611ac",
-      "target": "a_bedb27a10b06",
-      "paper_ids": [
-        "p_e0e34a54a11e"
-      ],
-      "weight": 1
-    },
-    {
-      "source": "a_ae4c667611ac",
       "target": "a_c2a22428f981",
       "paper_ids": [
         "p_e0e34a54a11e"
@@ -13452,6 +14682,14 @@
     {
       "source": "a_ae4c667611ac",
       "target": "a_df8bc7f4432f",
+      "paper_ids": [
+        "p_e0e34a54a11e"
+      ],
+      "weight": 1
+    },
+    {
+      "source": "a_ae4c667611ac",
+      "target": "a_ff086adff974",
       "paper_ids": [
         "p_e0e34a54a11e"
       ],
@@ -13706,38 +14944,6 @@
       "weight": 1
     },
     {
-      "source": "a_bedb27a10b06",
-      "target": "a_c2a22428f981",
-      "paper_ids": [
-        "p_e0e34a54a11e"
-      ],
-      "weight": 1
-    },
-    {
-      "source": "a_bedb27a10b06",
-      "target": "a_c5e7e6e63d70",
-      "paper_ids": [
-        "p_e0e34a54a11e"
-      ],
-      "weight": 1
-    },
-    {
-      "source": "a_bedb27a10b06",
-      "target": "a_df8bc7f4432f",
-      "paper_ids": [
-        "p_e0e34a54a11e"
-      ],
-      "weight": 1
-    },
-    {
-      "source": "a_bedb27a10b06",
-      "target": "a_ffcbdd59dbef",
-      "paper_ids": [
-        "p_e0e34a54a11e"
-      ],
-      "weight": 1
-    },
-    {
       "source": "a_bf680ee966a7",
       "target": "a_f9e535116823",
       "paper_ids": [
@@ -13819,6 +15025,14 @@
     },
     {
       "source": "a_c2a22428f981",
+      "target": "a_ff086adff974",
+      "paper_ids": [
+        "p_e0e34a54a11e"
+      ],
+      "weight": 1
+    },
+    {
+      "source": "a_c2a22428f981",
       "target": "a_ffcbdd59dbef",
       "paper_ids": [
         "p_e0e34a54a11e"
@@ -13852,6 +15066,14 @@
     {
       "source": "a_c5e7e6e63d70",
       "target": "a_df8bc7f4432f",
+      "paper_ids": [
+        "p_e0e34a54a11e"
+      ],
+      "weight": 1
+    },
+    {
+      "source": "a_c5e7e6e63d70",
+      "target": "a_ff086adff974",
       "paper_ids": [
         "p_e0e34a54a11e"
       ],
@@ -14035,6 +15257,14 @@
     },
     {
       "source": "a_df8bc7f4432f",
+      "target": "a_ff086adff974",
+      "paper_ids": [
+        "p_e0e34a54a11e"
+      ],
+      "weight": 1
+    },
+    {
+      "source": "a_df8bc7f4432f",
       "target": "a_ffcbdd59dbef",
       "paper_ids": [
         "p_e0e34a54a11e"
@@ -14168,6 +15398,2428 @@
         "p_22e862d21c6a"
       ],
       "weight": 1
+    },
+    {
+      "source": "a_ff086adff974",
+      "target": "a_ffcbdd59dbef",
+      "paper_ids": [
+        "p_e0e34a54a11e"
+      ],
+      "weight": 1
+    }
+  ],
+  "institutions": [
+    {
+      "id": "i_104f000fb823",
+      "name": "Guangxi Normal University",
+      "verified": true,
+      "paper_ids": [
+        "p_13dfcb58f9e9",
+        "p_22e862d21c6a",
+        "p_2d2d8ac68b00",
+        "p_56ea47011ad7",
+        "p_8c3ac9c02758",
+        "p_8f6c85f0d7a9",
+        "p_af375b145325"
+      ],
+      "representatives": [
+        {
+          "author_id": "a_b5aebfe71d8d",
+          "name": "Bineng Zhong",
+          "roles": [
+            "corresponding"
+          ],
+          "paper_ids": [
+            "p_56ea47011ad7",
+            "p_8c3ac9c02758",
+            "p_8f6c85f0d7a9"
+          ],
+          "evidence_urls": [
+            "https://openaccess.thecvf.com/content/CVPR2025/papers/Li_Dynamic_Updates_for_Language_Adaptation_in_Visual-Language_Tracking_CVPR_2025_paper.pdf",
+            "https://openaccess.thecvf.com/content/CVPR2026/papers/Zheng_Learning_to_Track_Instance_from_Single_Nature_Language_Description_CVPR_2026_paper.pdf",
+            "https://www.ijcai.org/proceedings/2024/0183.pdf"
+          ]
+        },
+        {
+          "author_id": "a_6d068485604f",
+          "name": "Guangtong Zhang",
+          "roles": [
+            "first"
+          ],
+          "paper_ids": [
+            "p_2d2d8ac68b00",
+            "p_8f6c85f0d7a9"
+          ],
+          "evidence_urls": [
+            "https://doi.org/10.1109/TCSVT.2024.3395352",
+            "https://www.ijcai.org/proceedings/2024/0183.pdf"
+          ]
+        },
+        {
+          "author_id": "a_a31f208fdd7a",
+          "name": "Qihua Liang",
+          "roles": [
+            "corresponding"
+          ],
+          "paper_ids": [
+            "p_56ea47011ad7",
+            "p_8c3ac9c02758"
+          ],
+          "evidence_urls": [
+            "https://openaccess.thecvf.com/content/CVPR2025/papers/Li_Dynamic_Updates_for_Language_Adaptation_in_Visual-Language_Tracking_CVPR_2025_paper.pdf",
+            "https://openaccess.thecvf.com/content/CVPR2026/papers/Zheng_Learning_to_Track_Instance_from_Single_Nature_Language_Description_CVPR_2026_paper.pdf"
+          ]
+        },
+        {
+          "author_id": "a_e7fd78235577",
+          "name": "Yaozong Zheng",
+          "roles": [
+            "first"
+          ],
+          "paper_ids": [
+            "p_13dfcb58f9e9",
+            "p_56ea47011ad7"
+          ],
+          "evidence_urls": [
+            "https://bishtref.com/articles/10.1109/tcsvt.2023.3301933",
+            "https://openaccess.thecvf.com/content/CVPR2026/papers/Zheng_Learning_to_Track_Instance_from_Single_Nature_Language_Description_CVPR_2026_paper.pdf"
+          ]
+        },
+        {
+          "author_id": "a_59dcb1607f31",
+          "name": "Lei Lei",
+          "roles": [
+            "first"
+          ],
+          "paper_ids": [
+            "p_af375b145325"
+          ],
+          "evidence_urls": [
+            "https://hongsong-wang.github.io/TMM2025/"
+          ]
+        },
+        {
+          "author_id": "a_30dafad0fad8",
+          "name": "Liangtao Shi",
+          "roles": [
+            "first"
+          ],
+          "paper_ids": [
+            "p_22e862d21c6a"
+          ],
+          "evidence_urls": [
+            "https://doi.org/10.1109/TCSVT.2025.3557570"
+          ]
+        },
+        {
+          "author_id": "a_c02a1f1e8f12",
+          "name": "Xiaohai Li",
+          "roles": [
+            "first"
+          ],
+          "paper_ids": [
+            "p_8c3ac9c02758"
+          ],
+          "evidence_urls": [
+            "https://openaccess.thecvf.com/content/CVPR2025/papers/Li_Dynamic_Updates_for_Language_Adaptation_in_Visual-Language_Tracking_CVPR_2025_paper.pdf"
+          ]
+        }
+      ],
+      "author_ids": [
+        "a_045a1e2041bd",
+        "a_30dafad0fad8",
+        "a_59dcb1607f31",
+        "a_5e0ffd233366",
+        "a_6d068485604f",
+        "a_8bf41d2a71ef",
+        "a_9237f05a2e90",
+        "a_96c30bb6511c",
+        "a_a31f208fdd7a",
+        "a_b2dd086d35da",
+        "a_b5aebfe71d8d",
+        "a_c02a1f1e8f12",
+        "a_c2c2f9f75ede",
+        "a_d7d4e41b2eaa",
+        "a_e7fd78235577",
+        "a_f7a0207ae7b1",
+        "a_f8446b485591"
+      ],
+      "paper_count": 7,
+      "representative_count": 7
+    },
+    {
+      "id": "i_97e0687b2e1d",
+      "name": "Pengcheng Laboratory",
+      "verified": true,
+      "paper_ids": [
+        "p_2ca4fb20eaf0",
+        "p_3103fa6aaa44",
+        "p_567265bfb2e5",
+        "p_a3b09c515a1c",
+        "p_ed784c5718e4"
+      ],
+      "representatives": [
+        {
+          "author_id": "a_88f12f7acf9b",
+          "name": "Zikun Zhou",
+          "roles": [
+            "corresponding"
+          ],
+          "paper_ids": [
+            "p_3103fa6aaa44",
+            "p_a3b09c515a1c"
+          ],
+          "evidence_urls": [
+            "https://openaccess.thecvf.com/content/CVPR2023/papers/Zhou_Joint_Visual_Grounding_and_Tracking_With_Natural_Language_Specification_CVPR_2023_paper.pdf",
+            "https://openaccess.thecvf.com/content/CVPR2025/papers/Liu_MambaVLT_Time-Evolving_Multimodal_State_Space_Model_for_Vision-Language_Tracking_CVPR_2025_paper.pdf"
+          ]
+        },
+        {
+          "author_id": "a_9dc59cdfaa63",
+          "name": "Xiao Wang",
+          "roles": [
+            "first"
+          ],
+          "paper_ids": [
+            "p_567265bfb2e5"
+          ],
+          "evidence_urls": [
+            "https://openaccess.thecvf.com/content/CVPR2021/papers/Wang_Towards_More_Flexible_and_Accurate_Object_Tracking_With_Natural_Language_CVPR_2021_paper.pdf"
+          ]
+        },
+        {
+          "author_id": "a_0f9797f1971f",
+          "name": "Xin Li",
+          "roles": [
+            "first"
+          ],
+          "paper_ids": [
+            "p_ed784c5718e4"
+          ],
+          "evidence_urls": [
+            "https://openaccess.thecvf.com/content/ICCV2023/papers/Li_CiteTracker_Correlating_Image_and_Text_for_Visual_Tracking_ICCV_2023_paper.pdf"
+          ]
+        },
+        {
+          "author_id": "a_417116563fb9",
+          "name": "Yanjie Liang",
+          "roles": [
+            "first"
+          ],
+          "paper_ids": [
+            "p_2ca4fb20eaf0"
+          ],
+          "evidence_urls": [
+            "https://cvteam.buaa.edu.cn/papers/2025-TCSVT-Yanjie.pdf"
+          ]
+        },
+        {
+          "author_id": "a_9c01d1ff14b4",
+          "name": "Yaowei Wang",
+          "roles": [
+            "corresponding"
+          ],
+          "paper_ids": [
+            "p_567265bfb2e5"
+          ],
+          "evidence_urls": [
+            "https://openaccess.thecvf.com/content/CVPR2021/papers/Wang_Towards_More_Flexible_and_Accurate_Object_Tracking_With_Natural_Language_CVPR_2021_paper.pdf"
+          ]
+        }
+      ],
+      "author_ids": [
+        "a_062fb946304d",
+        "a_0d004b30cf8f",
+        "a_0f9797f1971f",
+        "a_193015e08d0d",
+        "a_1f0ad77ca1b1",
+        "a_2df8bdd03d03",
+        "a_3ac4e681c1c0",
+        "a_417116563fb9",
+        "a_6a898b7b3836",
+        "a_7bda72d53a37",
+        "a_88f12f7acf9b",
+        "a_8cfa56955df5",
+        "a_9708fba01c0e",
+        "a_9c01d1ff14b4",
+        "a_9dc59cdfaa63",
+        "a_a4c098a9f970",
+        "a_b8296983eeaf",
+        "a_d49f8ce6a357",
+        "a_e6c7972b70b7",
+        "a_ed76915a6c0b",
+        "a_f388bf15d4dc",
+        "a_ff8bac71b192"
+      ],
+      "paper_count": 5,
+      "representative_count": 5
+    },
+    {
+      "id": "i_2947d706ad7f",
+      "name": "Fudan University",
+      "verified": true,
+      "paper_ids": [
+        "p_5902d9de6023",
+        "p_e04ed85d658b",
+        "p_e0e34a54a11e"
+      ],
+      "representatives": [
+        {
+          "author_id": "a_ffcbdd59dbef",
+          "name": "Lingyi Hong",
+          "roles": [
+            "first"
+          ],
+          "paper_ids": [
+            "p_e0e34a54a11e"
+          ],
+          "evidence_urls": [
+            "https://openaccess.thecvf.com/content/CVPR2024/papers/Hong_OneTracker_Unifying_Visual_Object_Tracking_with_Foundation_Models_and_Efficient_CVPR_2024_paper.pdf"
+          ]
+        },
+        {
+          "author_id": "a_f9e535116823",
+          "name": "Mi Zhang",
+          "roles": [
+            "corresponding"
+          ],
+          "paper_ids": [
+            "p_5902d9de6023"
+          ],
+          "evidence_urls": [
+            "https://mi-zhang-fdu.github.io/"
+          ]
+        },
+        {
+          "author_id": "a_c5e7e6e63d70",
+          "name": "Shilin Yan",
+          "roles": [
+            "cofirst"
+          ],
+          "paper_ids": [
+            "p_e0e34a54a11e"
+          ],
+          "evidence_urls": [
+            "https://openaccess.thecvf.com/content/CVPR2024/papers/Hong_OneTracker_Unifying_Visual_Object_Tracking_with_Foundation_Models_and_Efficient_CVPR_2024_paper.pdf"
+          ]
+        },
+        {
+          "author_id": "a_1876cd730d8b",
+          "name": "Wenqiang Zhang",
+          "roles": [
+            "corresponding"
+          ],
+          "paper_ids": [
+            "p_e0e34a54a11e"
+          ],
+          "evidence_urls": [
+            "https://openaccess.thecvf.com/content/CVPR2024/papers/Hong_OneTracker_Unifying_Visual_Object_Tracking_with_Foundation_Models_and_Efficient_CVPR_2024_paper.pdf"
+          ]
+        },
+        {
+          "author_id": "a_48ac295324ab",
+          "name": "Yiming Sun",
+          "roles": [
+            "first"
+          ],
+          "paper_ids": [
+            "p_e04ed85d658b"
+          ],
+          "evidence_urls": [
+            "https://proceedings.neurips.cc/paper_files/paper/2024/file/458567910b6d21f438f22aa20c036723-Paper-Conference.pdf"
+          ]
+        }
+      ],
+      "author_ids": [
+        "a_04ac2ac0d3ab",
+        "a_1876cd730d8b",
+        "a_1a8598d088ff",
+        "a_2168e0cac40b",
+        "a_2b6fc2f8bf94",
+        "a_42c677c6c4e4",
+        "a_48ac295324ab",
+        "a_6571ddfc7454",
+        "a_680c2d937bb5",
+        "a_6a1f81db6f9e",
+        "a_7241f2a31be5",
+        "a_7acbc6524523",
+        "a_7b9b03d8db20",
+        "a_803f3a46681f",
+        "a_ae4c667611ac",
+        "a_bf680ee966a7",
+        "a_c2a22428f981",
+        "a_c5e7e6e63d70",
+        "a_df8bc7f4432f",
+        "a_f9e535116823",
+        "a_ff086adff974",
+        "a_ffcbdd59dbef"
+      ],
+      "paper_count": 3,
+      "representative_count": 5
+    },
+    {
+      "id": "i_66dae938da97",
+      "name": "Harbin Institute of Technology",
+      "verified": true,
+      "paper_ids": [
+        "p_0bb036a0fbde",
+        "p_10bef15dee78",
+        "p_e20033f06b65"
+      ],
+      "representatives": [
+        {
+          "author_id": "a_6774db8d5663",
+          "name": "Ding Ma",
+          "roles": [
+            "first"
+          ],
+          "paper_ids": [
+            "p_10bef15dee78",
+            "p_e20033f06b65"
+          ],
+          "evidence_urls": [
+            "https://2021.acmmm.org/documents/ACMMM21_Full_Technical_Program_15_2.pdf",
+            "https://openaccess.thecvf.com/content/ICCV2023/papers/Ma_Tracking_by_Natural_Language_Specification_with_Long_Short-term_Context_Decoupling_ICCV_2023_paper.pdf"
+          ]
+        },
+        {
+          "author_id": "a_1f0ad77ca1b1",
+          "name": "Kaige Mao",
+          "roles": [
+            "first"
+          ],
+          "paper_ids": [
+            "p_0bb036a0fbde"
+          ],
+          "evidence_urls": [
+            "https://openalex.org/W4409076641"
+          ]
+        }
+      ],
+      "author_ids": [
+        "a_1f0ad77ca1b1",
+        "a_6774db8d5663",
+        "a_677c10cb39fb",
+        "a_7d1b9e390ea6",
+        "a_a8b0cc42b8a8",
+        "a_d774874a080b"
+      ],
+      "paper_count": 3,
+      "representative_count": 2
+    },
+    {
+      "id": "i_67132ca74c2d",
+      "name": "Institute of Automation, Chinese Academy of Sciences",
+      "verified": true,
+      "paper_ids": [
+        "p_02aa55658899",
+        "p_6b9e94ba1303",
+        "p_b7718dff44d2"
+      ],
+      "representatives": [
+        {
+          "author_id": "a_a66cb411355c",
+          "name": "Xiaokun Feng",
+          "roles": [
+            "first"
+          ],
+          "paper_ids": [
+            "p_02aa55658899",
+            "p_b7718dff44d2"
+          ],
+          "evidence_urls": [
+            "https://openaccess.thecvf.com/content/ICCV2025/papers/Feng_ATCTrack_Aligning_Target-Context_Cues_with_Dynamic_Target_States_for_Robust_ICCV_2025_paper.pdf",
+            "https://proceedings.neurips.cc/paper_files/paper/2024/file/1af3e0bf5905e33789979f666c31192d-Paper-Conference.pdf"
+          ]
+        },
+        {
+          "author_id": "a_21057ce5bc0a",
+          "name": "Kaiqi Huang",
+          "roles": [
+            "corresponding"
+          ],
+          "paper_ids": [
+            "p_02aa55658899"
+          ],
+          "evidence_urls": [
+            "https://openaccess.thecvf.com/content/ICCV2025/papers/Feng_ATCTrack_Aligning_Target-Context_Cues_with_Dynamic_Target_States_for_Robust_ICCV_2025_paper.pdf"
+          ]
+        },
+        {
+          "author_id": "a_fbe41c24171e",
+          "name": "Shiyu Hu",
+          "roles": [
+            "first"
+          ],
+          "paper_ids": [
+            "p_6b9e94ba1303"
+          ],
+          "evidence_urls": [
+            "https://xuchen-li.github.io/files/MGIT-poster.pdf"
+          ]
+        }
+      ],
+      "author_ids": [
+        "a_21057ce5bc0a",
+        "a_26187054c566",
+        "a_66b94471226c",
+        "a_85296c337eaa",
+        "a_a66cb411355c",
+        "a_a6e8b8389c67",
+        "a_ad6c71da7366",
+        "a_c2d911f6ee6b",
+        "a_d11930dd3d36",
+        "a_fbe41c24171e"
+      ],
+      "paper_count": 3,
+      "representative_count": 3
+    },
+    {
+      "id": "i_ac2248dffdf7",
+      "name": "University of Science and Technology of China",
+      "verified": true,
+      "paper_ids": [
+        "p_3cfd17fed640",
+        "p_4ebb4f4a5d29",
+        "p_9841564bd906"
+      ],
+      "representatives": [
+        {
+          "author_id": "a_60b9443352b7",
+          "name": "Tianzhu Zhang",
+          "roles": [
+            "corresponding"
+          ],
+          "paper_ids": [
+            "p_3cfd17fed640",
+            "p_9841564bd906"
+          ],
+          "evidence_urls": [
+            "https://arxiv.org/pdf/2511.01427",
+            "https://ojs.aaai.org/index.php/AAAI/article/download/28205/28406"
+          ]
+        },
+        {
+          "author_id": "a_76023372736e",
+          "name": "Yinchao Ma",
+          "roles": [
+            "first"
+          ],
+          "paper_ids": [
+            "p_3cfd17fed640",
+            "p_9841564bd906"
+          ],
+          "evidence_urls": [
+            "https://arxiv.org/pdf/2511.01427",
+            "https://ojs.aaai.org/index.php/AAAI/article/download/28205/28406"
+          ]
+        },
+        {
+          "author_id": "a_0c9a71ecc563",
+          "name": "Yuyang Tang",
+          "roles": [
+            "first"
+          ],
+          "paper_ids": [
+            "p_4ebb4f4a5d29"
+          ],
+          "evidence_urls": [
+            "https://hongsong-wang.github.io/TCSVT2026/"
+          ]
+        }
+      ],
+      "author_ids": [
+        "a_0c9a71ecc563",
+        "a_17b1fa45e7fc",
+        "a_303897a87f95",
+        "a_3aa79083f0f8",
+        "a_40c28bbea61f",
+        "a_60b9443352b7",
+        "a_76023372736e",
+        "a_e6c7972b70b7",
+        "a_e9e0662759de",
+        "a_f429d65eb8c9"
+      ],
+      "paper_count": 3,
+      "representative_count": 3
+    },
+    {
+      "id": "i_07d0bab21d19",
+      "name": "Beihang University",
+      "verified": true,
+      "paper_ids": [
+        "p_2ca4fb20eaf0",
+        "p_9f5442669ba5"
+      ],
+      "representatives": [
+        {
+          "author_id": "a_ff8bac71b192",
+          "name": "Jia Li",
+          "roles": [
+            "corresponding"
+          ],
+          "paper_ids": [
+            "p_2ca4fb20eaf0"
+          ],
+          "evidence_urls": [
+            "https://cvteam.buaa.edu.cn/papers/2025-TCSVT-Yanjie.pdf"
+          ]
+        },
+        {
+          "author_id": "a_dd7e6ae43608",
+          "name": "Jianbo Song",
+          "roles": [
+            "first"
+          ],
+          "paper_ids": [
+            "p_9f5442669ba5"
+          ],
+          "evidence_urls": [
+            "https://jglobal.jst.go.jp/en/detail?JGLOBAL_ID=202502250777216783"
+          ]
+        }
+      ],
+      "author_ids": [
+        "a_3877e487ff8a",
+        "a_417116563fb9",
+        "a_6a898b7b3836",
+        "a_732104f3d3fd",
+        "a_9dafc6520664",
+        "a_c99c38230c19",
+        "a_d49f8ce6a357",
+        "a_dd7e6ae43608",
+        "a_f388bf15d4dc",
+        "a_ff8bac71b192"
+      ],
+      "paper_count": 2,
+      "representative_count": 2
+    },
+    {
+      "id": "i_30ace114662f",
+      "name": "Beijing Jiaotong University",
+      "verified": true,
+      "paper_ids": [
+        "p_07c03c463953",
+        "p_7d88c786d302"
+      ],
+      "representatives": [
+        {
+          "author_id": "a_7c19874aa3ad",
+          "name": "Mingzhe Guo",
+          "roles": [
+            "first"
+          ],
+          "paper_ids": [
+            "p_07c03c463953",
+            "p_7d88c786d302"
+          ],
+          "evidence_urls": [
+            "https://jglobal.jst.go.jp/en/detail?JGLOBAL_ID=202502214997251911",
+            "https://papers.nips.cc/paper_files/paper/2022/file/1c8c87c36dc1e49e63555f95fa56b153-Paper-Conference.pdf"
+          ]
+        },
+        {
+          "author_id": "a_cbdd84a2ddea",
+          "name": "Liping Jing",
+          "roles": [
+            "corresponding"
+          ],
+          "paper_ids": [
+            "p_07c03c463953"
+          ],
+          "evidence_urls": [
+            "https://papers.nips.cc/paper_files/paper/2022/file/1c8c87c36dc1e49e63555f95fa56b153-Paper-Conference.pdf"
+          ]
+        }
+      ],
+      "author_ids": [
+        "a_062fb946304d",
+        "a_68eddca9abd0",
+        "a_7c19874aa3ad",
+        "a_af6ccc1e3fcc",
+        "a_cbdd84a2ddea"
+      ],
+      "paper_count": 2,
+      "representative_count": 2
+    },
+    {
+      "id": "i_2826c119ea97",
+      "name": "Dalian University of Technology",
+      "verified": true,
+      "paper_ids": [
+        "p_0aa9ec99c31c",
+        "p_2d4c379e8c90"
+      ],
+      "representatives": [
+        {
+          "author_id": "a_a9f54406ff60",
+          "name": "Chengao Zong",
+          "roles": [
+            "first"
+          ],
+          "paper_ids": [
+            "p_2d4c379e8c90"
+          ],
+          "evidence_urls": [
+            "https://jglobal.jst.go.jp/en/detail?JGLOBAL_ID=202502261684993965"
+          ]
+        },
+        {
+          "author_id": "a_18ffeb7f52b5",
+          "name": "Dong Wang",
+          "roles": [
+            "corresponding"
+          ],
+          "paper_ids": [
+            "p_0aa9ec99c31c"
+          ],
+          "evidence_urls": [
+            "https://ojs.aaai.org/index.php/AAAI/article/download/32223/34378"
+          ]
+        },
+        {
+          "author_id": "a_e6008d2b3b9f",
+          "name": "Xin Chen",
+          "roles": [
+            "first"
+          ],
+          "paper_ids": [
+            "p_0aa9ec99c31c"
+          ],
+          "evidence_urls": [
+            "https://ojs.aaai.org/index.php/AAAI/article/download/32223/34378"
+          ]
+        }
+      ],
+      "author_ids": [
+        "a_18ffeb7f52b5",
+        "a_2c58fdb6ed83",
+        "a_2ce3a4adba82",
+        "a_2df8bdd03d03",
+        "a_7c2bf506622b",
+        "a_8bda0e8eeac3",
+        "a_a9f54406ff60",
+        "a_e59822c9b2e7",
+        "a_e6008d2b3b9f"
+      ],
+      "paper_count": 2,
+      "representative_count": 3
+    },
+    {
+      "id": "i_bffd3a663c3c",
+      "name": "East China Normal University",
+      "verified": true,
+      "paper_ids": [
+        "p_5902d9de6023",
+        "p_e04ed85d658b"
+      ],
+      "representatives": [
+        {
+          "author_id": "a_7acbc6524523",
+          "name": "Yang Li",
+          "roles": [
+            "corresponding"
+          ],
+          "paper_ids": [
+            "p_5902d9de6023",
+            "p_e04ed85d658b"
+          ],
+          "evidence_urls": [
+            "https://proceedings.neurips.cc/paper_files/paper/2024/file/458567910b6d21f438f22aa20c036723-Paper-Conference.pdf",
+            "https://sii.ecnu.edu.cn/53647/list.htm"
+          ]
+        },
+        {
+          "author_id": "a_bf680ee966a7",
+          "name": "Changbo Wang",
+          "roles": [
+            "corresponding"
+          ],
+          "paper_ids": [
+            "p_5902d9de6023"
+          ],
+          "evidence_urls": [
+            "https://sii.ecnu.edu.cn/53647/list.htm"
+          ]
+        },
+        {
+          "author_id": "a_6a1f81db6f9e",
+          "name": "Fan Yu",
+          "roles": [
+            "cofirst"
+          ],
+          "paper_ids": [
+            "p_e04ed85d658b"
+          ],
+          "evidence_urls": [
+            "https://proceedings.neurips.cc/paper_files/paper/2024/file/458567910b6d21f438f22aa20c036723-Paper-Conference.pdf"
+          ]
+        },
+        {
+          "author_id": "a_48ac295324ab",
+          "name": "Yiming Sun",
+          "roles": [
+            "first"
+          ],
+          "paper_ids": [
+            "p_e04ed85d658b"
+          ],
+          "evidence_urls": [
+            "https://proceedings.neurips.cc/paper_files/paper/2024/file/458567910b6d21f438f22aa20c036723-Paper-Conference.pdf"
+          ]
+        }
+      ],
+      "author_ids": [
+        "a_04ac2ac0d3ab",
+        "a_48ac295324ab",
+        "a_6571ddfc7454",
+        "a_680c2d937bb5",
+        "a_6a1f81db6f9e",
+        "a_7241f2a31be5",
+        "a_7acbc6524523",
+        "a_7b9b03d8db20",
+        "a_803f3a46681f",
+        "a_bf680ee966a7",
+        "a_f9e535116823"
+      ],
+      "paper_count": 2,
+      "representative_count": 4
+    },
+    {
+      "id": "i_c9ec43f52983",
+      "name": "Harbin Institute of Technology, Shenzhen",
+      "verified": true,
+      "paper_ids": [
+        "p_3103fa6aaa44",
+        "p_a3b09c515a1c"
+      ],
+      "representatives": [
+        {
+          "author_id": "a_193015e08d0d",
+          "name": "Li Zhou",
+          "roles": [
+            "cofirst",
+            "first"
+          ],
+          "paper_ids": [
+            "p_3103fa6aaa44",
+            "p_a3b09c515a1c"
+          ],
+          "evidence_urls": [
+            "https://openaccess.thecvf.com/content/CVPR2023/papers/Zhou_Joint_Visual_Grounding_and_Tracking_With_Natural_Language_Specification_CVPR_2023_paper.pdf",
+            "https://openaccess.thecvf.com/content/CVPR2025/papers/Liu_MambaVLT_Time-Evolving_Multimodal_State_Space_Model_for_Vision-Language_Tracking_CVPR_2025_paper.pdf"
+          ]
+        },
+        {
+          "author_id": "a_9708fba01c0e",
+          "name": "Zhenyu He",
+          "roles": [
+            "corresponding"
+          ],
+          "paper_ids": [
+            "p_3103fa6aaa44",
+            "p_a3b09c515a1c"
+          ],
+          "evidence_urls": [
+            "https://openaccess.thecvf.com/content/CVPR2023/papers/Zhou_Joint_Visual_Grounding_and_Tracking_With_Natural_Language_Specification_CVPR_2023_paper.pdf",
+            "https://openaccess.thecvf.com/content/CVPR2025/papers/Liu_MambaVLT_Time-Evolving_Multimodal_State_Space_Model_for_Vision-Language_Tracking_CVPR_2025_paper.pdf"
+          ]
+        },
+        {
+          "author_id": "a_3ac4e681c1c0",
+          "name": "Xinqi Liu",
+          "roles": [
+            "first"
+          ],
+          "paper_ids": [
+            "p_a3b09c515a1c"
+          ],
+          "evidence_urls": [
+            "https://openaccess.thecvf.com/content/CVPR2025/papers/Liu_MambaVLT_Time-Evolving_Multimodal_State_Space_Model_for_Vision-Language_Tracking_CVPR_2025_paper.pdf"
+          ]
+        }
+      ],
+      "author_ids": [
+        "a_193015e08d0d",
+        "a_1f0ad77ca1b1",
+        "a_3ac4e681c1c0",
+        "a_88f12f7acf9b",
+        "a_9708fba01c0e",
+        "a_b8296983eeaf"
+      ],
+      "paper_count": 2,
+      "representative_count": 3
+    },
+    {
+      "id": "i_1540d5b05686",
+      "name": "Shanghai Jiao Tong University",
+      "verified": true,
+      "paper_ids": [
+        "p_9cbbdbf8bdf3",
+        "p_dd52359014bb"
+      ],
+      "representatives": [
+        {
+          "author_id": "a_0754ec66131e",
+          "name": "Chunhui Zhang",
+          "roles": [
+            "first"
+          ],
+          "paper_ids": [
+            "p_9cbbdbf8bdf3",
+            "p_dd52359014bb"
+          ],
+          "evidence_urls": [
+            "https://doi.org/10.1145/3581783.3611803",
+            "https://ieeexplore.ieee.org/document/10004511"
+          ]
+        }
+      ],
+      "author_ids": [
+        "a_0754ec66131e",
+        "a_0761607c83e6",
+        "a_2c25975f763c",
+        "a_44f92691cd1e",
+        "a_4d01fc05637a",
+        "a_5b8e3c093cce",
+        "a_9305e8243e4e",
+        "a_a4114158ee0e",
+        "a_dead6cff12e9",
+        "a_e85279a49155",
+        "a_e9be09156d2f",
+        "a_eb5c0eeea517",
+        "a_f2821745ecaa"
+      ],
+      "paper_count": 2,
+      "representative_count": 1
+    },
+    {
+      "id": "i_f18b953b0370",
+      "name": "Southeast University",
+      "verified": true,
+      "paper_ids": [
+        "p_c5794a63cc11",
+        "p_fc09fcfe6ac2"
+      ],
+      "representatives": [
+        {
+          "author_id": "a_a030458644f5",
+          "name": "Jiawei Ge",
+          "roles": [
+            "first"
+          ],
+          "paper_ids": [
+            "p_c5794a63cc11",
+            "p_fc09fcfe6ac2"
+          ],
+          "evidence_urls": [
+            "https://jglobal.jst.go.jp/en/detail?JGLOBAL_ID=202402243868147445",
+            "https://jglobal.jst.go.jp/en/detail?JGLOBAL_ID=202502211163758802"
+          ]
+        }
+      ],
+      "author_ids": [
+        "a_240989dd9488",
+        "a_2b32fc61ca41",
+        "a_400acc1eb137",
+        "a_7de706aec264",
+        "a_9fab532cb78b",
+        "a_a030458644f5",
+        "a_d21cffe3e968",
+        "a_e43cb1e6d0f8",
+        "a_fe97be22e50f"
+      ],
+      "paper_count": 2,
+      "representative_count": 1
+    },
+    {
+      "id": "i_cfda9dd75a1f",
+      "name": "University of Chinese Academy of Sciences",
+      "verified": true,
+      "paper_ids": [
+        "p_b4e0a3b3cd7a",
+        "p_f3a634ff25cb"
+      ],
+      "representatives": [
+        {
+          "author_id": "a_045a1e2041bd",
+          "name": "Guorong Li",
+          "roles": [
+            "corresponding"
+          ],
+          "paper_ids": [
+            "p_b4e0a3b3cd7a"
+          ],
+          "evidence_urls": [
+            "https://people.ucas.ac.cn/~GuorongLi?language=en"
+          ]
+        },
+        {
+          "author_id": "a_435f9a739b1c",
+          "name": "Libo Zhang",
+          "roles": [
+            "corresponding"
+          ],
+          "paper_ids": [
+            "p_f3a634ff25cb"
+          ],
+          "evidence_urls": [
+            "https://www.proceedings.com/content/079/079017-4157open.pdf"
+          ]
+        },
+        {
+          "author_id": "a_56c1ac33628f",
+          "name": "Weihong Li",
+          "roles": [
+            "cofirst"
+          ],
+          "paper_ids": [
+            "p_f3a634ff25cb"
+          ],
+          "evidence_urls": [
+            "https://www.proceedings.com/content/079/079017-4157open.pdf"
+          ]
+        },
+        {
+          "author_id": "a_8245c56ce9ae",
+          "name": "Xinran Liu",
+          "roles": [
+            "cofirst"
+          ],
+          "paper_ids": [
+            "p_f3a634ff25cb"
+          ],
+          "evidence_urls": [
+            "https://www.proceedings.com/content/079/079017-4157open.pdf"
+          ]
+        }
+      ],
+      "author_ids": [
+        "a_045a1e2041bd",
+        "a_062fb946304d",
+        "a_1361848fc0ea",
+        "a_322f89298f1a",
+        "a_435f9a739b1c",
+        "a_56c1ac33628f",
+        "a_5d365e9c4683",
+        "a_63e30f61f169",
+        "a_7f187fb0315e",
+        "a_8245c56ce9ae",
+        "a_a83ad2efa07b",
+        "a_af6ccc1e3fcc",
+        "a_e56a17ea7f6c",
+        "a_e801efaafb33"
+      ],
+      "paper_count": 2,
+      "representative_count": 4
+    },
+    {
+      "id": "i_a08118cd405b",
+      "name": "Xidian University",
+      "verified": true,
+      "paper_ids": [
+        "p_6f8128a454d7",
+        "p_f8aab28656f4"
+      ],
+      "representatives": [
+        {
+          "author_id": "a_a62e4c384f31",
+          "name": "Fang Liu",
+          "roles": [
+            "corresponding"
+          ],
+          "paper_ids": [
+            "p_6f8128a454d7"
+          ],
+          "evidence_urls": [
+            "https://faculty.xidian.edu.cn/lishuo/zh_CN/index/452425/list/index.htm"
+          ]
+        },
+        {
+          "author_id": "a_bfd15530afe7",
+          "name": "Guomao Guo",
+          "roles": [
+            "first"
+          ],
+          "paper_ids": [
+            "p_f8aab28656f4"
+          ],
+          "evidence_urls": [
+            "https://www.cmsworkshops.com/ICASSP2026/view_paper.php?PaperNum=6510"
+          ]
+        }
+      ],
+      "author_ids": [
+        "a_0a45cae3d62a",
+        "a_0ce4e330b7d8",
+        "a_15ea35b05572",
+        "a_24a073f37357",
+        "a_3063d0cbbc78",
+        "a_3a113605892e",
+        "a_4b373bdcde45",
+        "a_608d3169cd1c",
+        "a_7b9c142577c7",
+        "a_a4211851be53",
+        "a_a62e4c384f31",
+        "a_b067ae1ed803",
+        "a_bfd15530afe7",
+        "a_c6d6fa70e966",
+        "a_ca86460fe7d9",
+        "a_f9231f77b3bf"
+      ],
+      "paper_count": 2,
+      "representative_count": 2
+    },
+    {
+      "id": "i_47ec2dbbfb57",
+      "name": "Zhejiang University of Technology",
+      "verified": true,
+      "paper_ids": [
+        "p_79fadeebd56a",
+        "p_be679a5faaa7"
+      ],
+      "representatives": [
+        {
+          "author_id": "a_94bb799060d6",
+          "name": "Jian Tao",
+          "roles": [
+            "first"
+          ],
+          "paper_ids": [
+            "p_be679a5faaa7"
+          ],
+          "evidence_urls": [
+            "https://jglobal.jst.go.jp/en/detail?JGLOBAL_ID=202602263960371654"
+          ]
+        },
+        {
+          "author_id": "a_13401defcde8",
+          "name": "Yanyan Shao",
+          "roles": [
+            "first"
+          ],
+          "paper_ids": [
+            "p_79fadeebd56a"
+          ],
+          "evidence_urls": [
+            "https://openaccess.thecvf.com/content/CVPR2024/papers/Shao_Context-Aware_Integration_of_Language_and_Visual_References_for_Natural_Language_CVPR_2024_paper.pdf"
+          ]
+        }
+      ],
+      "author_ids": [
+        "a_13401defcde8",
+        "a_161d893f68f9",
+        "a_1cb177815723",
+        "a_23ed77d94ad1",
+        "a_2a1c2c64fa65",
+        "a_741c2019495f",
+        "a_746cc9a368b0",
+        "a_859042e61843",
+        "a_94bb799060d6",
+        "a_ba760ab2fa77"
+      ],
+      "paper_count": 2,
+      "representative_count": 2
+    },
+    {
+      "id": "i_2956f7bfe453",
+      "name": "Anhui Normal University",
+      "verified": true,
+      "paper_ids": [
+        "p_b18baeb5e798"
+      ],
+      "representatives": [
+        {
+          "author_id": "a_9ab9a8b38330",
+          "name": "Ze Zhou",
+          "roles": [
+            "first"
+          ],
+          "paper_ids": [
+            "p_b18baeb5e798"
+          ],
+          "evidence_urls": [
+            "https://www.cmsworkshops.com/ICASSP2026/view_paper.php?PaperNum=5363&bare=1"
+          ]
+        }
+      ],
+      "author_ids": [
+        "a_3be91c3c91bf",
+        "a_5e3b7a49d512",
+        "a_7854d9082f1d",
+        "a_9ab9a8b38330",
+        "a_fdf5676aac82"
+      ],
+      "paper_count": 1,
+      "representative_count": 1
+    },
+    {
+      "id": "i_32687b30094c",
+      "name": "Boston University",
+      "verified": true,
+      "paper_ids": [
+        "p_21b83b144dd7"
+      ],
+      "representatives": [
+        {
+          "author_id": "a_0508acaf13fb",
+          "name": "Qi Feng",
+          "roles": [
+            "first"
+          ],
+          "paper_ids": [
+            "p_21b83b144dd7"
+          ],
+          "evidence_urls": [
+            "https://openaccess.thecvf.com/content/CVPR2021/papers/Feng_Siamese_Natural_Language_Tracker_Tracking_by_Natural_Language_Descriptions_With_CVPR_2021_paper.pdf"
+          ]
+        }
+      ],
+      "author_ids": [
+        "a_0508acaf13fb",
+        "a_75929e4f04f1",
+        "a_9d898c3b014e",
+        "a_c3894f1764f9"
+      ],
+      "paper_count": 1,
+      "representative_count": 1
+    },
+    {
+      "id": "i_2572292fb559",
+      "name": "ByteDance Inc.",
+      "verified": true,
+      "paper_ids": [
+        "p_f37de3d80133"
+      ],
+      "representatives": [
+        {
+          "author_id": "a_276a86b8796d",
+          "name": "Han Wang",
+          "roles": [
+            "first"
+          ],
+          "paper_ids": [
+            "p_f37de3d80133"
+          ],
+          "evidence_urls": [
+            "https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/03256.pdf"
+          ]
+        }
+      ],
+      "author_ids": [
+        "a_1577d8d42f4e",
+        "a_276a86b8796d",
+        "a_48819f2b01b6",
+        "a_b6a3e4b19f45",
+        "a_e42841a17268"
+      ],
+      "paper_count": 1,
+      "representative_count": 1
+    },
+    {
+      "id": "i_da5191da307f",
+      "name": "DiDi Chuxing",
+      "verified": true,
+      "paper_ids": [
+        "p_07c03c463953"
+      ],
+      "representatives": [
+        {
+          "author_id": "a_062fb946304d",
+          "name": "Zhipeng Zhang",
+          "roles": [
+            "cofirst"
+          ],
+          "paper_ids": [
+            "p_07c03c463953"
+          ],
+          "evidence_urls": [
+            "https://papers.nips.cc/paper_files/paper/2022/file/1c8c87c36dc1e49e63555f95fa56b153-Paper-Conference.pdf"
+          ]
+        }
+      ],
+      "author_ids": [
+        "a_062fb946304d",
+        "a_7c19874aa3ad",
+        "a_af6ccc1e3fcc",
+        "a_cbdd84a2ddea"
+      ],
+      "paper_count": 1,
+      "representative_count": 1
+    },
+    {
+      "id": "i_5aa821a37194",
+      "name": "Hangzhou Institute for Advanced Study",
+      "verified": true,
+      "paper_ids": [
+        "p_f3a634ff25cb"
+      ],
+      "representatives": [
+        {
+          "author_id": "a_435f9a739b1c",
+          "name": "Libo Zhang",
+          "roles": [
+            "corresponding"
+          ],
+          "paper_ids": [
+            "p_f3a634ff25cb"
+          ],
+          "evidence_urls": [
+            "https://www.proceedings.com/content/079/079017-4157open.pdf"
+          ]
+        },
+        {
+          "author_id": "a_56c1ac33628f",
+          "name": "Weihong Li",
+          "roles": [
+            "cofirst"
+          ],
+          "paper_ids": [
+            "p_f3a634ff25cb"
+          ],
+          "evidence_urls": [
+            "https://www.proceedings.com/content/079/079017-4157open.pdf"
+          ]
+        }
+      ],
+      "author_ids": [
+        "a_062fb946304d",
+        "a_435f9a739b1c",
+        "a_56c1ac33628f",
+        "a_5d365e9c4683",
+        "a_7f187fb0315e",
+        "a_8245c56ce9ae",
+        "a_af6ccc1e3fcc",
+        "a_e801efaafb33"
+      ],
+      "paper_count": 1,
+      "representative_count": 2
+    },
+    {
+      "id": "i_135c012f1fd7",
+      "name": "Hong Kong University of Science and Technology (Guangzhou)",
+      "verified": true,
+      "paper_ids": [
+        "p_dd52359014bb"
+      ],
+      "representatives": [
+        {
+          "author_id": "a_5b8e3c093cce",
+          "name": "Li Liu",
+          "roles": [
+            "corresponding"
+          ],
+          "paper_ids": [
+            "p_dd52359014bb"
+          ],
+          "evidence_urls": [
+            "https://researchportal.hkust.edu.hk/en/publications/all-in-one-exploring-unified-vision-language-tracking-with-multi--2/"
+          ]
+        }
+      ],
+      "author_ids": [
+        "a_0754ec66131e",
+        "a_0761607c83e6",
+        "a_4d01fc05637a",
+        "a_5b8e3c093cce",
+        "a_9305e8243e4e",
+        "a_dead6cff12e9",
+        "a_eb5c0eeea517"
+      ],
+      "paper_count": 1,
+      "representative_count": 1
+    },
+    {
+      "id": "i_ca84cc2f0d09",
+      "name": "Inha University",
+      "verified": true,
+      "paper_ids": [
+        "p_c5e5fe0d94b4"
+      ],
+      "representatives": [
+        {
+          "author_id": "a_a8d69e274c79",
+          "name": "Dae-Hyeon Park",
+          "roles": [
+            "first"
+          ],
+          "paper_ids": [
+            "p_c5e5fe0d94b4"
+          ],
+          "evidence_urls": [
+            "https://openaccess.thecvf.com/content/CVPR2026/papers/Park_MVLM_Template-Free_Tracking_via_Vision-Language_Margin_Confidence_and_Memory-Gated_Tracking_CVPR_2026_paper.pdf"
+          ]
+        },
+        {
+          "author_id": "a_e80d75131a49",
+          "name": "Seung-Hwan Bae",
+          "roles": [
+            "corresponding"
+          ],
+          "paper_ids": [
+            "p_c5e5fe0d94b4"
+          ],
+          "evidence_urls": [
+            "https://openaccess.thecvf.com/content/CVPR2026/papers/Park_MVLM_Template-Free_Tracking_via_Vision-Language_Margin_Confidence_and_Memory-Gated_Tracking_CVPR_2026_paper.pdf"
+          ]
+        }
+      ],
+      "author_ids": [
+        "a_46999c3b24d7",
+        "a_a8d69e274c79",
+        "a_c846aa3d6f48",
+        "a_e80d75131a49",
+        "a_ec1434c9e55d",
+        "a_fdee1c71009f"
+      ],
+      "paper_count": 1,
+      "representative_count": 2
+    },
+    {
+      "id": "i_b60bb6d2e0d8",
+      "name": "Institute of Software, Chinese Academy of Sciences",
+      "verified": true,
+      "paper_ids": [
+        "p_f3a634ff25cb"
+      ],
+      "representatives": [
+        {
+          "author_id": "a_e801efaafb33",
+          "name": "Junyuan Gao",
+          "roles": [
+            "cofirst"
+          ],
+          "paper_ids": [
+            "p_f3a634ff25cb"
+          ],
+          "evidence_urls": [
+            "https://www.proceedings.com/content/079/079017-4157open.pdf"
+          ]
+        },
+        {
+          "author_id": "a_5d365e9c4683",
+          "name": "Liang Peng",
+          "roles": [
+            "first"
+          ],
+          "paper_ids": [
+            "p_f3a634ff25cb"
+          ],
+          "evidence_urls": [
+            "https://www.proceedings.com/content/079/079017-4157open.pdf"
+          ]
+        },
+        {
+          "author_id": "a_435f9a739b1c",
+          "name": "Libo Zhang",
+          "roles": [
+            "corresponding"
+          ],
+          "paper_ids": [
+            "p_f3a634ff25cb"
+          ],
+          "evidence_urls": [
+            "https://www.proceedings.com/content/079/079017-4157open.pdf"
+          ]
+        },
+        {
+          "author_id": "a_56c1ac33628f",
+          "name": "Weihong Li",
+          "roles": [
+            "cofirst"
+          ],
+          "paper_ids": [
+            "p_f3a634ff25cb"
+          ],
+          "evidence_urls": [
+            "https://www.proceedings.com/content/079/079017-4157open.pdf"
+          ]
+        },
+        {
+          "author_id": "a_8245c56ce9ae",
+          "name": "Xinran Liu",
+          "roles": [
+            "cofirst"
+          ],
+          "paper_ids": [
+            "p_f3a634ff25cb"
+          ],
+          "evidence_urls": [
+            "https://www.proceedings.com/content/079/079017-4157open.pdf"
+          ]
+        }
+      ],
+      "author_ids": [
+        "a_062fb946304d",
+        "a_435f9a739b1c",
+        "a_56c1ac33628f",
+        "a_5d365e9c4683",
+        "a_7f187fb0315e",
+        "a_8245c56ce9ae",
+        "a_af6ccc1e3fcc",
+        "a_e801efaafb33"
+      ],
+      "paper_count": 1,
+      "representative_count": 5
+    },
+    {
+      "id": "i_a976a5a18b90",
+      "name": "Jilin Engineering Normal University",
+      "verified": true,
+      "paper_ids": [
+        "p_107ad7a2c3c7"
+      ],
+      "representatives": [
+        {
+          "author_id": "a_6d068485604f",
+          "name": "Guangtong Zhang",
+          "roles": [
+            "first"
+          ],
+          "paper_ids": [
+            "p_107ad7a2c3c7"
+          ],
+          "evidence_urls": [
+            "https://ojs.aaai.org/index.php/AAAI/article/download/38237/42199"
+          ]
+        }
+      ],
+      "author_ids": [
+        "a_2515068044a9",
+        "a_6d068485604f",
+        "a_b5aebfe71d8d",
+        "a_c21298f82188",
+        "a_ef210ddb2eb1"
+      ],
+      "paper_count": 1,
+      "representative_count": 1
+    },
+    {
+      "id": "i_8dbb76cb43c3",
+      "name": "Jilin University",
+      "verified": true,
+      "paper_ids": [
+        "p_107ad7a2c3c7"
+      ],
+      "representatives": [
+        {
+          "author_id": "a_6d068485604f",
+          "name": "Guangtong Zhang",
+          "roles": [
+            "first"
+          ],
+          "paper_ids": [
+            "p_107ad7a2c3c7"
+          ],
+          "evidence_urls": [
+            "https://ojs.aaai.org/index.php/AAAI/article/download/38237/42199"
+          ]
+        },
+        {
+          "author_id": "a_ef210ddb2eb1",
+          "name": "Tian Bai",
+          "roles": [
+            "corresponding"
+          ],
+          "paper_ids": [
+            "p_107ad7a2c3c7"
+          ],
+          "evidence_urls": [
+            "https://ojs.aaai.org/index.php/AAAI/article/download/38237/42199"
+          ]
+        }
+      ],
+      "author_ids": [
+        "a_2515068044a9",
+        "a_6d068485604f",
+        "a_b5aebfe71d8d",
+        "a_c21298f82188",
+        "a_ef210ddb2eb1"
+      ],
+      "paper_count": 1,
+      "representative_count": 2
+    },
+    {
+      "id": "i_5ea9876e49db",
+      "name": "Lancaster University",
+      "verified": true,
+      "paper_ids": [
+        "p_4670b7e08846"
+      ],
+      "representatives": [
+        {
+          "author_id": "a_a612ea04cc8d",
+          "name": "Jun Liu",
+          "roles": [
+            "corresponding"
+          ],
+          "paper_ids": [
+            "p_4670b7e08846"
+          ],
+          "evidence_urls": [
+            "https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/03555.pdf"
+          ]
+        },
+        {
+          "author_id": "a_2b90c294c310",
+          "name": "Xiaofei Hui",
+          "roles": [
+            "cofirst"
+          ],
+          "paper_ids": [
+            "p_4670b7e08846"
+          ],
+          "evidence_urls": [
+            "https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/03555.pdf"
+          ]
+        }
+      ],
+      "author_ids": [
+        "a_0497ffe5e107",
+        "a_1fac3860e7de",
+        "a_239e48aa0dd9",
+        "a_2b90c294c310",
+        "a_59f67132362b",
+        "a_5b5b7f0edab7",
+        "a_5bb5f70fc099",
+        "a_860f36e16293",
+        "a_a612ea04cc8d",
+        "a_bd157ba1bc81",
+        "a_e5bb013a317e",
+        "a_e7f378a839a5",
+        "a_f12249240f1c"
+      ],
+      "paper_count": 1,
+      "representative_count": 2
+    },
+    {
+      "id": "i_2350b000aea7",
+      "name": "Nanjing University",
+      "verified": true,
+      "paper_ids": [
+        "p_9d98b6914c26"
+      ],
+      "representatives": [
+        {
+          "author_id": "a_79bd720270ef",
+          "name": "Jie Liu",
+          "roles": [
+            "corresponding"
+          ],
+          "paper_ids": [
+            "p_9d98b6914c26"
+          ],
+          "evidence_urls": [
+            "https://njulj.github.io/publications/"
+          ]
+        },
+        {
+          "author_id": "a_7f10b5470607",
+          "name": "Xingyu Luo",
+          "roles": [
+            "first"
+          ],
+          "paper_ids": [
+            "p_9d98b6914c26"
+          ],
+          "evidence_urls": [
+            "https://www.researchgate.net/publication/400803462_GLAD_Generative_Language-Assisted_Visual_Tracking_for_Low-Semantic_Templates_GLAD_Generative_Language-Assisted_Visual_Tracking_for_Low-SemanticX_Luo_et_al"
+          ]
+        },
+        {
+          "author_id": "a_7bdac1a0fe94",
+          "name": "Yidong Cai",
+          "roles": [
+            "cofirst"
+          ],
+          "paper_ids": [
+            "p_9d98b6914c26"
+          ],
+          "evidence_urls": [
+            "https://www.researchgate.net/publication/400803462_GLAD_Generative_Language-Assisted_Visual_Tracking_for_Low-Semantic_Templates_GLAD_Generative_Language-Assisted_Visual_Tracking_for_Low-SemanticX_Luo_et_al"
+          ]
+        }
+      ],
+      "author_ids": [
+        "a_57c0431f646d",
+        "a_75ca36e4f518",
+        "a_79bd720270ef",
+        "a_7bdac1a0fe94",
+        "a_7f10b5470607",
+        "a_b080c0ee5b28"
+      ],
+      "paper_count": 1,
+      "representative_count": 3
+    },
+    {
+      "id": "i_045b196dfab5",
+      "name": "Nanyang Technological University",
+      "verified": true,
+      "paper_ids": [
+        "p_02aa55658899"
+      ],
+      "representatives": [
+        {
+          "author_id": "a_fbe41c24171e",
+          "name": "Shiyu Hu",
+          "roles": [
+            "cofirst"
+          ],
+          "paper_ids": [
+            "p_02aa55658899"
+          ],
+          "evidence_urls": [
+            "https://openaccess.thecvf.com/content/ICCV2025/papers/Feng_ATCTrack_Aligning_Target-Context_Cues_with_Dynamic_Target_States_for_Robust_ICCV_2025_paper.pdf"
+          ]
+        }
+      ],
+      "author_ids": [
+        "a_21057ce5bc0a",
+        "a_26187054c566",
+        "a_66b94471226c",
+        "a_85296c337eaa",
+        "a_a66cb411355c",
+        "a_a6e8b8389c67",
+        "a_c2d911f6ee6b",
+        "a_fbe41c24171e"
+      ],
+      "paper_count": 1,
+      "representative_count": 1
+    },
+    {
+      "id": "i_99dcf403ef31",
+      "name": "National University of Defense Technology",
+      "verified": true,
+      "paper_ids": [
+        "p_1eba5dabb7b0"
+      ],
+      "representatives": [
+        {
+          "author_id": "a_2d19450e7a8a",
+          "name": "Hong Zhu",
+          "roles": [
+            "first"
+          ],
+          "paper_ids": [
+            "p_1eba5dabb7b0"
+          ],
+          "evidence_urls": [
+            "https://bishtref.com/articles/10.1109/tits.2024.3520103"
+          ]
+        }
+      ],
+      "author_ids": [
+        "a_2d19450e7a8a",
+        "a_8209a9e75755",
+        "a_b5b6a1f21796",
+        "a_f03f73100b84",
+        "a_f249ebcde77c"
+      ],
+      "paper_count": 1,
+      "representative_count": 1
+    },
+    {
+      "id": "i_93face664305",
+      "name": "Peking University",
+      "verified": true,
+      "paper_ids": [
+        "p_567265bfb2e5"
+      ],
+      "representatives": [
+        {
+          "author_id": "a_8cfa56955df5",
+          "name": "Xiujun Shu",
+          "roles": [
+            "cofirst"
+          ],
+          "paper_ids": [
+            "p_567265bfb2e5"
+          ],
+          "evidence_urls": [
+            "https://openaccess.thecvf.com/content/CVPR2021/papers/Wang_Towards_More_Flexible_and_Accurate_Object_Tracking_With_Natural_Language_CVPR_2021_paper.pdf"
+          ]
+        }
+      ],
+      "author_ids": [
+        "a_062fb946304d",
+        "a_0d004b30cf8f",
+        "a_7bda72d53a37",
+        "a_8cfa56955df5",
+        "a_9c01d1ff14b4",
+        "a_9dc59cdfaa63",
+        "a_e6c7972b70b7"
+      ],
+      "paper_count": 1,
+      "representative_count": 1
+    },
+    {
+      "id": "i_0ae38fa46e97",
+      "name": "Singapore University of Technology and Design",
+      "verified": true,
+      "paper_ids": [
+        "p_4670b7e08846"
+      ],
+      "representatives": [
+        {
+          "author_id": "a_bd157ba1bc81",
+          "name": "Jing Wu",
+          "roles": [
+            "cofirst"
+          ],
+          "paper_ids": [
+            "p_4670b7e08846"
+          ],
+          "evidence_urls": [
+            "https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/03555.pdf"
+          ]
+        },
+        {
+          "author_id": "a_a612ea04cc8d",
+          "name": "Jun Liu",
+          "roles": [
+            "corresponding"
+          ],
+          "paper_ids": [
+            "p_4670b7e08846"
+          ],
+          "evidence_urls": [
+            "https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/03555.pdf"
+          ]
+        },
+        {
+          "author_id": "a_e5bb013a317e",
+          "name": "Kian Eng Ong",
+          "roles": [
+            "cofirst"
+          ],
+          "paper_ids": [
+            "p_4670b7e08846"
+          ],
+          "evidence_urls": [
+            "https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/03555.pdf"
+          ]
+        },
+        {
+          "author_id": "a_0497ffe5e107",
+          "name": "Pengfei Wang",
+          "roles": [
+            "first"
+          ],
+          "paper_ids": [
+            "p_4670b7e08846"
+          ],
+          "evidence_urls": [
+            "https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/03555.pdf"
+          ]
+        },
+        {
+          "author_id": "a_2b90c294c310",
+          "name": "Xiaofei Hui",
+          "roles": [
+            "cofirst"
+          ],
+          "paper_ids": [
+            "p_4670b7e08846"
+          ],
+          "evidence_urls": [
+            "https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/03555.pdf"
+          ]
+        },
+        {
+          "author_id": "a_239e48aa0dd9",
+          "name": "Zile Yang",
+          "roles": [
+            "cofirst"
+          ],
+          "paper_ids": [
+            "p_4670b7e08846"
+          ],
+          "evidence_urls": [
+            "https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/03555.pdf"
+          ]
+        }
+      ],
+      "author_ids": [
+        "a_0497ffe5e107",
+        "a_1fac3860e7de",
+        "a_239e48aa0dd9",
+        "a_2b90c294c310",
+        "a_59f67132362b",
+        "a_5b5b7f0edab7",
+        "a_5bb5f70fc099",
+        "a_860f36e16293",
+        "a_a612ea04cc8d",
+        "a_bd157ba1bc81",
+        "a_e5bb013a317e",
+        "a_e7f378a839a5",
+        "a_f12249240f1c"
+      ],
+      "paper_count": 1,
+      "representative_count": 6
+    },
+    {
+      "id": "i_245b024b4a73",
+      "name": "South China University of Technology",
+      "verified": true,
+      "paper_ids": [
+        "p_d05ebd6c913f"
+      ],
+      "representatives": [
+        {
+          "author_id": "a_3eb7be975fa2",
+          "name": "Liting Lin",
+          "roles": [
+            "cofirst"
+          ],
+          "paper_ids": [
+            "p_d05ebd6c913f"
+          ],
+          "evidence_urls": [
+            "https://openaccess.thecvf.com/content_CVPR_2019/papers/Fan_LaSOT_A_High-Quality_Benchmark_for_Large-Scale_Single_Object_Tracking_CVPR_2019_paper.pdf"
+          ]
+        }
+      ],
+      "author_ids": [
+        "a_3277661cb836",
+        "a_3eb7be975fa2",
+        "a_559fb5543aff",
+        "a_68eddca9abd0",
+        "a_8fd371beb28f",
+        "a_9292db94ddf7",
+        "a_af6ccc1e3fcc",
+        "a_b8406dc0662c",
+        "a_c2559eb2d5aa",
+        "a_db7141d35f1d"
+      ],
+      "paper_count": 1,
+      "representative_count": 1
+    },
+    {
+      "id": "i_41a4721365e6",
+      "name": "Temple University",
+      "verified": true,
+      "paper_ids": [
+        "p_d05ebd6c913f"
+      ],
+      "representatives": [
+        {
+          "author_id": "a_68eddca9abd0",
+          "name": "Haibin Ling",
+          "roles": [
+            "corresponding"
+          ],
+          "paper_ids": [
+            "p_d05ebd6c913f"
+          ],
+          "evidence_urls": [
+            "https://openaccess.thecvf.com/content_CVPR_2019/papers/Fan_LaSOT_A_High-Quality_Benchmark_for_Large-Scale_Single_Object_Tracking_CVPR_2019_paper.pdf"
+          ]
+        },
+        {
+          "author_id": "a_af6ccc1e3fcc",
+          "name": "Heng Fan",
+          "roles": [
+            "first"
+          ],
+          "paper_ids": [
+            "p_d05ebd6c913f"
+          ],
+          "evidence_urls": [
+            "https://openaccess.thecvf.com/content_CVPR_2019/papers/Fan_LaSOT_A_High-Quality_Benchmark_for_Large-Scale_Single_Object_Tracking_CVPR_2019_paper.pdf"
+          ]
+        }
+      ],
+      "author_ids": [
+        "a_3277661cb836",
+        "a_3eb7be975fa2",
+        "a_559fb5543aff",
+        "a_68eddca9abd0",
+        "a_8fd371beb28f",
+        "a_9292db94ddf7",
+        "a_af6ccc1e3fcc",
+        "a_b8406dc0662c",
+        "a_c2559eb2d5aa",
+        "a_db7141d35f1d"
+      ],
+      "paper_count": 1,
+      "representative_count": 2
+    },
+    {
+      "id": "i_f40f874d8f41",
+      "name": "University of Amsterdam",
+      "verified": true,
+      "paper_ids": [
+        "p_fd82347cdf30"
+      ],
+      "representatives": [
+        {
+          "author_id": "a_44fe21bf1094",
+          "name": "Zhenyang Li",
+          "roles": [
+            "first"
+          ],
+          "paper_ids": [
+            "p_fd82347cdf30"
+          ],
+          "evidence_urls": [
+            "https://pure.uva.nl/ws/files/19631019/Tracking_by_Natural_Language_Specification.pdf"
+          ]
+        }
+      ],
+      "author_ids": [
+        "a_374c0deeffa2",
+        "a_44fe21bf1094",
+        "a_5018c9c53dc9",
+        "a_b096ddb58730",
+        "a_f3ce3ccf893c"
+      ],
+      "paper_count": 1,
+      "representative_count": 1
+    },
+    {
+      "id": "i_911ef2fd0a2d",
+      "name": "University of North Texas",
+      "verified": true,
+      "paper_ids": [
+        "p_f3a634ff25cb"
+      ],
+      "representatives": [
+        {
+          "author_id": "a_7f187fb0315e",
+          "name": "Shaohua Dong",
+          "roles": [
+            "cofirst"
+          ],
+          "paper_ids": [
+            "p_f3a634ff25cb"
+          ],
+          "evidence_urls": [
+            "https://www.proceedings.com/content/079/079017-4157open.pdf"
+          ]
+        }
+      ],
+      "author_ids": [
+        "a_062fb946304d",
+        "a_435f9a739b1c",
+        "a_56c1ac33628f",
+        "a_5d365e9c4683",
+        "a_7f187fb0315e",
+        "a_8245c56ce9ae",
+        "a_af6ccc1e3fcc",
+        "a_e801efaafb33"
+      ],
+      "paper_count": 1,
+      "representative_count": 1
+    },
+    {
+      "id": "i_dd5d3b606065",
+      "name": "University of Rochester",
+      "verified": true,
+      "paper_ids": [
+        "p_750ccf837015"
+      ],
+      "representatives": [
+        {
+          "author_id": "a_7f71b2e594ed",
+          "name": "Jiebo Luo",
+          "roles": [
+            "corresponding"
+          ],
+          "paper_ids": [
+            "p_750ccf837015"
+          ],
+          "evidence_urls": [
+            "https://arxiv.org/pdf/1912.06316"
+          ]
+        },
+        {
+          "author_id": "a_fe3d551657cc",
+          "name": "Zhengyuan Yang",
+          "roles": [
+            "first"
+          ],
+          "paper_ids": [
+            "p_750ccf837015"
+          ],
+          "evidence_urls": [
+            "https://arxiv.org/pdf/1912.06316"
+          ]
+        }
+      ],
+      "author_ids": [
+        "a_4a3813caa865",
+        "a_7f71b2e594ed",
+        "a_b29be8d9426a",
+        "a_d1490d5fe1cf",
+        "a_fe3d551657cc"
+      ],
+      "paper_count": 1,
+      "representative_count": 2
+    },
+    {
+      "id": "i_ee07a5609ff0",
+      "name": "Wuhan University",
+      "verified": true,
+      "paper_ids": [
+        "p_f80f559dbe2f"
+      ],
+      "representatives": [
+        {
+          "author_id": "a_f15fb0b4dc9a",
+          "name": "Zhongjie Mao",
+          "roles": [
+            "first"
+          ],
+          "paper_ids": [
+            "p_f80f559dbe2f"
+          ],
+          "evidence_urls": [
+            "https://cmsworkshops.com/ICASSP2024/view_paper.php?PaperNum=4034"
+          ]
+        }
+      ],
+      "author_ids": [
+        "a_7fa4bb8c6bce",
+        "a_a6d3c464b86a",
+        "a_b0c90acc3fd5",
+        "a_f15fb0b4dc9a"
+      ],
+      "paper_count": 1,
+      "representative_count": 1
+    },
+    {
+      "id": "i_63dcb1736e34",
+      "name": "Xi’an Research Institute of High-tech",
+      "verified": true,
+      "paper_ids": [
+        "p_620e3eabdf36"
+      ],
+      "representatives": [
+        {
+          "author_id": "a_b59fd28cd8c8",
+          "name": "Yuanliang Xue",
+          "roles": [
+            "first"
+          ],
+          "paper_ids": [
+            "p_620e3eabdf36"
+          ],
+          "evidence_urls": [
+            "https://www.minicod.com/papers/avltrack-dynamic-sparse-learning-for-aerial-vision-language-tracking-8e8f75f7"
+          ]
+        }
+      ],
+      "author_ids": [
+        "a_40c3af5aa818",
+        "a_50318f5a2afa",
+        "a_7650b403da8d",
+        "a_96c30bb6511c",
+        "a_b59fd28cd8c8",
+        "a_b5aebfe71d8d",
+        "a_e7fd78235577"
+      ],
+      "paper_count": 1,
+      "representative_count": 1
+    },
+    {
+      "id": "i_e36e2139073c",
+      "name": "Xi’an Technological University",
+      "verified": true,
+      "paper_ids": [
+        "p_d9b42b6c098d"
+      ],
+      "representatives": [
+        {
+          "author_id": "a_958e20799d20",
+          "name": "Liqiang Liu",
+          "roles": [
+            "first"
+          ],
+          "paper_ids": [
+            "p_d9b42b6c098d"
+          ],
+          "evidence_urls": [
+            "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5929541"
+          ]
+        }
+      ],
+      "author_ids": [
+        "a_387f3c18a858",
+        "a_7b54637135f0",
+        "a_958e20799d20",
+        "a_9b39ebc63cc4",
+        "a_bf821256f950",
+        "a_d29a5e102228",
+        "a_ec307e2dd2f7",
+        "a_fc698f9215b7"
+      ],
+      "paper_count": 1,
+      "representative_count": 1
+    },
+    {
+      "id": "i_2fafcff0b32f",
+      "name": "Zhejiang University",
+      "verified": true,
+      "paper_ids": [
+        "p_79fadeebd56a"
+      ],
+      "representatives": [
+        {
+          "author_id": "a_ba760ab2fa77",
+          "name": "Qi Ye",
+          "roles": [
+            "corresponding"
+          ],
+          "paper_ids": [
+            "p_79fadeebd56a"
+          ],
+          "evidence_urls": [
+            "https://openaccess.thecvf.com/content/CVPR2024/papers/Shao_Context-Aware_Integration_of_Language_and_Visual_References_for_Natural_Language_CVPR_2024_paper.pdf"
+          ]
+        }
+      ],
+      "author_ids": [
+        "a_13401defcde8",
+        "a_2a1c2c64fa65",
+        "a_741c2019495f",
+        "a_746cc9a368b0",
+        "a_859042e61843",
+        "a_ba760ab2fa77"
+      ],
+      "paper_count": 1,
+      "representative_count": 1
+    },
+    {
+      "id": "i_e89bf7eccbbf",
+      "name": "Zhengzhou University of Light Industry",
+      "verified": true,
+      "paper_ids": [
+        "p_2923e355a258"
+      ],
+      "representatives": [
+        {
+          "author_id": "a_34df026637bc",
+          "name": "Huanlong Zhang",
+          "roles": [
+            "first"
+          ],
+          "paper_ids": [
+            "p_2923e355a258"
+          ],
+          "evidence_urls": [
+            "https://bishtref.com/articles/10.1109/tmm.2023.3285441"
+          ]
+        }
+      ],
+      "author_ids": [
+        "a_34df026637bc",
+        "a_60b9443352b7",
+        "a_70cfdae08001",
+        "a_7a477c2954f5",
+        "a_b5aebfe71d8d"
+      ],
+      "paper_count": 1,
+      "representative_count": 1
+    },
+    {
+      "id": "i_d6342a138e75",
+      "name": "Institution pending verification / 机构待核实",
+      "verified": false,
+      "paper_ids": [
+        "p_12f389841472",
+        "p_43291da7cb30",
+        "p_49c3d5fe1e8c",
+        "p_5b0c16b3fd8d",
+        "p_5c4f172d5392",
+        "p_9dd5d739776c",
+        "p_b7cf14a80ecd",
+        "p_d5e612d73734",
+        "p_d6d382cdbfb0",
+        "p_de3867b9b78c",
+        "p_e9df7dde642c"
+      ],
+      "representatives": [
+        {
+          "author_id": "a_6774db8d5663",
+          "name": "Ding Ma",
+          "roles": [
+            "first"
+          ],
+          "paper_ids": [
+            "p_e9df7dde642c"
+          ],
+          "evidence_urls": []
+        },
+        {
+          "author_id": "a_2d76af62906e",
+          "name": "Geng Xiong",
+          "roles": [
+            "first"
+          ],
+          "paper_ids": [
+            "p_43291da7cb30"
+          ],
+          "evidence_urls": []
+        },
+        {
+          "author_id": "a_6d068485604f",
+          "name": "Guangtong Zhang",
+          "roles": [
+            "first"
+          ],
+          "paper_ids": [
+            "p_12f389841472"
+          ],
+          "evidence_urls": []
+        },
+        {
+          "author_id": "a_69a4945f2c60",
+          "name": "Hao Dong",
+          "roles": [
+            "first"
+          ],
+          "paper_ids": [
+            "p_d6d382cdbfb0"
+          ],
+          "evidence_urls": []
+        },
+        {
+          "author_id": "a_2d19450e7a8a",
+          "name": "Hong Zhu",
+          "roles": [
+            "first"
+          ],
+          "paper_ids": [
+            "p_9dd5d739776c"
+          ],
+          "evidence_urls": []
+        },
+        {
+          "author_id": "a_a030458644f5",
+          "name": "Jiawei Ge",
+          "roles": [
+            "first"
+          ],
+          "paper_ids": [
+            "p_b7cf14a80ecd"
+          ],
+          "evidence_urls": []
+        },
+        {
+          "author_id": "a_11393c1b7e38",
+          "name": "Rong Wang",
+          "roles": [
+            "first"
+          ],
+          "paper_ids": [
+            "p_5c4f172d5392"
+          ],
+          "evidence_urls": []
+        },
+        {
+          "author_id": "a_f48de91eef28",
+          "name": "Yihao Zhen",
+          "roles": [
+            "first"
+          ],
+          "paper_ids": [
+            "p_5b0c16b3fd8d"
+          ],
+          "evidence_urls": []
+        },
+        {
+          "author_id": "a_0c9a71ecc563",
+          "name": "Yuyang Tang",
+          "roles": [
+            "first"
+          ],
+          "paper_ids": [
+            "p_de3867b9b78c"
+          ],
+          "evidence_urls": []
+        },
+        {
+          "author_id": "a_f4601f866131",
+          "name": "Zequan Cui",
+          "roles": [
+            "first"
+          ],
+          "paper_ids": [
+            "p_d5e612d73734"
+          ],
+          "evidence_urls": []
+        },
+        {
+          "author_id": "a_e5a82aad4592",
+          "name": "Zhibin Zhang",
+          "roles": [
+            "first"
+          ],
+          "paper_ids": [
+            "p_49c3d5fe1e8c"
+          ],
+          "evidence_urls": []
+        }
+      ],
+      "author_ids": [
+        "a_05da26d62e20",
+        "a_0c9a71ecc563",
+        "a_11393c1b7e38",
+        "a_237b114bb6fc",
+        "a_240989dd9488",
+        "a_2515068044a9",
+        "a_2b32fc61ca41",
+        "a_2d19450e7a8a",
+        "a_2d76af62906e",
+        "a_34df026637bc",
+        "a_3ab3a6e785c5",
+        "a_3fda4f83dd0c",
+        "a_400acc1eb137",
+        "a_448c7df71f7e",
+        "a_56473161cc17",
+        "a_5c450e48eb62",
+        "a_5e0ffd233366",
+        "a_60b9443352b7",
+        "a_6620cc317be8",
+        "a_6774db8d5663",
+        "a_69a4945f2c60",
+        "a_69e9e58907c3",
+        "a_6a1e19776f56",
+        "a_6af90ce3c91f",
+        "a_6d068485604f",
+        "a_76023372736e",
+        "a_7de706aec264",
+        "a_8209a9e75755",
+        "a_842012a4234c",
+        "a_8aec3d9ee7d8",
+        "a_96c30bb6511c",
+        "a_a030458644f5",
+        "a_a31f208fdd7a",
+        "a_a537411145de",
+        "a_a876d34c4929",
+        "a_a8b0cc42b8a8",
+        "a_b5aebfe71d8d",
+        "a_b5b6a1f21796",
+        "a_be8104487d38",
+        "a_c02a1f1e8f12",
+        "a_c4508dee27ee",
+        "a_d003ea243696",
+        "a_d21cffe3e968",
+        "a_d2d22afe386c",
+        "a_dcf0c475d36a",
+        "a_e43cb1e6d0f8",
+        "a_e5a82aad4592",
+        "a_eb11fc790595",
+        "a_ef210ddb2eb1",
+        "a_f223afd1fc17",
+        "a_f249ebcde77c",
+        "a_f4601f866131",
+        "a_f48de91eef28",
+        "a_f8446b485591",
+        "a_fe97be22e50f"
+      ],
+      "paper_count": 11,
+      "representative_count": 11
     }
   ]
 }

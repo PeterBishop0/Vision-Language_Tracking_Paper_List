@@ -59,7 +59,7 @@ The graph is constructed from the publications collected in this repository and 
 
 ### NL+BBox:
 
-* **SNLT**: **Siamese Natural Language Tracker: Tracking by Natural Language Descriptions with Siamese Trackers**, Feng Qi, Vitaly Ablavsky, Qinxun Bai, Stan Sclaroff (CVPR21)   
+* **SNLT**: **Siamese Natural Language Tracker: Tracking by Natural Language Descriptions with Siamese Trackers**, Qi Feng, Vitaly Ablavsky, Qinxun Bai, Stan Sclaroff (CVPR21)   
 [[Paper](https://arxiv.org/pdf/1912.02048.pdf)] 
 [[Code](https://github.com/fredfung007/snlt)]
 
@@ -97,7 +97,7 @@ The graph is constructed from the publications collected in this repository and 
 [[Paper](https://arxiv.org/abs/2403.19975)]
 [[Code](https://github.com/twotwo2/QueryNLT)]
 
-* **OneTracker: Unifying Visual Object Tracking with Foundation Models and Efficient Tuning**, Lingyi Hong, Shilin Yan, Renrui Zhang, Wanyun Li, Xinyu Zhou, Pinxue Guo, Kaixun Jiang, Yiting Cheng, Jinglun Li, Zhaoyu Chen, Wenqiang Zhang (CVPR24)  
+* **OneTracker: Unifying Visual Object Tracking with Foundation Models and Efficient Tuning**, Lingyi Hong, Shilin Yan, Renrui Zhang, Wanyun Li, Xinyu Zhou, Pinxue Guo, Kaixun Jiang, Yiting Chen, Jinglun Li, Zhaoyu Chen, Wenqiang Zhang (CVPR24)  
 [[Paper](https://arxiv.org/pdf/2403.09634.pdf)]
 
 * **MemVLT: Vision-Language Tracking with Adaptive Memory-based Prompts**, Xiaokun Feng, Xuchen Li, Shiyu Hu, Dailing Zhang, wu meiqi, Jing Zhang, Xiaotang Chen, Kaiqi Huang (NeurIPS24)  
