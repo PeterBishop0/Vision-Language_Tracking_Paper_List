@@ -30,12 +30,31 @@
     <button id="reset" class="reset-btn" type="button" title="重置所有筛选">重置</button>
   </section>
   <section id="network" class="section-block" aria-labelledby="network-title">
-    <div class="section-heading"><div><span class="eyebrow mini">01 / RESEARCHER CONNECTIONS</span><h2 id="network-title">研究者合作网络</h2><p>每条连线表示至少一篇共同署名论文，点击作者即可查看具体合作关系。</p></div><div class="role-group" aria-label="突出显示作者角色"><span>突出显示</span><button class="role-btn selected" data-role="all" type="button">全部</button><button class="role-btn" data-role="first" type="button">第一作者</button><button class="role-btn" data-role="corresponding" type="button">通讯作者</button></div></div>
+    <div class="section-heading"><div><span class="eyebrow mini">01 / RESEARCHER CONNECTIONS</span><h2 id="network-title">研究者合作网络</h2><p>从合作群组开始探索：点击群组进入放大的研究者网络，再点击作者查看真实合著关系。</p></div><div class="role-group" aria-label="突出显示作者角色"><span>突出显示</span><button class="role-btn selected" data-role="all" type="button">全部</button><button class="role-btn" data-role="first" type="button">第一作者</button><button class="role-btn" data-role="corresponding" type="button">通讯作者</button></div></div>
     <div class="graph-shell">
       <div class="graph-panel">
-        <div class="graph-top"><div><strong id="networkStatus">加载研究网络中…</strong><small id="institutionFilterLabel">收录论文全局合著网络</small></div><div class="graph-controls"><label class="node-limit">展示 <select id="maxNodes"><option value="30">30 人</option><option value="48" selected>48 人</option><option value="72">72 人</option></select></label><button id="fit" type="button">适应画布</button><button id="clearInstitution" type="button" hidden>清除机构筛选 ×</button></div></div>
-        <div class="graph-stage"><div id="cy" aria-label="研究者共同署名合作网络" role="img"></div><div class="graph-hint"><span class="graph-swatch"></span> 作者节点 <span class="line-swatch"></span> 合著关系 <span class="hint-separator">·</span> 颜色用于区分连通社群，不代表机构</div></div>
-        <div class="graph-bottom"><span>点击节点查看合作作者及论文</span><span>滚轮缩放 · 拖动平移</span></div>
+        <div class="graph-top">
+          <div class="graph-titles">
+            <button id="overviewBack" type="button" class="overview-back" hidden>← 返回群组总览</button>
+            <strong id="networkStatus">正在加载合作群组…</strong>
+            <small id="institutionFilterLabel">点击群组，直接进入放大视图</small>
+          </div>
+          <div class="graph-controls">
+            <label id="maxNodesLabel" class="node-limit" hidden>群组人数
+              <select id="maxNodes"><option value="24" selected>24 人</option><option value="36">36 人</option><option value="60">60 人</option><option value="all">全部</option></select>
+            </label>
+            <button id="zoomOut" class="zoom-btn" type="button" aria-label="缩小网络" title="缩小网络" hidden>−</button>
+            <button id="zoomIn" class="zoom-btn" type="button" aria-label="放大网络" title="放大网络" hidden>＋</button>
+            <button id="fit" type="button" hidden>适应视图</button>
+            <button id="clearInstitution" type="button" hidden>清除机构筛选 ×</button>
+          </div>
+        </div>
+        <div class="graph-stage">
+          <div id="overview" class="community-overview" aria-label="可点击的合作群组总览"></div>
+          <div id="cy" aria-label="研究者共同署名合作网络" role="img" hidden></div>
+          <div class="graph-hint"><span class="graph-swatch"></span>作者节点 <span class="line-swatch"></span>真实合著关系 <span class="hint-separator">·</span> 颜色标识合著群组，非机构</div>
+        </div>
+        <div class="graph-bottom"><span id="graphInstruction">点击群组放大查看作者网络</span><span id="graphFootRight">无需滚轮缩放</span></div>
       </div>
       <aside id="details" class="detail-panel" aria-live="polite"><div class="empty-detail"><span class="avatar-placeholder">◎</span><strong>选择一位研究者</strong><p>点击图中的节点，查看论文、第一作者与通讯作者身份，以及共同署名的研究人员。</p></div></aside>
     </div>
