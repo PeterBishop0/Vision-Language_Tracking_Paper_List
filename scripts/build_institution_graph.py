@@ -1,184 +1,99 @@
 #!/usr/bin/env python3
-"""Extend README-derived VLT coauthorship data using verifiable per-paper role annotations.
+"""Build a researcher-first VLT atlas with a ONE-INSTITUTION-PER-PAPER classification.
 
-No affiliations or corresponding authors are inferred from last-author order or
-coauthorship. A paper can belong to multiple institutions when explicit, cited
-role annotations support that assignment. Unverified papers remain visible in
-an explicit 'institution pending verification' group.
+Primary affiliation policy: explicitly curated affiliation #1 from a paper >
+first author's affiliation recorded for that specific paper > corresponding-author
+institution as transparent proxy > Unknown. Missing proof is never invented.
+Original individual paper author affiliations / roles remain in verified_roles.
 """
-import argparse
-import csv
-import json
-import sys
-from collections import defaultdict
-from datetime import datetime, timezone
+import argparse,csv,json,sys
 from pathlib import Path
+from datetime import datetime,timezone
+from collections import defaultdict
+from build_graph import parse_source,build_graph,normalize,uid
 
-from build_graph import build_graph, parse_source, normalize, uid
+UNKNOWN='__unknown__'
+HEAD=['paper_title','author_name','institution','role','evidence_url']
 
-ALLOWED_ROLES = {'first', 'cofirst', 'corresponding'}
-PENDING_KEY = '__pending__'
-PENDING_LABEL = 'Institution pending verification / 机构待核实'
-FIELDS = ['paper_title', 'author_name', 'institution', 'role', 'evidence_url']
+def read_csv(path):
+    with path.open(encoding='utf-8-sig',newline='') as f:return list(csv.DictReader(f))
 
-
-def load_annotations(path, papers):
-    warnings = []
-    by_title = {normalize(p['title']): p for p in papers}
-    verified = []
-    if not path.exists():
-        return [], [f'{path} missing: institution grouping will be unverified']
-    with path.open('r', encoding='utf-8-sig', newline='') as f:
-        reader = csv.DictReader(f)
-        missing = set(FIELDS) - set(reader.fieldnames or [])
-        if missing:
-            raise ValueError('Annotation CSV missing required columns: ' + ', '.join(sorted(missing)))
-        seen = set()
-        for i, row in enumerate(reader, start=2):
-            title = (row.get('paper_title') or '').strip()
-            name = (row.get('author_name') or '').strip()
-            institution = (row.get('institution') or '').strip()
-            role = (row.get('role') or '').strip().lower()
-            evidence = (row.get('evidence_url') or '').strip()
-            if not title and not name and not institution:
-                continue
-            # Blank affiliation is a TODO, not evidence of an affiliation.
-            if not institution:
-                continue
-            p = by_title.get(normalize(title))
-            if not p:
-                warnings.append(f'annotations row {i}: paper title not found: {title[:70]}')
-                continue
-            if not name or normalize(name) not in {normalize(n) for n in p['authors']}:
-                warnings.append(f'annotations row {i}: author not found on paper: {name} / {title[:55]}')
-                continue
-            if role not in ALLOWED_ROLES:
-                warnings.append(f'annotations row {i}: invalid role {role!r}; choose {sorted(ALLOWED_ROLES)}')
-                continue
-            if role == 'first' and normalize(name) != normalize(p['authors'][0]):
-                warnings.append(f'annotations row {i}: first author mismatch: {name} / {title[:55]}')
-                continue
-            if not (evidence.startswith('https://') or evidence.startswith('http://')):
-                warnings.append(f'annotations row {i}: evidence_url required for verified institution: {title[:55]}')
-                continue
-            key = (p['id'], normalize(name), normalize(institution), role)
-            if key in seen:
-                continue
-            seen.add(key)
-            verified.append({
-                'paper_id': p['id'], 'author_id': uid('a', normalize(name)),
-                'name': name, 'institution': institution,
-                'role': role, 'evidence_url': evidence,
-            })
-    return verified, warnings
-
-
-def build_institution_data(papers, authors, annotations):
-    authors_by_id = {a['id']: a for a in authors}
-    annotated_by_paper = defaultdict(list)
-    for x in annotations:
-        annotated_by_paper[x['paper_id']].append(x)
+def build_dataset(readme,roles_path,primary_path):
+    parsed,warnings,raw=parse_source(readme)
+    authors,papers,edges=build_graph(parsed)
+    mapping={normalize(p['title']):p for p in papers}
     for p in papers:
-        p['first_author_id'] = p['author_ids'][0] if p['author_ids'] else None
-        p['verified_roles'] = annotated_by_paper.get(p['id'], [])
-        p['corresponding_author_ids'] = sorted({x['author_id'] for x in p['verified_roles'] if x['role'] == 'corresponding'})
-        p['institution_status'] = 'verified' if p['verified_roles'] else 'pending'
-
-    groups = {}  # institution name -> group
+        p['first_author_id']=p['author_ids'][0] if p['author_ids'] else None
+        p['verified_roles']=[]
+    for row in read_csv(roles_path):
+        name=(row.get('author_name') or '').strip();inst=(row.get('institution') or '').strip()
+        p=mapping.get(normalize(row.get('paper_title','')))
+        if not p or not name or not inst:continue
+        role=(row.get('role') or '').strip().lower()
+        if role not in {'first','cofirst','corresponding'}:continue
+        if normalize(name) not in {normalize(n) for n in p['authors']}:
+            warnings.append(f'Unknown author annotation: {name} / {p["title"][:40]}');continue
+        if role=='first' and normalize(name)!=normalize(p['authors'][0]):continue
+        url=row.get('evidence_url','').strip()
+        if not url.startswith(('https://','http://')):continue
+        rec={'author_id':uid('a',normalize(name)),'name':name,'institution':inst,'role':role,'evidence_url':url,'source_type':'paper_record'}
+        if rec not in p['verified_roles']:p['verified_roles'].append(rec)
+    overrides={}
+    if primary_path.exists():
+        for row in read_csv(primary_path):
+            key=normalize(row.get('paper_title',''))
+            if key and key in mapping and row.get('primary_institution','').strip() and row.get('evidence_url','').startswith(('http://','https://')):
+                overrides[key]=row
+            elif key: warnings.append('Invalid or unmatched primary affiliation override: '+row.get('paper_title',''))
     for p in papers:
-        recs = p['verified_roles']
-        institutions = {x['institution'] for x in recs} or {PENDING_KEY}
-        for institution in institutions:
-            if institution not in groups:
-                groups[institution] = {
-                    'id': uid('i', normalize(institution)),
-                    'name': PENDING_LABEL if institution == PENDING_KEY else institution,
-                    'verified': institution != PENDING_KEY,
-                    'paper_ids': [], 'representatives': [], 'author_ids': [],
-                }
-            g = groups[institution]
-            g['paper_ids'].append(p['id'])
-            g['author_ids'].extend(p['author_ids'])
-            reps = [x for x in recs if x['institution'] == institution]
-            if institution == PENDING_KEY and p['first_author_id']:
-                # Known from author order, but affiliation remains UNKNOWN.
-                reps = [{'paper_id': p['id'], 'author_id': p['first_author_id'],
-                         'name': authors_by_id[p['first_author_id']]['name'],
-                         'institution': '', 'role': 'first', 'evidence_url': ''}]
-            g['representatives'].extend(reps)
-    result = []
-    for g in groups.values():
-        g['paper_ids'] = sorted(set(g['paper_ids']))
-        g['author_ids'] = sorted(set(g['author_ids']))
-        g['paper_count'] = len(g['paper_ids'])
-        rep_by_author = defaultdict(lambda: {'author_id': '', 'name': '', 'roles': set(), 'paper_ids': set(), 'evidence_urls': set()})
-        for r in g['representatives']:
-            a = rep_by_author[r['author_id']]
-            a['author_id'] = r['author_id']; a['name'] = r['name']; a['roles'].add(r['role'])
-            a['paper_ids'].add(r['paper_id'])
-            if r['evidence_url']: a['evidence_urls'].add(r['evidence_url'])
-        g['representatives'] = [{
-            'author_id': x['author_id'], 'name': x['name'], 'roles': sorted(x['roles']),
-            'paper_ids': sorted(x['paper_ids']), 'evidence_urls': sorted(x['evidence_urls']),
-        } for x in sorted(rep_by_author.values(), key=lambda x: (-len(x['paper_ids']), x['name'].casefold()))]
-        g['representative_count'] = len(g['representatives'])
-        result.append(g)
-    return sorted(result, key=lambda x: (not x['verified'], -x['paper_count'], x['name'].casefold()))
-
-
-def export_blank_rows(papers, path):
-    """Convenience editor: one blank institution row for each README first author.
-    This never overwrites a populated CSV; use an external editor to merge rows.
-    """
-    if path.exists():
-        raise FileExistsError(f'Will not overwrite existing file: {path}')
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open('w', encoding='utf-8-sig', newline='') as f:
-        writer = csv.DictWriter(f, fieldnames=FIELDS)
-        writer.writeheader()
-        for p in sorted(papers, key=lambda p: (-p['year'], p['title'])):
-            writer.writerow({'paper_title': p['title'], 'author_name': p['authors'][0] if p['authors'] else '',
-                             'institution': '', 'role': 'first', 'evidence_url': ''})
-
+        o=overrides.get(normalize(p['title']))
+        first=[r for r in p['verified_roles'] if r['role']=='first' and normalize(r['name'])==normalize(p['authors'][0])]
+        corr=[r for r in p['verified_roles'] if r['role']=='corresponding']
+        if o:
+            name=o['primary_institution'].strip();status='paper_first_affiliation';url=o['evidence_url'].strip()
+        elif first:
+            # First author can list multiple affiliations; source list order is only a fallback.
+            # To certify affiliation #1, add an explicit override in primary_affiliations.csv.
+            name=first[0]['institution'];url=first[0]['evidence_url']
+            status='first_author_affiliation' if len({r['institution'] for r in first})==1 else 'first_author_multi_affiliation_unchecked'
+        elif corr:
+            name=corr[0]['institution'];url=corr[0]['evidence_url'];status='corresponding_reference'
+        else:
+            name='机构待核实';url='';status='unknown'
+        p.update(primary_institution=name, primary_status=status,primary_evidence_url=url,
+                 institution_id=uid('i',normalize(name)) if status!='unknown' else UNKNOWN,
+                 corresponding_author_ids=sorted({r['author_id'] for r in corr}))
+    ins={}
+    for p in papers:
+        key=p['institution_id'];g=ins.setdefault(key,{'id':key,'name':p['primary_institution'],'paper_ids':[],'author_ids':[],'lead_author_ids':[],'statuses':[]})
+        g['paper_ids'].append(p['id']);g['author_ids']+=p['author_ids'];g['lead_author_ids'].append(p['first_author_id'])
+        g['statuses'].append(p['primary_status'])
+    for g in ins.values():
+        g['paper_count']=len(g['paper_ids'])
+        g['author_ids']=sorted(set(g['author_ids']));g['lead_author_ids']=sorted(set(g['lead_author_ids']));g['statuses']=sorted(set(g['statuses']))
+        g['is_singleton']=g['paper_count']==1
+        g['is_unknown']=g['id']==UNKNOWN
+    groups=sorted(ins.values(),key=lambda x:(x['is_unknown'],-x['paper_count'],x['name'].casefold()))
+    counts={}
+    for a in authors:
+        a['first_author_paper_ids']=[p['id'] for p in papers if p['first_author_id']==a['id']]
+        a['corresponding_paper_ids']=[p['id'] for p in papers if a['id'] in p['corresponding_author_ids']]
+        a['primary_institutions']=sorted({p['primary_institution'] for p in papers if p['first_author_id']==a['id'] and p['primary_status']!='unknown'})
+    meta={'source':'README.md + paper_roles.csv + primary_affiliations.csv','generated_utc':datetime.now(timezone.utc).isoformat(timespec='seconds'),
+          'raw_entries':raw,'unique_papers':len(papers),'researchers':len(authors),'coauthorship_edges':len(edges),
+          'institutions':len(groups)-int(UNKNOWN in ins), 'major_institutions':sum(not g['is_singleton'] and not g['is_unknown'] for g in groups),
+          'singleton_institutions':sum(g['is_singleton'] and not g['is_unknown'] for g in groups),
+          'unknown_papers':sum(p['primary_status']=='unknown' for p in papers),
+          'status_counts':dict(__import__('collections').Counter(p['primary_status'] for p in papers)),
+          'warnings':warnings,
+          'identity_note':'Authors are identified by normalized names (NOT ORCID-disambiguated).',
+          'institution_note':'One primary institution per paper. Explicit #1 paper affiliation prioritized; first-author or corresponding affiliation used as labeled fallback. Single-paper institutions collapsed only in the UI.'}
+    return {'meta':meta,'papers':papers,'authors':authors,'edges':edges,'institutions':groups}
 
 def main():
-    ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument('--input', type=Path, default=Path('README.md'))
-    ap.add_argument('--annotations', type=Path, default=Path('data/paper_roles.csv'))
-    ap.add_argument('--output', type=Path, default=Path('docs/data/graph.json'))
-    ap.add_argument('--export-template', type=Path, help='Write a blank, paper-complete editor CSV and exit')
-    args = ap.parse_args()
-    papers, warnings, raw = parse_source(args.input.read_text(encoding='utf-8'))
-    if not papers:
-        sys.exit('No paper entries parsed. Keep the original README markdown format.')
-    if args.export_template:
-        export_blank_rows(papers, args.export_template)
-        print(f'Wrote {len(papers)} paper rows to {args.export_template}')
-        return
-    authors, papers, edges = build_graph(papers)
-    annotations, more_warnings = load_annotations(args.annotations, papers)
-    groups = build_institution_data(papers, authors, annotations)
-    payload = {
-        'meta': {
-            'source': args.input.name,
-            'generated_utc': datetime.now(timezone.utc).isoformat(timespec='seconds'),
-            'raw_entries': raw, 'unique_papers': len(papers),
-            'researchers': len(authors), 'coauthorship_edges': len(edges),
-            'verified_institutions': sum(g['verified'] for g in groups),
-            'verified_papers': sum(p['institution_status'] == 'verified' for p in papers),
-            'warnings': warnings + more_warnings,
-            'identity_note': 'Same-normalized-name author IDs are provisional; ORCID/OpenAlex disambiguation pending.',
-            'affiliation_note': 'Only source-backed first/co-first/corresponding roles establish institution membership; coauthors are not assumed to share affiliation.',
-        },
-        'authors': authors, 'papers': papers, 'edges': edges,
-        'institutions': groups,
-    }
-    args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-    print(f'Parsed {raw} entries → {len(papers)} papers, {len(authors)} names, {len(edges)} coauthor edges')
-    print(f'Institution annotations: {len(annotations)} verified records; {len(groups)} cards incl. pending')
-    for msg in payload['meta']['warnings']:
-        print('WARNING:', msg, file=sys.stderr)
-
-if __name__ == '__main__':
-    main()
+    a=argparse.ArgumentParser();a.add_argument('--input',type=Path,default=Path('README.md'));a.add_argument('--annotations',type=Path,default=Path('data/paper_roles.csv'));a.add_argument('--primary',type=Path,default=Path('data/primary_affiliations.csv'));a.add_argument('--output',type=Path,default=Path('docs/data/graph.json'))
+    x=a.parse_args();d=build_dataset(x.input.read_text(encoding='utf-8'),x.annotations,x.primary)
+    x.output.parent.mkdir(parents=True,exist_ok=True);x.output.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    print(json.dumps({k:d['meta'][k] for k in ['unique_papers','researchers','coauthorship_edges','institutions','major_institutions','singleton_institutions','unknown_papers','status_counts']},ensure_ascii=False,indent=2))
+    for warn in d['meta']['warnings']:print('WARNING:',warn,file=sys.stderr)
+if __name__=='__main__':main()

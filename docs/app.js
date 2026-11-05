@@ -1,132 +1,126 @@
-/* VLT Institution Atlas v1. Group membership is strictly based on source-verified
-   first/co-first/corresponding authorship annotations in data/paper_roles.csv.
-   Other coauthors are visualized but NOT treated as institution members. */
+/* VLT Research Atlas — network-first, institution-overview-second.
+   Uses only README-derived coauthorships; never fabricates links or affiliations. */
 'use strict';
-const $ = id => document.getElementById(id);
-const byId = new Map();
-let db = null, cy = null, activeInstitute = null, selectedAuthor = null, activeRole = 'all';
-let filteredPapers = [];
-const collator = new Intl.Collator('en',{sensitivity:'base'});
-const ROLES = {first:'第一作者',cofirst:'共同第一作者',corresponding:'通讯作者'};
-const COLORS = ['#477bee','#10ada6','#8c79d7','#ec9b4c','#6299bc','#d47a9e'];
-const e = (tag,text='',cls='') => {const n=document.createElement(tag);n.textContent=text;if(cls)n.className=cls;return n;};
-function link(parent,text,href,cls='') {const n=e('a',text,cls);if(typeof href==='string'&&/^https?:\/\//.test(href)){n.href=href;n.target='_blank';n.rel='noopener noreferrer';}parent.appendChild(n);return n;}
-function paperMatch(p) {return (!($('category').value)||p.categories.includes($('category').value)) && (!$('ccf').value||p.ccf===$('ccf').value) && p.year>=Number($('fromYear').value) && p.year<=Number($('toYear').value);}
-function groupPapers(g) {const ids=new Set(g.paper_ids);return filteredPapers.filter(p=>ids.has(p.id));}
-function groupRolePapers(g,role) {const pp=groupPapers(g);if(role==='all')return pp;const allowed=new Set();for(const rep of g.representatives){if(rep.roles.includes(role)||(role==='first'&&rep.roles.includes('cofirst'))) for(const id of rep.paper_ids)allowed.add(id);}return pp.filter(p=>allowed.has(p.id));}
-function presentAuthors(g,ps) {const s=new Set(ps.map(p=>p.id));return g.representatives.map(r=>({...r,currentCount:r.paper_ids.filter(id=>s.has(id)).length})).filter(r=>r.currentCount>0).sort((a,b)=>b.currentCount-a.currentCount||collator.compare(a.name,b.name));}
-function mark(t,label,cls='') {t.appendChild(e('span',label,'tag '+cls));}
-function showOverview() {
-  activeInstitute=null;selectedAuthor=null;activeRole='all';if(cy){cy.destroy();cy=null;}
-  $('institutionView').hidden=true;$('overview').hidden=false;$('back').hidden=true;$('fit').hidden=true;
-  $('viewKicker').textContent='INSTITUTION ATLAS';$('viewTitle').textContent='研究机构一览';
-  const q=$('search').value.trim().toLowerCase();const eligible=[];
-  for(const g of db.institutions){const ps=groupPapers(g);if(!ps.length)continue;
-    const searchMatch=!q||g.name.toLowerCase().includes(q)||g.representatives.some(r=>r.name.toLowerCase().includes(q))||ps.some(p=>p.authors.some(a=>a.toLowerCase().includes(q)));
-    if(searchMatch)eligible.push({g,ps});}
-  $('viewStatus').textContent=`${filteredPapers.length} 篇论文 · ${eligible.filter(x=>x.g.verified).length} 所已核实机构 · 持续完善中`;
-  const host=$('overview');host.replaceChildren();if(!eligible.length){host.appendChild(e('div','没有匹配的机构或论文，请修改筛选条件。','institution-empty'));return;}
-  const grid=e('div','','institution-grid');host.appendChild(grid);
-  eligible.forEach(({g,ps},i)=>{
-    const card=e('button','','institution-card'+(g.verified?'':' pending'));card.type='button';card.style.setProperty('--card-color',g.verified?COLORS[i%COLORS.length]:'#a18a5b');
-    const top=e('div','','institution-top');top.append(e('span',g.verified?'INSTITUTION':'PENDING VERIFICATION','institution-code'),e('span',g.verified?'来源已核实':'待补充机构','verified-pill'));
-    card.appendChild(top);card.appendChild(e('div',g.verified?g.name:'机构待核实 · Unverified','institution-name'));
-    const reps=presentAuthors(g,ps);card.appendChild(e('div',g.verified?'代表作者：'+reps.slice(0,3).map(x=>x.name).join(' · '):'其他论文将保留在此，直到补充可核验的作者机构。','institution-people'));
-    const bottom=e('div','','institution-footer');bottom.append(e('span',`${ps.length} 篇论文 · ${reps.length} 位署名代表`),e('b','查看研究者 ↗'));card.appendChild(bottom);
-    card.onclick=()=>openInstitution(g.id);grid.appendChild(card);
-  });
+const $=id=>document.getElementById(id), create=(tag,text='',cls='')=>{const x=document.createElement(tag);x.textContent=text;if(cls)x.className=cls;return x;};
+const PALETTE=['#4E7DEE','#10AAA3','#9375E0','#E4A354','#4D9EC6','#DF7F9E','#6E9A61','#7180B2'];
+const ROLE={first:'第一作者',cofirst:'共同一作',corresponding:'通讯作者'};
+const STATUS={paper_first_affiliation:'论文首页第一单位（已核实）',first_author_affiliation:'第一作者署名单位参考',first_author_multi_affiliation_unchecked:'第一作者有多个署名单位，顺序待复核',corresponding_reference:'通讯作者单位参考（非第一单位）',unknown:'机构待核实'};
+let db,cy=null,selectedId=null,selectedInstitution=null,activeRole='all',shownPapers=[],visibleAuthorIds=new Set(),currentData=null,otherOpen=false;
+let amap=new Map(),pmap=new Map();
+function makeLink(parent,label,url,cls=''){const x=create('a',label,cls);if(typeof url==='string'&&/^https?:\/\//.test(url)){x.href=url;x.target='_blank';x.rel='noopener noreferrer';}parent.append(x);return x;}
+function filterPapers(){const cat=$('category').value,ccf=$('ccf').value,start=Number($('fromYear').value),end=Number($('toYear').value);
+ return db.papers.filter(p=>(!cat||p.categories.includes(cat))&&(!ccf||p.ccf===ccf)&&p.year>=start&&p.year<=end&&(!selectedInstitution||p.institution_id===selectedInstitution));}
+function authorScore(id,counts,first,corr,degrees){return (counts.get(id)||0)*12+(first.get(id)||0)*6+(corr.get(id)||0)*5+Math.min(10,degrees.get(id)||0)*.2;}
+function coauthorGraph(papers){const pid=new Set(papers.map(p=>p.id));const counts=new Map(),first=new Map(),corr=new Map(),adj=new Map(),edges=[];
+ for(const p of papers){for(const a of p.author_ids){counts.set(a,(counts.get(a)||0)+1);if(!adj.has(a))adj.set(a,[]);}if(p.first_author_id)first.set(p.first_author_id,(first.get(p.first_author_id)||0)+1);for(const a of p.corresponding_author_ids||[])corr.set(a,(corr.get(a)||0)+1);}
+ for(const e of db.edges){const weight=e.paper_ids.filter(p=>pid.has(p)).length;if(!weight)continue;edges.push({...e,weight});adj.get(e.source)?.push({id:e.target,weight});adj.get(e.target)?.push({id:e.source,weight});}
+ const degree=new Map([...adj].map(([id,es])=>[id,es.length]));
+ const rank=(a,b)=>authorScore(b,counts,first,corr,degree)-authorScore(a,counts,first,corr,degree)||((amap.get(a)?.name||'').localeCompare(amap.get(b)?.name||''));
+ const seen=new Set(),groups=[];
+ for(const id of counts.keys()){if(seen.has(id))continue;const queue=[id],members=[];seen.add(id);for(let k=0;k<queue.length;k++){const v=queue[k];members.push(v);for(const n of adj.get(v)||[]){if(!seen.has(n.id)){seen.add(n.id);queue.push(n.id);}}}members.sort(rank);const gp=new Set();for(const p of papers)if(p.author_ids.some(a=>members.includes(a)))gp.add(p.id);groups.push({ids:members,papers:gp.size,score:members.reduce((s,id)=>s+authorScore(id,counts,first,corr,degree),0)});}
+ groups.sort((a,b)=>b.papers-a.papers||b.score-a.score);
+ return {counts,first,corr,adj,edges,groups,rank};}
+function pickPeople(d,q,limit){let chosen=[];
+ if(q){const matches=[...d.counts.keys()].filter(id=>(amap.get(id)?.name||'').toLowerCase().includes(q)).sort(d.rank).slice(0,8);
+   const hit=new Set(matches);const neighbors=[];for(const m of matches)for(const n of d.adj.get(m)||[])neighbors.push(n);
+   neighbors.sort((a,b)=>b.weight-a.weight||d.rank(a.id,b.id));for(const n of neighbors){if(hit.size>=limit)break;hit.add(n.id);}chosen=[...hit];
+   if(!matches.length)return [];
+ }else{
+   const activeGroups=d.groups.slice(0,Math.min(d.groups.length,8));let level=0;
+   while(chosen.length<limit&&activeGroups.some(g=>g.ids[level])){for(const g of activeGroups){if(chosen.length>=limit)break;if(g.ids[level])chosen.push(g.ids[level]);}level++;}
+   if(chosen.length<limit){const remaining=[...d.counts.keys()].filter(id=>!chosen.includes(id)).sort(d.rank);chosen.push(...remaining.slice(0,limit-chosen.length));}
+ }
+ return chosen.sort(d.rank).slice(0,limit);
 }
-function visiblePapers() {if(!activeInstitute)return [];return groupRolePapers(activeInstitute,activeRole);}
-function openInstitution(id) {const g=db.institutions.find(x=>x.id===id);if(!g)return;activeInstitute=g;activeRole='all';selectedAuthor=null;
-  $('overview').hidden=true;$('institutionView').hidden=false;$('back').hidden=false;$('fit').hidden=false;
-  $('viewKicker').textContent=g.verified?'INSTITUTION PROFILE':'ANNOTATION QUEUE';$('viewTitle').textContent=g.verified?g.name:'机构待核实';
-  renderInstitution();}
-function renderInstitution(){const g=activeInstitute;if(!g)return;const gp=groupPapers(g);if(!gp.length){showOverview();return;}
-  $('viewStatus').textContent=`${gp.length} 篇收录论文 · ${g.verified?'基于已核实作者角色归属':'机构信息尚未核实'}`;
-  const host=$('institutionIntro');host.replaceChildren();
-  host.append(e('div',g.verified?'VERIFIED AUTHOR AFFILIATION':'AWAITING AUTHOR AFFILIATION','institution-intro-kicker'),
-              e('h3',g.verified?g.name:'资料待核实'),
-              e('p',g.verified?'本机构仅收录有论文证据支持的一作/共同一作/通讯作者；同篇论文可能对应多个机构。':'尚未找到足够的作者机构信息。下面仍展示第一作者和论文，但不把作者归属于任何具体机构。'));
-  const repBox=e('div','','rep-chips');for(const rep of presentAuthors(g,gp).slice(0,12)){
-    const chip=e('button',rep.name,'rep-chip');chip.type='button';chip.appendChild(e('small',rep.roles.map(r=>ROLES[r]||r).join(' / ')));
-    chip.onclick=()=>{activeRole='all';updateRoleButtons();renderRole();focusAuthor(rep.author_id);};repBox.appendChild(chip);
-  }host.appendChild(repBox);
-  updateRoleButtons();renderRole();}
-function updateRoleButtons() {document.querySelectorAll('.role-btn').forEach(b=>{b.classList.toggle('active',b.dataset.role===activeRole);b.setAttribute('aria-pressed',String(b.dataset.role===activeRole));});}
-function renderRole(){if(!activeInstitute)return;const papers=visiblePapers();selectedAuthor=null;
-  const status=activeRole==='all'?'全部':activeRole==='first'?'第一作者（含共同一作）':'通讯作者';
-  $('roleStatus').textContent=`${status} · ${papers.length} 篇`;
-  $('paperCount').textContent=papers.length+' 篇';
-  renderPaperList(papers);renderGraph(papers);showDetail(null,papers);}
-function roleRecords(p,authorId) {if(!p.verified_roles?.length){if(p.first_author_id===authorId)return [{role:'first',institution:'',evidence_url:''}];return [];}return p.verified_roles.filter(x=>x.author_id===authorId);}
-function renderPaperList(ps){const host=$('paperList');host.replaceChildren();if(!ps.length){host.appendChild(e('div','该角色下暂无已核实的论文记录。','institution-empty'));return;}
-  for(const p of ps.slice().sort((a,b)=>b.year-a.year)){const c=e('article','','paper-card');link(c,p.title,p.paper_url);
-    c.appendChild(e('div',`${p.venue} ${p.year} · CCF ${p.ccf}`,'paper-meta'));
-    const tags=e('div','','tags');p.categories.forEach(cat=>mark(tags,cat));
-    const recs=p.verified_roles?.filter(x=>x.institution===activeInstitute.name)||[];
-    if(recs.length){recs.forEach(x=>mark(tags,`${x.name} · ${ROLES[x.role]}`, 'verified'));}
-    else mark(tags,'机构未核实','pending');c.appendChild(tags);host.appendChild(c);}
+function graphElements(d,ids){const idSet=new Set(ids),sEdges=d.edges.filter(x=>idSet.has(x.source)&&idSet.has(x.target)),neighbors=new Map(ids.map(id=>[id,[]]));
+ for(const ed of sEdges){neighbors.get(ed.source).push(ed.target);neighbors.get(ed.target).push(ed.source);}
+ const components=[],visited=new Set();for(const id of ids){if(visited.has(id))continue;const q=[id];visited.add(id);for(let k=0;k<q.length;k++)for(const v of neighbors.get(q[k]))if(!visited.has(v)){visited.add(v);q.push(v);}components.push(q.sort(d.rank));}
+ components.sort((a,b)=>b.length-a.length||d.rank(a[0],b[0]));
+ // A readable clustered preset, rather than a hairball with hundreds of persistent edges.
+ const columns=components.length===1?1:components.length<=4?2:3;
+ const coords=new Map();components.forEach((comp,ci)=>{const cx=350+(ci%columns)*680,cy=340+Math.floor(ci/columns)*610;
+   comp.forEach((id,j)=>{if(j===0){coords.set(id,{x:cx,y:cy});return;}const k=j-1;let idx=k,ring=0;while(idx>=(ring+1)*8){idx-=(ring+1)*8;ring++;}
+    const n=(ring+1)*8,radius=82+ring*83,ang=(-Math.PI/2)+idx*2*Math.PI/n+((ring%2)?0.18:0);
+    coords.set(id,{x:cx+radius*Math.cos(ang),y:cy+radius*Math.sin(ang)});});});
+ const cmap=new Map();components.forEach((comp,i)=>comp.forEach(id=>cmap.set(id,i)));
+ // Keep a maximum-weight spanning forest as the visible baseline; retain all
+ // real edges for the clicked author's full collaboration neighborhood.
+ const root=new Map(ids.map(id=>[id,id]));const find=x=>{let y=x;while(root.get(y)!==y){y=root.get(y);}return y;};
+ const visible=new Set();for(const ed of sEdges.slice().sort((a,b)=>b.weight-a.weight)){const a=find(ed.source),b=find(ed.target);if(a!==b){root.set(a,b);visible.add([ed.source,ed.target].sort().join('|'));}}
+ const nodes=ids.map(id=>{const g=cmap.get(id),c=d.counts.get(id)||1,f=d.first.get(id)||0,co=d.corr.get(id)||0,group=components[g];
+   const label=(group.indexOf(id)<2||c>=3)?amap.get(id)?.name||id:'';
+   return {data:{id,label,fullName:amap.get(id)?.name||id,count:c,first:f,corresponding:co,color:PALETTE[g%PALETTE.length]},position:coords.get(id),classes:(f?'firstAuthor ':'')+(co?'correspondingAuthor':'')};});
+ const edgeElems=sEdges.map(e=>({data:{id:e.source+'_'+e.target,source:e.source,target:e.target,weight:e.weight},classes:visible.has([e.source,e.target].sort().join('|'))?'backbone':''}));
+ return {elements:[...nodes,...edgeElems],components};}
+function clearHighlights(){if(!cy)return;cy.elements().removeClass('dimmed connected chosen related roleMuted');if(activeRole!=='all'){cy.nodes().forEach(n=>{if(activeRole==='first'&&!n.data('first')||activeRole==='corresponding'&&!n.data('corresponding'))n.addClass('roleMuted');});}}
+function spotlight(id){if(!cy)return;const node=cy.getElementById(id);if(node.empty())return;clearHighlights();cy.nodes().addClass('dimmed');cy.edges().addClass('dimmed');const edges=node.connectedEdges(),neighbors=edges.connectedNodes();node.removeClass('dimmed roleMuted').addClass('chosen');neighbors.removeClass('dimmed').addClass('connected');edges.removeClass('dimmed').addClass('related');}
+function renderGraph(){shownPapers=filterPapers();const d=coauthorGraph(shownPapers),q=$('search').value.trim().toLowerCase(),ids=pickPeople(d,q,Number($('maxNodes').value));visibleAuthorIds=new Set(ids);currentData=d;
+ $('networkStatus').textContent=`${shownPapers.length} 篇论文 · ${d.counts.size} 位作者 · 当前展示 ${ids.length} 位`;
+ $('institutionFilterLabel').textContent=selectedInstitution?`已聚焦：${db.institutions.find(g=>g.id===selectedInstitution)?.name||'机构'}`:'展示主要合作社群，点击研究者查看完整相关连线';
+ $('clearInstitution').hidden=!selectedInstitution;
+ if(cy){cy.destroy();cy=null;}const el=$('cy');el.replaceChildren();
+ if(typeof cytoscape!=='function'){el.append(create('div','Cytoscape 加载失败，请检查网络连接。','empty-state'));return;}
+ if(!ids.length){el.append(create('div','无匹配研究者，请修改姓名或筛选条件。','empty-state'));renderEmpty();return;}
+ const graph=graphElements(d,ids);cy=cytoscape({container:el,elements:graph.elements,layout:{name:'preset',fit:true,padding:62,animate:false},minZoom:.11,maxZoom:2.8,wheelSensitivity:.17,boxSelectionEnabled:false,style:[
+  {selector:'node',style:{'background-color':'data(color)','width':'mapData(count,1,13,20,46)','height':'mapData(count,1,13,20,46)','border-color':'#fff','border-width':3,'label':'data(label)','color':'#415b82','font-size':11,'font-weight':700,'text-valign':'bottom','text-margin-y':9,'text-wrap':'wrap','text-max-width':'115px','text-background-color':'#fff','text-background-opacity':.89,'text-background-padding':'3px'}},
+  {selector:'node.firstAuthor',style:{'border-width':4,'border-color':'#c8d9fd'}},
+  {selector:'edge',style:{'line-color':'#b4c4db','width':1.2,'opacity':.025,'curve-style':'bezier'}},
+  {selector:'edge.backbone',style:{'line-color':'#a8bfdc','width':1.65,'opacity':.29}},
+  {selector:'node.roleMuted',style:{'opacity':.17,'text-opacity':.08}},
+  {selector:'node.dimmed',style:{'opacity':.16,'text-opacity':.07}},
+  {selector:'edge.dimmed',style:{'opacity':.015}},
+  {selector:'node.connected',style:{'opacity':1,'border-color':'#bdd3ff','border-width':4}},
+  {selector:'node.chosen',style:{'background-color':'#f29b53','border-color':'#ffe5d0','border-width':7,'opacity':1,'color':'#a7662f','label':'data(fullName)','font-size':13,'font-weight':800,'z-index':40}},
+  {selector:'edge.related',style:{'line-color':'#eeaa77','width':'mapData(weight,1,9,2,5)','opacity':.76,'z-index':20}},
+ ]});
+ cy.on('tap','node',ev=>{selectedId=ev.target.id();spotlight(selectedId);renderDetail(selectedId);});
+ cy.on('tap',ev=>{if(ev.target===cy){selectedId=null;clearHighlights();renderEmpty();}});
+ cy.on('mouseover','node',ev=>{if(!selectedId)spotlight(ev.target.id());});
+ cy.on('mouseout','node',()=>{if(!selectedId)clearHighlights();});
+ if(selectedId&&visibleAuthorIds.has(selectedId)){spotlight(selectedId);renderDetail(selectedId);}else{selectedId=null;clearHighlights();renderEmpty();}
 }
-function renderGraph(ps){if(cy){cy.destroy();cy=null;}const wrap=$('cy');wrap.replaceChildren();if(!ps.length){wrap.appendChild(e('div','该筛选条件下没有作者网络。','institution-empty'));return;}
-  const counts=new Map(),selectedIds=new Set(ps.map(p=>p.id)),reps=new Map();for(const p of ps){for(const aid of p.author_ids)counts.set(aid,(counts.get(aid)||0)+1);}
-  for(const r of activeInstitute.representatives){const n=r.paper_ids.filter(pid=>selectedIds.has(pid)).length;if(n)reps.set(r.author_id,n);}
-  const cap=Number($('maxNodes').value),rank=(a,b)=>((reps.has(b)?100:0)+(counts.get(b)||0))-((reps.has(a)?100:0)+(counts.get(a)||0))||collator.compare(byId.get(a)?.name||'',byId.get(b)?.name||'');
-  const ids=[...counts.keys()].sort(rank).slice(0,cap),idset=new Set(ids);
-  const nodes=ids.map(id=>({data:{id,label:byId.get(id)?.name||id,count:counts.get(id),isRep:reps.has(id)?1:0},classes:reps.has(id)?'verified':'coauthor'}));
-  const edges=[];for(const x of db.edges){if(!idset.has(x.source)||!idset.has(x.target))continue;const w=x.paper_ids.filter(pid=>selectedIds.has(pid)).length;if(w)edges.push({data:{id:`${x.source}_${x.target}`,source:x.source,target:x.target,weight:w}});}
-  // A minimum spanning forest ensures that the initial view has few edges, yet
-  // every actual collaboration remains selectable when an author is focused.
-  const parent=new Map(ids.map(id=>[id,id]));const root=x=>{let n=x;while(parent.get(n)!==n)n=parent.get(n);return n;};
-  for(const ed of edges.slice().sort((a,b)=>b.data.weight-a.data.weight)){
-    const a=root(ed.data.source),b=root(ed.data.target);if(a!==b){parent.set(a,b);ed.classes='backbone';}}
-  if(typeof cytoscape!=='function'){wrap.appendChild(e('div','Cytoscape 网络组件加载失败，请检查网络。','error'));return;}
-  cy=cytoscape({container:wrap,elements:[...nodes,...edges],minZoom:.18,maxZoom:2.6,wheelSensitivity:.15,
-    layout:{name:'concentric',animate:false,fit:true,padding:48,startAngle:Math.PI*1.5,minNodeSpacing:38,concentric:n=>n.data('isRep')?100+(n.data('count')||0):n.data('count')||1,levelWidth:()=>2},
-    style:[
-      {selector:'node',style:{'label':'data(label)','font-family':'Arial, sans-serif','font-size':10,'font-weight':600,'color':'#536b88','text-valign':'bottom','text-margin-y':7,'text-background-opacity':.88,'text-background-color':'#f9fcff','text-background-padding':'2px','text-wrap':'wrap','text-max-width':'100px','width':'mapData(count,1,10,20,42)','height':'mapData(count,1,10,20,42)','border-width':2,'border-color':'#a2b9d8','background-color':'#fff'}},
-      {selector:'node.verified',style:{'background-color':'#477ce9','border-color':'#c4d9ff','border-width':3,'color':'#265db8','font-size':11,'font-weight':700}},
-      {selector:'edge',style:{'width':1.3,'line-color':'#aac1df','opacity':.035,'curve-style':'bezier'}},
-      {selector:'edge.backbone',style:{'width':1.4,'line-color':'#a6c0e5','opacity':.34}},
-      {selector:'node.dimmed',style:{'opacity':.11,'text-opacity':.05}},
-      {selector:'edge.dimmed',style:{'opacity':.02}},
-      {selector:'node.neighbor',style:{'opacity':1,'border-color':'#8ebafe','border-width':3}},
-      {selector:'node.selected',style:{'background-color':'#fa9952','border-color':'#ffe0c3','border-width':6,'font-size':12,'font-weight':800,'color':'#d87b38','opacity':1,'z-index':20}},
-      {selector:'edge.related',style:{'opacity':.8,'line-color':'#f0a16a','width':'mapData(weight,1,9,2.2,5)','z-index':12}}
-    ]});
-  cy.on('tap','node',ev=>focusAuthor(ev.target.id()));
-  cy.on('tap',ev=>{if(ev.target===cy){selectedAuthor=null;clearFocus();showDetail(null,ps);}});
-  cy.on('mouseover','node',ev=>{if(!selectedAuthor)paintFocus(ev.target);});cy.on('mouseout','node',()=>{if(!selectedAuthor)clearFocus();});
+function renderEmpty(){const box=$('details');box.replaceChildren();const body=create('div','','empty-detail');body.append(create('span','◎','avatar-placeholder'),create('strong','选择一位研究者'),create('p','点击作者节点可以查看其署名论文、共同作者，以及相关机构信息。'));box.append(body);}
+function renderDetail(id){const a=amap.get(id),panel=$('details');if(!a){renderEmpty();return;}panel.replaceChildren();const authored=shownPapers.filter(p=>p.author_ids.includes(id)).sort((a,b)=>b.year-a.year),partners=new Map();for(const p of authored)for(const aid of p.author_ids)if(aid!==id)partners.set(aid,(partners.get(aid)||0)+1);
+ const header=create('div','','person-head'),avatar=create('div',a.name.split(/\s+/).slice(0,2).map(x=>x[0]).join(''),'avatar'),intro=create('div');intro.append(create('h3',a.name),create('p','Researcher · VLT Co-authorship'));header.append(avatar,intro);panel.append(header);
+ const metrics=create('div','','metric-row');for(const [v,title] of [[authored.length,'收录论文'],[partners.size,'共同署名作者']]){const m=create('div','','metric');m.append(create('strong',String(v)),create('span',title));metrics.append(m);}panel.append(metrics);
+ const lead=authored.filter(p=>p.first_author_id===id).length,corr=authored.filter(p=>(p.corresponding_author_ids||[]).includes(id)).length;
+ panel.append(create('div',`一作论文 ${lead} 篇 · 已核实通讯 ${corr} 篇`,'person-note'));
+ const institutions=[...new Set(authored.filter(p=>p.first_author_id===id).map(p=>p.primary_institution))];if(institutions.length){panel.append(create('div','第一作者论文主机构（不代表个人现任单位）','detail-label'));const chips=create('div','','chip-list');institutions.slice(0,6).forEach(n=>chips.append(create('span',n,'chip small')));panel.append(chips);}
+ panel.append(create('div','相关论文','detail-label'));
+ for(const p of authored.slice(0,15)){const wrap=create('div','','detail-paper');makeLink(wrap,p.title,p.paper_url);wrap.append(create('div',`${p.venue} ${p.year} · CCF ${p.ccf}`,'meta'));
+   const tags=[];if(p.first_author_id===id)tags.push('第一作者');if((p.corresponding_author_ids||[]).includes(id))tags.push('通讯作者');if(tags.length)wrap.append(create('div',tags.join(' / '),'source-indicator'));
+   wrap.append(create('div',`${p.primary_institution} · ${STATUS[p.primary_status]||'单位待核实'}`,'source-indicator'));
+   if(p.primary_evidence_url)makeLink(wrap,'机构依据 ↗',p.primary_evidence_url,'source-indicator');panel.append(wrap);}
+ panel.append(create('div','主要合著作者','detail-label'));const chipArea=create('div','','chip-list');for(const [aid,num] of [...partners.entries()].sort((a,b)=>b[1]-a[1]).slice(0,12)){const btn=create('button',`${amap.get(aid)?.name||aid} · ${num}`,'chip');btn.onclick=()=>focusAuthor(aid);chipArea.append(btn);}panel.append(chipArea);
 }
-function clearFocus(){if(cy)cy.elements().removeClass('dimmed neighbor selected related');}
-function paintFocus(n){if(!cy||n.empty())return;clearFocus();cy.nodes().addClass('dimmed');cy.edges().addClass('dimmed');
-  const edges=n.connectedEdges(), neighbors=edges.connectedNodes();n.removeClass('dimmed').addClass('selected');neighbors.removeClass('dimmed').addClass('neighbor');edges.removeClass('dimmed').addClass('related');}
-function focusAuthor(id){if(!activeInstitute)return;selectedAuthor=id;const n=cy?.getElementById(id);if(n&&!n.empty()){paintFocus(n);cy.animate({center:{eles:n},zoom:Math.min(1.32,Math.max(.85,cy.zoom()))},{duration:270});}
-  showDetail(id,visiblePapers());}
-function showDetail(id,ps){const host=$('details');host.replaceChildren();if(!id){const blank=e('div','','detail-placeholder');blank.append(e('span','◎'),e('strong','选择一位研究者'),e('p','点击图谱中的作者节点，可查看其论文与已核实的机构、作者角色。'));host.appendChild(blank);return;}
-  const a=byId.get(id);if(!a)return;const authored=ps.filter(p=>p.author_ids.includes(id));
-  host.append(e('h3',a.name,'detail-title'));
-  const attributions=authored.flatMap(p=>(p.verified_roles||[]).filter(x=>x.author_id===id&&x.institution===activeInstitute.name));
-  const roleText=attributions.length?`已核实：${[...new Set(attributions.map(x=>ROLES[x.role]))].join(' / ')} · ${activeInstitute.name}`:
-      (authored.some(p=>p.first_author_id===id)?'第一作者署名已知，机构待核实':'论文共同署名作者 · 该机构归属未经核实');
-  host.appendChild(e('div',roleText,'detail-meta'));
-  const collaborators=new Set();authored.forEach(p=>p.author_ids.forEach(aid=>{if(aid!==id)collaborators.add(aid);}));
-  const m=e('div','','metric-row');for(const [v,label] of [[authored.length,'相关论文'],[collaborators.size,'共同署名']]){const c=e('div','','mini-metric');c.append(e('strong',String(v)),e('small',label));m.appendChild(c);}host.appendChild(m);
-  host.appendChild(e('div','RELEVANT PAPERS','detail-section'));
-  for(const p of authored.slice().sort((x,y)=>y.year-x.year).slice(0,18)){const item=e('div','','paper-mini');link(item,p.title,p.paper_url);item.appendChild(e('small',`${p.venue} ${p.year} · CCF ${p.ccf}`));const roles=roleRecords(p,id);const r=roles.filter(x=>!x.institution||x.institution===activeInstitute.name);if(r.length)item.appendChild(e('small',r.map(x=>ROLES[x.role]+(x.institution?' · 来源已核实':' · 机构未核实')).join(' / ')));
-    for(const rr of r.filter(x=>x.evidence_url)) link(item,'核实来源 ↗',rr.evidence_url,'source-link');host.appendChild(item);}
+function focusAuthor(id){if(!visibleAuthorIds.has(id)){const author=amap.get(id);if(author){$('search').value=author.name;selectedInstitution=null;renderAll();}}
+ selectedId=id;if(cy&&visibleAuthorIds.has(id)){spotlight(id);const node=cy.getElementById(id);cy.animate({center:{eles:node},zoom:Math.min(1.25,Math.max(.70,cy.zoom()))},{duration:240});}renderDetail(id);document.getElementById('network').scrollIntoView({behavior:'smooth',block:'start'});}
+function renderInstitutions(){const basePapers=db.papers.filter(p=>{const cat=$('category').value,ccf=$('ccf').value,start=Number($('fromYear').value),end=Number($('toYear').value);return (!cat||p.categories.includes(cat))&&(!ccf||p.ccf===ccf)&&p.year>=start&&p.year<=end;});
+ const groups=db.institutions.map(g=>({...g,papers:basePapers.filter(p=>p.institution_id===g.id)})).filter(g=>g.papers.length).sort((a,b)=>b.papers.length-a.papers.length||a.name.localeCompare(b.name));
+ const major=groups.filter(g=>g.papers.length>=2&&g.id!=='__unknown__'),minor=groups.filter(g=>g.papers.length===1&&g.id!=='__unknown__'),unknown=groups.filter(g=>g.id==='__unknown__');
+ $('institutionStatus').textContent=`${major.length} 个主要机构 · ${minor.length} 个单篇机构`;
+ const host=$('institutionCards');host.replaceChildren();if(!major.length)host.append(create('div','当前筛选范围内暂无收录 2 篇及以上的机构。','empty-state'));
+ for(const [i,g] of major.entries()){const b=create('button','','institution-card'+(selectedInstitution===g.id?' active':''));b.type='button';b.append(create('span','INSTITUTION  '+String(i+1).padStart(2,'0'),'institute-kicker'),create('div',g.name,'institute-name'));
+   const first=[...new Set(g.papers.map(p=>p.authors[0]))].slice(0,3).join(' · ');b.append(create('div','第一作者：'+first,'institute-sub'));
+   const bottom=create('div','','bottom');bottom.append(create('span',`${g.papers.length} 篇收录论文`),create('strong','聚焦合作网络 ↗'));b.append(bottom);
+   b.onclick=()=>selectInstitution(g.id);host.append(b);}
+ const n=minor.length,m=minor.reduce((n,g)=>n+g.papers.length,0),nUnknown=unknown.reduce((n,g)=>n+g.papers.length,0);
+ $('otherTitle').textContent=`其他机构 · ${n} 所`; $('otherSubtitle').textContent=`${m} 篇单篇机构论文`+(nUnknown?` · 另有 ${nUnknown} 篇机构待核实`:'');
+ const other=$('otherList');other.replaceChildren();for(const g of minor){const b=create('button',g.name,'other-item');b.type='button';b.append(create('small',`${g.papers.length} 篇论文 · 查看合作网络`));b.onclick=()=>selectInstitution(g.id);other.append(b);}
+ for(const g of unknown){const b=create('button','机构待核实','other-item');b.type='button';b.append(create('small',`${g.papers.length} 篇论文 · 暂无主机构依据`));b.onclick=()=>selectInstitution(g.id);other.append(b);}
+ $('toggleOthers').hidden=!other.children.length;$('otherList').hidden=!otherOpen;$('toggleOthers').setAttribute('aria-expanded',String(otherOpen));$('othersChevron').textContent=otherOpen?'收起 ↑':'展开 ↓';
 }
-function setFilters(){filteredPapers=db.papers.filter(paperMatch);if(activeInstitute){renderInstitution();}else showOverview();}
-async function start(){try{const response=await fetch('data/graph.json',{cache:'no-store'});if(!response.ok)throw Error(`HTTP ${response.status}`);db=await response.json();if(!Array.isArray(db.institutions))throw Error('当前图谱数据缺少机构信息，请运行 build_institution_graph.py');
-  db.authors.forEach(a=>byId.set(a.id,a));$('statPapers').textContent=db.meta.unique_papers;$('statAuthors').textContent=db.meta.researchers;$('statInstitutions').textContent=db.meta.verified_institutions;
-  $('lastBuilt').textContent=`来源：README.md + data/paper_roles.csv · 构建 ${db.meta.generated_utc.slice(0,10)} UTC`;
-  const years=db.papers.map(p=>p.year),lo=Math.min(...years),hi=Math.max(...years);for(let y=lo;y<=hi;y++){$('fromYear').appendChild(new Option(String(y),String(y)));$('toYear').appendChild(new Option(String(y),String(y)));}
-  $('fromYear').value=String(lo);$('toYear').value=String(hi);
-  for(const id of ['search','category','ccf','fromYear','toYear','maxNodes'])$(id).addEventListener(id==='search'?'input':'change',()=>{
-    if(id==='search'){activeInstitute=null;setFilters();}else setFilters();});
-  $('back').addEventListener('click',()=>{selectedAuthor=null;showOverview();});
-  $('fit').addEventListener('click',()=>cy?.fit(undefined,45));
-  $('reset').addEventListener('click',()=>{$('search').value='';$('category').value='';$('ccf').value='';$('fromYear').value=String(lo);$('toYear').value=String(hi);$('maxNodes').value='40';activeInstitute=null;setFilters();});
-  document.querySelectorAll('.role-btn').forEach(b=>b.addEventListener('click',()=>{activeRole=b.dataset.role;updateRoleButtons();renderRole();}));
-  setFilters();
- }catch(err){console.error(err);$('viewStatus').textContent='数据加载失败';$('overview').appendChild(e('div',String(err),'error'));}}
-start();
+function renderAll(){renderGraph();renderInstitutions();}
+function selectInstitution(id){selectedInstitution=id;selectedId=null;$('search').value='';renderAll();document.getElementById('network').scrollIntoView({behavior:'smooth',block:'start'});}
+async function init(){try{const r=await fetch('data/graph.json',{cache:'no-store'});if(!r.ok)throw Error(`HTTP ${r.status}`);db=await r.json();if(!db.institutions||!db.papers[0]?.primary_status)throw Error('网站需要新版图谱数据，请运行 Python 数据构建脚本。');amap=new Map(db.authors.map(a=>[a.id,a]));pmap=new Map(db.papers.map(p=>[p.id,p]));
+ $('statPapers').textContent=db.meta.unique_papers;$('statResearchers').textContent=db.meta.researchers;$('statInstitutions').textContent=db.meta.institutions;
+ $('lastBuilt').textContent=`README.md · 数据构建 ${db.meta.generated_utc.slice(0,10)} UTC`;
+ const years=db.papers.map(p=>p.year),min=Math.min(...years),max=Math.max(...years);for(let y=min;y<=max;y++){$('fromYear').append(new Option(String(y),String(y)));$('toYear').append(new Option(String(y),String(y)));}$('fromYear').value=String(min);$('toYear').value=String(max);
+ for(const id of ['search','ccf','category','fromYear','toYear','maxNodes'])$(id).addEventListener(id==='search'?'input':'change',()=>{if(id==='search')selectedId=null;renderAll();});
+ document.querySelectorAll('.role-btn').forEach(b=>b.addEventListener('click',()=>{activeRole=b.dataset.role;document.querySelectorAll('.role-btn').forEach(x=>{x.classList.toggle('selected',x===b);x.setAttribute('aria-pressed',String(x===b));});clearHighlights();if(selectedId)spotlight(selectedId);}));
+ $('toggleOthers').addEventListener('click',()=>{otherOpen=!otherOpen;$('otherList').hidden=!otherOpen;$('toggleOthers').setAttribute('aria-expanded',String(otherOpen));$('othersChevron').textContent=otherOpen?'收起 ↑':'展开 ↓';});
+ $('fit').addEventListener('click',()=>cy?.fit(undefined,60));$('clearInstitution').addEventListener('click',()=>{selectedInstitution=null;selectedId=null;renderAll();});
+ $('reset').addEventListener('click',()=>{$('search').value='';$('ccf').value='';$('category').value='';$('fromYear').value=String(min);$('toYear').value=String(max);$('maxNodes').value='48';selectedInstitution=null;selectedId=null;activeRole='all';document.querySelectorAll('.role-btn').forEach(x=>x.classList.toggle('selected',x.dataset.role==='all'));renderAll();});
+ renderAll();
+ }catch(err){console.error(err);$('networkStatus').textContent='图谱加载失败';$('cy').append(create('div',err.message,'empty-state'));}}
+init();

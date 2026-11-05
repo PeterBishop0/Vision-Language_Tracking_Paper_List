@@ -1,63 +1,39 @@
-import csv
-import tempfile
 import unittest
 from pathlib import Path
-from build_graph import parse_source, build_graph
-from build_institution_graph import load_annotations, build_institution_data
+from build_institution_graph import build_dataset
 
-SRC='''## Initialize Settings:
-### NL+BBox:
-* **First Paper**, Alice Smith, Bob Chen, Carol Wu (CVPR25)
-[[Paper](https://example.org/first)]
-* **Second Paper**, Bob Chen, Eric Xu (ICCV25)
-[[Paper](https://example.org/second)]
-'''
+ROOT=Path(__file__).resolve().parent.parent
 
-class InstitutionTests(unittest.TestCase):
-    def setup_data(self):
-        ps,_,_=parse_source(SRC)
-        authors,ps,edges=build_graph(ps)
-        return authors,ps,edges
-
-    def make_csv(self, path, rows):
-        with path.open('w', encoding='utf-8', newline='') as f:
-            writer=csv.DictWriter(f,fieldnames=['paper_title','author_name','institution','role','evidence_url'])
-            writer.writeheader();writer.writerows(rows)
-
-    def test_no_institution_guesses_from_coauthors_or_last_author(self):
-        authors, ps, _ = self.setup_data()
-        groups=build_institution_data(ps,authors,[])
-        self.assertEqual(len(groups),1)
-        self.assertFalse(groups[0]['verified'])
-        self.assertEqual(groups[0]['paper_count'],2)
-        self.assertEqual(len(ps[0]['corresponding_author_ids']),0)
-
-    def test_multiple_institutions_and_roles_same_paper(self):
-        authors,ps,_=self.setup_data()
-        with tempfile.TemporaryDirectory() as td:
-            path=Path(td)/'annotations.csv'
-            self.make_csv(path,[
-                {'paper_title':'First Paper','author_name':'Alice Smith','institution':'Uni A','role':'first','evidence_url':'https://example.org/a'},
-                {'paper_title':'First Paper','author_name':'Bob Chen','institution':'Uni B','role':'corresponding','evidence_url':'https://example.org/a'},
-                {'paper_title':'Second Paper','author_name':'Eric Xu','institution':'Uni C','role':'corresponding','evidence_url':'https://example.org/b'},
-            ])
-            annotation,warnings=load_annotations(path,ps)
-        self.assertEqual(warnings,[])
-        groups=build_institution_data(ps,authors,annotation)
-        self.assertEqual({x['name'] for x in groups},{'Uni A','Uni B','Uni C'})
-        self.assertEqual(len(ps[0]['corresponding_author_ids']),1)
-        self.assertEqual(next(g for g in groups if g['name']=='Uni A')['representatives'][0]['roles'],['first'])
-
-    def test_invalid_or_uncited_institution_is_skipped(self):
-        authors,ps,_=self.setup_data()
-        with tempfile.TemporaryDirectory() as td:
-            path=Path(td)/'annotations.csv'
-            self.make_csv(path,[
-                {'paper_title':'First Paper','author_name':'Carol Wu','institution':'Uni A','role':'first','evidence_url':'https://example.org/a'},
-                {'paper_title':'First Paper','author_name':'Alice Smith','institution':'Uni A','role':'first','evidence_url':''},
-            ])
-            annotation,warnings=load_annotations(path,ps)
-        self.assertEqual(annotation,[])
-        self.assertEqual(len(warnings),2)
-
+class TestNetworkFirstInstitutionPolicy(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.data=build_dataset((ROOT/'README.md').read_text(encoding='utf-8'),ROOT/'data/paper_roles.csv',ROOT/'data/primary_affiliations.csv')
+    def test_every_paper_has_exactly_one_primary_institution(self):
+        papers=self.data['papers'];groups=self.data['institutions']
+        self.assertEqual(len(papers),65)
+        ids=[pid for g in groups for pid in g['paper_ids']]
+        self.assertCountEqual(ids,[p['id'] for p in papers])
+        self.assertEqual(len(ids),len(set(ids)))
+    def test_first_affiliation_overrides_author_multi_affiliation(self):
+        papers=self.data['papers']
+        ad=next(p for p in papers if 'Aware Distillation' in p['title'])
+        chat=next(p for p in papers if p['title'].startswith('ChatTracker: Enhancing Visual Tracking Performance'))
+        self.assertEqual(ad['primary_institution'],'Jilin University')
+        self.assertEqual(chat['primary_institution'],'East China Normal University')
+        self.assertEqual(ad['primary_status'],'paper_first_affiliation')
+    def test_uncertainty_preserved(self):
+        m=self.data['meta']
+        self.assertEqual(sum(m['status_counts'].values()),m['unique_papers'])
+        self.assertGreater(m['unknown_papers'],0)
+        self.assertTrue(all(p.get('primary_status') for p in self.data['papers']))
+    def test_singleton_is_a_view_flag_not_data_merge(self):
+        gs=self.data['institutions']
+        one=[g for g in gs if g['is_singleton'] and not g['is_unknown']]
+        self.assertGreater(len(one),0)
+        self.assertTrue(all(g['paper_count']==1 for g in one))
+        self.assertEqual(len({g['name'] for g in one}),len(one))
+    def test_role_evidence_retained(self):
+        p=next(p for p in self.data['papers'] if 'Aware Distillation' in p['title'])
+        self.assertTrue(any(x['role']=='corresponding' for x in p['verified_roles']))
+        self.assertTrue(p['corresponding_author_ids'])
 if __name__=='__main__':unittest.main()

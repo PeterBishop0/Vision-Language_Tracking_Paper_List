@@ -2,67 +2,53 @@
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="VLT Research Atlas — institution-first, source-verifiable vision-language tracking researcher knowledge graph">
-  <meta name="theme-color" content="#f8fbff">
-  <title>VLT Research Atlas · Institutions and Researchers</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Interactive Vision-Language Tracking Researcher Collaboration Network and Institution Overview">
+  <meta name="theme-color" content="#f7f9fd">
+  <title>VLT Research Atlas | Collaboration Network</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header class="topbar">
-  <div class="topbar-inner">
-    <a class="brand" href="./" aria-label="VLT Research Atlas 首页">
-      <span class="brand-mark"><span></span><span></span><span></span></span>
-      <span><strong>VLT <em>Research Atlas</em></strong><small>Institutions · Researchers · Publications</small></span>
-    </a>
-    <a href="https://github.com/PeterBishop0/Vision-Language_Tracking_Paper_List" class="github" target="_blank" rel="noopener noreferrer">GitHub Repository <span>↗</span></a>
-  </div>
-</header>
-<main class="page">
-  <section class="hero">
-    <div class="hero-text">
-      <div class="eyebrow"><span class="eyebrow-dot"></span> VISION–LANGUAGE TRACKING COMMUNITY</div>
-      <h1>研究机构与学者<span>合作图谱</span></h1>
-      <p>以机构为入口，围绕第一作者与通讯作者梳理 VLT 研究网络。通过来源可追溯的作者角色信息，探索论文、机构与合著关系。</p>
+<header class="topbar"><div class="container topbar-inner">
+  <a class="brand" href="./" aria-label="VLT Research Atlas"><span class="brand-symbol">V<span>·</span></span><span class="brand-type"><strong>VLT Research Atlas</strong><small>Vision-Language Tracking</small></span></a>
+  <nav class="nav"><a href="#network">合作网络</a><a href="#institutions">机构一览</a><a class="github-link" href="https://github.com/PeterBishop0/Vision-Language_Tracking_Paper_List" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></nav>
+</div></header>
+<main class="container">
+  <section class="hero" aria-labelledby="main-title">
+    <div class="hero-copy"><div class="eyebrow"><span class="online-dot"></span> VISION–LANGUAGE TRACKING · RESEARCH COMMUNITY</div>
+      <h1 id="main-title">Explore the people <span>behind the research.</span></h1>
+      <p>从研究者之间的真实合著关系出发，探索 VLT 的研究网络、代表论文与机构分布。</p>
     </div>
-    <div class="stats">
-      <div class="stat"><span>PUBLICATIONS</span><strong id="statPapers">—</strong><small>收录论文</small></div>
-      <div class="stat"><span>AUTHORS</span><strong id="statAuthors">—</strong><small>作者姓名节点</small></div>
-      <div class="stat"><span>INSTITUTIONS</span><strong id="statInstitutions">—</strong><small>已核实机构</small></div>
+    <div class="hero-stats"><div><strong id="statPapers">—</strong><span>收录论文</span></div><div><strong id="statResearchers">—</strong><span>作者姓名节点</span></div><div><strong id="statInstitutions">—</strong><span>归属机构</span></div></div>
+  </section>
+  <section class="filter-row" aria-label="图谱筛选条件">
+    <div class="field field-search"><label for="search">搜索研究者</label><input id="search" type="search" placeholder="输入英文姓名，例如 Bineng Zhong" autocomplete="off"></div>
+    <div class="field"><label for="category">初始化方式</label><select id="category"><option value="">全部分类</option><option>NL+BBox</option><option>NL & NL+BBox</option><option>NL Only</option><option>Datasets</option></select></div>
+    <div class="field"><label for="ccf">CCF</label><select id="ccf"><option value="">A + B</option><option value="A">A 类</option><option value="B">B 类</option></select></div>
+    <div class="field field-year"><label for="fromYear">起始年份</label><select id="fromYear"></select></div>
+    <div class="field field-year"><label for="toYear">截止年份</label><select id="toYear"></select></div>
+    <button id="reset" class="reset-btn" type="button" title="重置所有筛选">重置</button>
+  </section>
+  <section id="network" class="section-block" aria-labelledby="network-title">
+    <div class="section-heading"><div><span class="eyebrow mini">01 / RESEARCHER CONNECTIONS</span><h2 id="network-title">研究者合作网络</h2><p>每条连线表示至少一篇共同署名论文，点击作者即可查看具体合作关系。</p></div><div class="role-group" aria-label="突出显示作者角色"><span>突出显示</span><button class="role-btn selected" data-role="all" type="button">全部</button><button class="role-btn" data-role="first" type="button">第一作者</button><button class="role-btn" data-role="corresponding" type="button">通讯作者</button></div></div>
+    <div class="graph-shell">
+      <div class="graph-panel">
+        <div class="graph-top"><div><strong id="networkStatus">加载研究网络中…</strong><small id="institutionFilterLabel">收录论文全局合著网络</small></div><div class="graph-controls"><label class="node-limit">展示 <select id="maxNodes"><option value="30">30 人</option><option value="48" selected>48 人</option><option value="72">72 人</option></select></label><button id="fit" type="button">适应画布</button><button id="clearInstitution" type="button" hidden>清除机构筛选 ×</button></div></div>
+        <div class="graph-stage"><div id="cy" aria-label="研究者共同署名合作网络" role="img"></div><div class="graph-hint"><span class="graph-swatch"></span> 作者节点 <span class="line-swatch"></span> 合著关系 <span class="hint-separator">·</span> 颜色用于区分连通社群，不代表机构</div></div>
+        <div class="graph-bottom"><span>点击节点查看合作作者及论文</span><span>滚轮缩放 · 拖动平移</span></div>
+      </div>
+      <aside id="details" class="detail-panel" aria-live="polite"><div class="empty-detail"><span class="avatar-placeholder">◎</span><strong>选择一位研究者</strong><p>点击图中的节点，查看论文、第一作者与通讯作者身份，以及共同署名的研究人员。</p></div></aside>
     </div>
   </section>
-  <div class="disclaimer"><span class="info-dot">i</span><div><strong>数据核验说明</strong> 仅根据附有论文来源的第一作者、共同第一作者及通讯作者信息进行机构归属；其余论文放在“机构待核实”。同名作者尚未完成身份消歧，共同署名不等于同一机构。</div></div>
-  <div class="workspace">
-    <aside class="filter-panel">
-      <div class="panel-heading"><span class="section-label">EXPLORE</span><h2>筛选论文</h2><p>聚焦你关注的时间和研究方向</p></div>
-      <div class="field"><label for="search">机构或研究者</label><input id="search" type="search" placeholder="搜索机构 / 作者姓名" autocomplete="off"></div>
-      <div class="field"><label for="category">跟踪初始化方式</label><select id="category"><option value="">全部分类</option><option>NL+BBox</option><option>NL & NL+BBox</option><option>NL Only</option><option>Datasets</option></select></div>
-      <div class="field"><label for="ccf">CCF 等级</label><select id="ccf"><option value="">CCF A + B</option><option value="A">CCF A</option><option value="B">CCF B</option></select></div>
-      <div class="year-fields"><div class="field"><label for="fromYear">从</label><select id="fromYear"></select></div><div class="field"><label for="toYear">到</label><select id="toYear"></select></div></div>
-      <div class="field"><label for="maxNodes">网络最多显示</label><select id="maxNodes"><option value="25">25 位作者</option><option value="40" selected>40 位作者</option><option value="65">65 位作者</option></select></div>
-      <button id="reset" class="reset" type="button">↺ <span>重置筛选</span></button>
-      <div class="filter-help"><span>HOW IT WORKS</span><p>先选择机构，再按第一作者或通讯作者筛选论文。点击研究者可查看与其共同署名的论文和作者。</p></div>
-    </aside>
-    <section class="main-panel">
-      <div class="panel-toolbar">
-        <div><div class="section-label" id="viewKicker">INSTITUTION ATLAS</div><h2 id="viewTitle">研究机构一览</h2><p id="viewStatus">正在读取数据…</p></div>
-        <div class="toolbar-buttons"><button id="back" type="button" class="button-outline" hidden>← 返回机构</button><button id="fit" type="button" class="button-outline" hidden>适应画布</button></div>
-      </div>
-      <div id="overview" class="overview" aria-label="机构列表"></div>
-      <div id="institutionView" class="institution-view" hidden>
-        <div id="institutionIntro" class="institution-intro"></div>
-        <div class="role-bar"><div class="role-description">论文筛选</div><div class="role-options" role="group" aria-label="作者角色"><button type="button" class="role-btn active" data-role="all">全部论文</button><button type="button" class="role-btn" data-role="first">第一作者</button><button type="button" class="role-btn" data-role="corresponding">通讯作者</button></div><div id="roleStatus" class="role-status"></div></div>
-        <div class="network-grid">
-          <div class="network-panel"><div class="network-heading"><div><strong>Research Network</strong><span>高亮作者身份以查看完整合著关系</span></div><span class="network-key"><i></i>已核实角色 <b></b>其他署名作者</span></div><div id="cy" aria-label="研究者合著网络"></div><div class="network-bottom">轻触节点查看论文 · 滚轮缩放 · 拖动平移</div></div>
-          <aside id="details" class="detail-panel" aria-live="polite"><div class="detail-placeholder"><span>◎</span><strong>选择研究者</strong><p>点击图中的研究者，查看署名论文与角色来源。</p></div></aside>
-        </div>
-        <div class="paper-section"><div class="paper-section-title"><strong>相关论文</strong><span id="paperCount">—</span></div><div id="paperList" class="paper-list"></div></div>
-      </div>
-    </section>
-  </div>
-  <footer><span id="lastBuilt">Source: README.md + verified role annotations</span><span>Open-source · Evidence-first · CCF A/B</span></footer>
+  <section id="institutions" class="section-block institution-section" aria-labelledby="institutions-title">
+    <div class="section-heading"><div><span class="eyebrow mini">02 / INSTITUTION OVERVIEW</span><h2 id="institutions-title">研究机构一览</h2><p>一篇论文仅归属一个主机构。收录量较小的机构折叠显示，避免过多卡片。</p></div><span id="institutionStatus" class="institution-status"></span></div>
+    <div id="institutionCards" class="institution-cards" aria-live="polite"></div>
+    <div class="other-institutions"><button id="toggleOthers" class="other-toggle" type="button" aria-expanded="false"><span><strong id="otherTitle">其他机构</strong><small id="otherSubtitle">单篇论文机构合并展示</small></span><span id="othersChevron">展开 ↓</span></button><div id="otherList" class="other-list" hidden></div></div>
+  </section>
+  <section class="method-note"><span class="method-icon">ⓘ</span><p><strong>数据说明：</strong>论文优先按首页第一署名机构归属；缺少明确的编号 1 机构时暂按有来源的第一作者或通讯作者单位参考，并在详情标注。单篇机构只是界面合并，不会更改原始名称。作者身份目前仍按姓名匹配，尚未完成 ORCID 消歧。</p></section>
+  <footer><span id="lastBuilt">Data from README.md</span><a href="https://github.com/PeterBishop0/Vision-Language_Tracking_Paper_List" target="_blank" rel="noopener noreferrer">Open source on GitHub ↗</a></footer>
 </main>
 <script src="https://cdn.jsdelivr.net/npm/cytoscape@3.34.3/dist/cytoscape.min.js"></script>
-<script defer src="app.js"></script>
+<script src="app.js" defer></script>
 </body>
 </html>

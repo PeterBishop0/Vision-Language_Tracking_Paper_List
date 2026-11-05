@@ -8,6 +8,7 @@ on:
       - scripts/build_graph.py
       - scripts/build_institution_graph.py
       - data/paper_roles.csv
+      - data/primary_affiliations.csv
       - scripts/test_build_graph.py
       - docs/**
       - .github/workflows/graph-pages.yml
@@ -37,7 +38,7 @@ jobs:
       - name: Test verified author-role ingestion
         run: cd scripts && python -m unittest -v test_institution_graph.py
       - name: Build institution-aware graph from README and annotations
-        run: python scripts/build_institution_graph.py --input README.md --annotations data/paper_roles.csv --output docs/data/graph.json
+        run: python scripts/build_institution_graph.py --input README.md --annotations data/paper_roles.csv --primary data/primary_affiliations.csv --output docs/data/graph.json
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload graph site
