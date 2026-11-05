@@ -1,0 +1,53 @@
+name: Build and publish VLT Researcher Graph
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - README.md
+      - scripts/build_graph.py
+      - scripts/test_build_graph.py
+      - docs/**
+      - .github/workflows/graph-pages.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test README parser
+        run: cd scripts && python -m unittest -v test_build_graph.py
+      - name: Build graph from the existing README
+        run: python scripts/build_graph.py --input README.md --output docs/data/graph.json
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Upload graph site
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./docs
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
