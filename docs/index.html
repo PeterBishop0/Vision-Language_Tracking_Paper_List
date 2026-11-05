@@ -3,50 +3,71 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Vision-Language Tracking Researcher Graph: an interactive coauthorship map based on a curated paper list.">
-  <title>VLT Researcher Graph · Vision-Language Tracking</title>
+  <meta name="theme-color" content="#f7faff">
+  <meta name="description" content="An interactive academic co-authorship atlas for Vision-Language Tracking (VLT), based on a curated CCF A/B paper list.">
+  <title>VLT Research Atlas | Researcher Network</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="topbar">
-    <div class="brand"><span class="logo">VLT<span class="dot">●</span></span><div><strong>Researcher Graph</strong><small>Vision-Language Tracking · CCF A/B</small></div></div>
-    <a class="repo-link" href="https://github.com/PeterBishop0/Vision-Language_Tracking_Paper_List" target="_blank" rel="noopener noreferrer">查看论文仓库 ↗</a>
+    <div class="topbar-inner">
+      <a class="brand" href="./" aria-label="VLT Research Atlas 首页">
+        <span class="brand-icon" aria-hidden="true">
+          <svg viewBox="0 0 44 44" fill="none"><path d="M13 14L31 13L24 30L13 14Z" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><circle cx="13" cy="14" r="4.3" fill="currentColor"/><circle cx="31" cy="13" r="4.3" fill="currentColor"/><circle cx="24" cy="30" r="4.3" fill="currentColor"/></svg>
+        </span>
+        <span class="brand-text"><strong>VLT <span>Research Atlas</span></strong><small>Vision-Language Tracking</small></span>
+      </a>
+      <div class="topbar-right">
+        <span class="header-tag"><span class="signal-dot"></span> Community research map</span>
+        <a class="repo-link" href="https://github.com/PeterBishop0/Vision-Language_Tracking_Paper_List" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 .8A11.2 11.2 0 0 0 8.46 22.6c.56.1.77-.24.77-.55v-2.09c-3.13.67-3.79-1.33-3.79-1.33-.51-1.29-1.25-1.64-1.25-1.64-1.03-.7.08-.68.08-.68 1.14.08 1.75 1.17 1.75 1.17 1.01 1.72 2.65 1.22 3.29.93.1-.73.4-1.22.72-1.5-2.5-.29-5.12-1.25-5.12-5.54 0-1.22.44-2.23 1.16-3.02-.12-.29-.5-1.44.11-2.99 0 0 .95-.31 3.08 1.15a10.7 10.7 0 0 1 5.62 0c2.13-1.46 3.07-1.15 3.07-1.15.62 1.55.24 2.7.12 2.99.73.79 1.16 1.8 1.16 3.02 0 4.3-2.63 5.25-5.14 5.53.41.36.78 1.05.78 2.11v3.12c0 .3.2.66.79.55A11.2 11.2 0 0 0 12 .8Z"/></svg>
+          GitHub Repository <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
   </header>
-  <main>
-    <div class="intro">
-      <div><div class="eyebrow">EXPLORING THE RESEARCH COMMUNITY</div><h1>谁在推动视觉语言跟踪研究？</h1><p>基于维护中的论文清单生成研究人员合著网络。点击节点，探索作者的论文、合作关系与研究方向。</p></div>
-      <div class="stats"><div><strong id="statPapers">—</strong><small>篇独立论文</small></div><div><strong id="statAuthors">—</strong><small>位署名作者</small></div><div><strong id="statEdges">—</strong><small>组合作者关系</small></div></div>
-    </div>
-    <div class="note" role="status">⚠ 本图谱是基于 README 署名的研究性演示：同名作者尚未经过 OpenAlex / ORCID 消歧；连线表示“共同署名”，不代表师生、机构或合作深度。</div>
+
+  <main class="page">
+    <section class="intro" aria-label="项目简介">
+      <div class="intro-copy">
+        <span class="eyebrow"><span class="eyebrow-icon">✦</span> VISION-LANGUAGE TRACKING · COMMUNITY ATLAS</span>
+        <h1>探索 VLT 研究者的<span class="accent-word">合作网络<span class="accent-underline"></span></span></h1>
+        <p>从论文到研究者，从研究者到合作网络。探索视觉语言跟踪领域的学术联系与研究成果。</p>
+        <div class="intro-pills"><span>论文驱动</span><span>CCF A / B</span><span>持续更新</span></div>
+      </div>
+      <div class="stats" aria-label="图谱统计">
+        <div class="stat"><div class="stat-icon papers-icon">▤</div><strong id="statPapers">—</strong><small>收录论文 <span>Publications</span></small></div>
+        <div class="stat"><div class="stat-icon authors-icon">◎</div><strong id="statAuthors">—</strong><small>作者姓名 <span>Author names</span></small></div>
+        <div class="stat"><div class="stat-icon links-icon">⌁</div><strong id="statEdges">—</strong><small>合著关联 <span>Connections</span></small></div>
+      </div>
+    </section>
+
+    <div class="note" role="note"><span class="note-icon">i</span><div><strong>关于图谱数据</strong><span>合著关系来自本仓库的 README 论文署名；同名作者尚未通过 ORCID / OpenAlex 完成身份消歧，连线仅表示共同署名。</span></div></div>
+
     <div class="workspace">
-      <aside class="sidebar filters">
-        <div class="panel-title">筛选 / FILTERS</div>
-        <label for="search">研究人员姓名</label>
-        <input id="search" type="search" placeholder="例如 Bineng Zhong" autocomplete="off">
-        <label for="category">论文类别</label>
-        <select id="category"><option value="">全部类别</option><option>NL+BBox</option><option>NL & NL+BBox</option><option>NL Only</option><option>Datasets</option></select>
-        <label for="ccf">CCF 等级</label>
-        <select id="ccf"><option value="">A + B</option><option value="A">CCF A</option><option value="B">CCF B</option></select>
-        <label for="fromYear">起始年份</label>
-        <select id="fromYear"></select>
-        <label for="toYear">截止年份</label>
-        <select id="toYear"></select>
-        <label for="maxNodes">图谱显示人数</label>
-        <select id="maxNodes"><option value="30">30 人</option><option value="50" selected>50 人</option><option value="80">80 人</option><option value="120">120 人</option></select>
-        <button id="reset" type="button">重置筛选</button>
-        <div class="divider"></div>
-        <div class="panel-title">阅读说明</div>
-        <p class="hint">节点越大，筛选范围内的论文越多；线条越粗，两位作者在清单内共同署名的论文越多。</p>
-        <p class="hint">为避免过密，默认只展示论文较多的 50 位作者。输入姓名可定位不在默认视图中的作者。</p>
+      <aside class="sidebar filters" aria-label="图谱筛选">
+        <div class="panel-head"><div class="panel-label">FILTERS</div><h2>筛选研究网络</h2><p>按研究方向、时间与等级探索</p></div>
+        <div class="filter-fields">
+          <div class="field"><label for="search">研究人员</label><div class="search-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.2"/><path d="m15.5 15.5 5.1 5.1"/></svg><input id="search" type="search" placeholder="搜索作者姓名…" autocomplete="off"></div></div>
+          <div class="field"><label for="category">初始化方式</label><select id="category"><option value="">全部类别</option><option>NL+BBox</option><option>NL & NL+BBox</option><option>NL Only</option><option>Datasets</option></select></div>
+          <div class="field"><label for="ccf">CCF 等级</label><select id="ccf"><option value="">全部 · A + B</option><option value="A">CCF A</option><option value="B">CCF B</option></select></div>
+          <div class="year-fields"><div class="field"><label for="fromYear">起始年份</label><select id="fromYear"></select></div><div class="field"><label for="toYear">截止年份</label><select id="toYear"></select></div></div>
+          <div class="field"><label for="maxNodes">最多显示</label><select id="maxNodes"><option value="30">30 位作者</option><option value="50" selected>50 位作者</option><option value="80">80 位作者</option><option value="120">120 位作者</option></select></div>
+        </div>
+        <button id="reset" type="button" class="reset-button"><span aria-hidden="true">↺</span> 重置所有筛选</button>
+        <div class="sidebar-tip"><span aria-hidden="true">✧</span><p><strong>探索提示</strong><br>点击圆点查看作者信息；搜索姓名可定位未显示在默认视图中的作者。</p></div>
       </aside>
+
       <section class="graph-area" aria-label="研究人员合作图谱">
-        <div class="graph-toolbar"><span id="graphStatus">正在加载数据…</span><button type="button" id="fit">适应画布</button></div>
-        <div id="cy" role="img" aria-label="基于论文署名关系的研究人员网络图"></div>
-        <div class="graph-foot"><span class="legend-dot"></span> 研究人员 <span class="legend-line"></span> 共同署名关系</div>
+        <div class="graph-toolbar"><div><div class="graph-overline"><span class="live-indicator"></span> CO-AUTHORSHIP ATLAS</div><h2 id="graphTitle">合作群组地图</h2><div id="graphStatus" class="graph-status">正在加载数据…</div></div><div class="toolbar-actions"><button type="button" id="backOverview" class="back-button" hidden>← 全部群组</button><button type="button" id="fit" title="缩放到完整网络" hidden>适应画布</button></div></div>
+        <div id="groupOverview" class="group-overview" aria-label="按合著关系划分的研究人员群组"></div>
+        <div id="cy" class="network-canvas" role="img" aria-label="基于论文署名关系的研究人员网络图" hidden></div>
+        <div class="graph-foot"><div class="legend"><span class="legend-dot"></span> <span id="legendMain">合著群组</span> <span class="legend-line"></span> <span id="legendLines">点击卡片探索作者</span> <span class="legend-selected"></span> <span id="legendSelected">聚焦协作关系</span></div><span class="drag-tip" id="graphTip">按群组查看，避免连线遮挡</span></div>
       </section>
-      <aside class="sidebar detail" id="details" aria-live="polite"><div class="panel-title">研究人员 / RESEARCHER</div><div class="empty">点击网络中的作者，或在左侧搜索姓名，查看详细信息。</div></aside>
+
+      <aside class="sidebar detail" id="details" aria-live="polite"><div class="panel-label">RESEARCHER PROFILE</div><div class="empty-state"><span class="empty-icon" aria-hidden="true">◎</span><strong>了解一位研究者</strong><p>点击网络中的节点，查看作者署名论文、合著者和研究方向。</p><span class="empty-hint">SELECT A RESEARCHER TO EXPLORE</span></div></aside>
     </div>
-    <footer><span id="lastBuilt">数据来源：本仓库 README.md</span><span>Made for the VLT community · Graph data is reproducible</span></footer>
+    <footer><span id="lastBuilt">数据来源：本仓库 README.md</span><span>Built with Cytoscape.js · Research-driven, open-source</span></footer>
   </main>
   <script src="https://cdn.jsdelivr.net/npm/cytoscape@3.34.3/dist/cytoscape.min.js"></script>
   <script src="app.js" defer></script>
