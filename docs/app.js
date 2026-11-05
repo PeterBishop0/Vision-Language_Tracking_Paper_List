@@ -4,6 +4,7 @@
  * A group is NOT an institution or an independently verified laboratory.
  */
 'use strict';
+window.__VLT_ATLAS_VERSION = '20261105-2205-fix';
 const $ = id => document.getElementById(id);
 const create = (tag, text = '', className = '') => {
   const el = document.createElement(tag);

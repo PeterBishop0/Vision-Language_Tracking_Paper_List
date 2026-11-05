@@ -6,7 +6,7 @@
   <meta name="description" content="Interactive Vision-Language Tracking Researcher Collaboration Network and Institution Overview">
   <meta name="theme-color" content="#f7f9fd">
   <title>VLT Research Atlas | Collaboration Network</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20261105-2205-fix">
 </head>
 <body>
 <header class="topbar"><div class="container topbar-inner">
@@ -50,7 +50,9 @@
           </div>
         </div>
         <div class="graph-stage">
-          <div id="overview" class="community-overview" aria-label="可点击的合作群组总览"></div>
+          <div id="overview" class="community-overview" aria-label="可点击的合作群组总览">
+            <div class="load-placeholder"><strong>正在载入合作群组…</strong><p>如长时间未显示，请刷新页面或确认三个网页文件均已更新。</p></div>
+          </div>
           <div id="cy" aria-label="研究者共同署名合作网络" role="img" hidden></div>
           <div class="graph-hint"><span class="graph-swatch"></span>作者节点 <span class="line-swatch"></span>真实合著关系 <span class="hint-separator">·</span> 颜色标识合著群组，非机构</div>
         </div>
@@ -68,6 +70,26 @@
   <footer><span id="lastBuilt">Data from README.md</span><a href="https://github.com/PeterBishop0/Vision-Language_Tracking_Paper_List" target="_blank" rel="noopener noreferrer">Open source on GitHub ↗</a></footer>
 </main>
 <script src="https://cdn.jsdelivr.net/npm/cytoscape@3.34.3/dist/cytoscape.min.js"></script>
-<script src="app.js" defer></script>
+<script src="app.js?v=20261105-2205-fix" defer></script>
+<script>
+window.addEventListener('load', function () {
+  if (window.__VLT_ATLAS_VERSION === '20261105-2205-fix') return;
+  const host = document.getElementById('overview');
+  const status = document.getElementById('networkStatus');
+  const graph = document.getElementById('cy');
+  if (graph) graph.hidden = true;
+  if (host) {
+    host.hidden = false;
+    host.innerHTML = '<div class="load-placeholder load-error"><strong>网页资源版本不一致</strong><p>当前页面没有加载到新版图谱脚本。请确认 index.html、app.js、styles.css 均已上传，并强制刷新 Ctrl + Shift + R。</p><button type="button" id="forceReload">重新加载</button></div>';
+    const button = document.getElementById('forceReload');
+    if (button) button.addEventListener('click', function () {
+      const url = new URL(location.href);
+      url.searchParams.set('refresh', String(Date.now()));
+      location.replace(url.toString());
+    });
+  }
+  if (status) status.textContent = '需要刷新：网页资源未同步';
+});
+</script>
 </body>
 </html>
