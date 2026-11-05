@@ -1,5 +1,23 @@
 # Vision-Language_Tracking_Paper_List
-Paper list for vision-language tracking (continue to Update this list)
+Paper list for vision-language tracking (continuously updated).
+
+## 🌐 VLT Researcher Knowledge Graph
+
+We provide an interactive **Vision-Language Tracking Researcher Knowledge Graph** to explore the research community and collaboration networks in vision-language tracking.
+
+**[🔗 Explore the Interactive Researcher Graph](https://peterbishop0.github.io/Vision-Language_Tracking_Paper_List/)**
+
+### Features
+- **Researcher Network:** Visualize researchers and their co-authorship relationships.
+- **Interactive Exploration:** Search for researchers and explore their publications and collaborators.
+- **Paper Filtering:** Filter publications by year, venue, CCF ranking (A/B), and tracking initialization settings.
+- **Continuous Updates:** Automatically synchronize the graph with this paper list through GitHub Actions.
+
+The graph is constructed from the publications collected in this repository and will be continuously expanded as new papers are added.
+
+> **Note:** Co-authorship relationships are derived from the collected papers. Researcher identities are currently matched by name and may require further disambiguation.
+
+---
 
 ## Datasets (One Pass Evaluation):
 
